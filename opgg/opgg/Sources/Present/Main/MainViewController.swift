@@ -16,11 +16,20 @@ final class MainViewController: BaseViewController, View {
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
     
+    private let topView = TopView()
+    
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: MainViewModel) {
         rx.viewDidLoad
             .bind(to: viewModel.action.tappedMatchs)
+            .disposed(by: disposeBag)
+        
+        rx.viewDidAppear
+            .map { _ in }
+            .bind(onNext: { [unowned self] _ in
+                self.scrollView.contentSize = CGSize(width: contentView.frame.width, height: contentView.frame.height)
+            })
             .disposed(by: disposeBag)
     }
     
@@ -40,7 +49,6 @@ final class MainViewController: BaseViewController, View {
         }
         
         contentView.do {
-            $0.backgroundColor = .paleGrey
             $0.axis = .vertical
         }
     }
@@ -51,6 +59,7 @@ final class MainViewController: BaseViewController, View {
         view.addSubview(topLayoutBox)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.addArrangedSubview(topView)
         
         topLayoutBox.snp.makeConstraints {
             $0.top.equalTo(topLayoutGuide.snp.top)
@@ -62,6 +71,11 @@ final class MainViewController: BaseViewController, View {
             $0.top.equalTo(topLayoutBox.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
     }
 }
