@@ -10,12 +10,12 @@ import RxSwift
 import UIKit
 
 final class TopView: BaseView, View {
-    var disposeBag = DisposeBag()
-    
     private let thumbnail = UIImageView()
     private let title = UILabel()
     private let refreshButton = UIButton()
     private let levelLabel = PaddingLabel()
+    
+    var disposeBag = DisposeBag()
     
     func bind(to viewModel: TopViewModel) {
         viewModel.state.profileImageURL
@@ -30,10 +30,6 @@ final class TopView: BaseView, View {
     
     override func attribute() {
         super.attribute()
-        
-        self.do {
-            $0.backgroundColor = .black
-        }
         
         thumbnail.do {
             $0.backgroundColor = .red
@@ -72,7 +68,7 @@ final class TopView: BaseView, View {
         addSubview(refreshButton)
         
         thumbnail.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.equalToSuperview().offset(8)
             $0.leading.equalToSuperview().offset(16)
             $0.width.height.equalTo(88)
         }
@@ -94,7 +90,7 @@ final class TopView: BaseView, View {
         }
         
         snp.makeConstraints {
-            $0.bottom.equalTo(thumbnail)
+            $0.bottom.equalTo(thumbnail).offset(8)
         }
     }
 }

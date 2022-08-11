@@ -19,7 +19,8 @@ final class MainViewModel: ViewModel {
     }
     
     struct SubViewModel {
-        let topViewModel = TopViewModel()
+        let topView = TopViewModel()
+        let previousTier = PreviousTierViewModel()
     }
     
     let action = Action()
@@ -42,7 +43,12 @@ final class MainViewModel: ViewModel {
             .share()
         
         summoner
-            .bind(to: subViewModel.topViewModel.update.summoner)
+            .bind(to: subViewModel.topView.update.summoner)
+            .disposed(by: disposeBag)
+        
+        summoner
+            .map { $0.previousTiers }
+            .bind(to: subViewModel.previousTier.update.previousTier)
             .disposed(by: disposeBag)
         
         let requestMatchs = action.tappedMatchs

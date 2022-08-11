@@ -17,19 +17,13 @@ final class MainViewController: BaseViewController, View {
     private let contentView = UIStackView()
     
     private let topView = TopView()
+    private let previousTierView = PreviousTierView()
     
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: MainViewModel) {
         rx.viewDidLoad
             .bind(to: viewModel.action.viewDidLoad)
-            .disposed(by: disposeBag)
-        
-        rx.viewDidAppear
-            .map { _ in }
-            .bind(onNext: { [unowned self] _ in
-                self.scrollView.contentSize = CGSize(width: contentView.frame.width, height: contentView.frame.height)
-            })
             .disposed(by: disposeBag)
     }
     
@@ -45,15 +39,22 @@ final class MainViewController: BaseViewController, View {
         }
         
         scrollView.do {
-            $0.backgroundColor = .paleGrey
+            $0.backgroundColor = .clear
+            $0.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16)
+            $0.contentSize = CGSize(width: 0, height: 2000)
+        }
+        
+        topView.do {
+            $0.viewModel = viewModel?.subViewModel.topView
+        }
+        
+        previousTierView.do {
+            $0.viewModel = viewModel?.subViewModel.previousTier
         }
         
         contentView.do {
             $0.axis = .vertical
-        }
-        
-        topView.do {
-            $0.viewModel = viewModel?.subViewModel.topViewModel
+            $0.spacing = 16
         }
     }
     
@@ -64,6 +65,7 @@ final class MainViewController: BaseViewController, View {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addArrangedSubview(topView)
+        contentView.addArrangedSubview(previousTierView)
         
         topLayoutBox.snp.makeConstraints {
             $0.top.equalTo(topLayoutGuide.snp.top)
@@ -78,8 +80,8 @@ final class MainViewController: BaseViewController, View {
         }
         
         contentView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
+            $0.top.width.equalToSuperview()
+            $0.bottom.equalTo(previousTierView)
         }
     }
 }
