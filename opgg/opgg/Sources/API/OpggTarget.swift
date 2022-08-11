@@ -10,6 +10,7 @@ import Foundation
 
 enum OpggTarget {
     case requestSummonerInfo
+    case requestMatches(lastMatch: UInt64?)
 }
 
 extension OpggTarget: BaseTarget {
@@ -17,19 +18,25 @@ extension OpggTarget: BaseTarget {
         switch self {
         case .requestSummonerInfo:
             return "/api/summoner/genetory"
+        case .requestMatches(let lastMatch):
+            if let lastMatch = lastMatch {
+                return "/api/summoner/genetory/matches?lastMatch=\(lastMatch)"
+            } else {
+                return "/api/summoner/genetory/matches"
+            }
         }
     }
     
     var parameter: [String: Any]? {
         switch self {
-        case .requestSummonerInfo:
+        case .requestSummonerInfo, .requestMatches:
             return nil
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .requestSummonerInfo:
+        case .requestSummonerInfo, .requestMatches:
             return .get
         }
     }

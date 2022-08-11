@@ -15,7 +15,7 @@ final class MainViewController: BaseViewController, View {
     
     func bind(to viewModel: MainViewModel) {
         rx.viewDidLoad
-            .bind(to: viewModel.action.viewDidLoad)
+            .bind(to: viewModel.action.tappedMatchs)
             .disposed(by: disposeBag)
     }
 }

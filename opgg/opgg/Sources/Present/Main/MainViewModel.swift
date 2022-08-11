@@ -12,6 +12,7 @@ import RxSwift
 final class MainViewModel: ViewModel {
     struct Action {
         let viewDidLoad = PublishRelay<Void>()
+        let tappedMatchs = PublishRelay<Void>()
     }
     
     struct State {
@@ -31,6 +32,19 @@ final class MainViewModel: ViewModel {
             .share()
         
         requestSummoner
+            .compactMap { $0.value }
+            .bind(onNext: {
+                print($0)
+            })
+            .disposed(by: disposeBag)
+        
+        let requestMatchs = action.tappedMatchs
+            .flatMapLatest { [unowned self] _ in
+                self.opggRepository.requestMatches(lastMatch: nil)
+            }
+            .share()
+        
+        requestMatchs
             .compactMap { $0.value }
             .bind(onNext: {
                 print($0)

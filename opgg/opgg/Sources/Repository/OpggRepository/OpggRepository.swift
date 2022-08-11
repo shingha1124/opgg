@@ -10,4 +10,5 @@ import RxSwift
 
 protocol OpggRepository {
     func requestSummonerInfo() -> Single<Result<SummonerInfo, APIError>>
+    func requestMatches(lastMatch: UInt64?) -> Single<Result<Matchs, APIError>>
 }

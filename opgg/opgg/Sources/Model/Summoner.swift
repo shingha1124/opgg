@@ -11,7 +11,7 @@ struct SummonerInfo: Decodable {
     let summoner: Summoner
 }
 
-struct Summoner: Codable {
+struct Summoner: Decodable {
     let name: String
     let level: Int
     let profileImageURL: String
@@ -31,17 +31,17 @@ struct Summoner: Codable {
     }
 }
 
-struct LadderRank: Codable {
+struct LadderRank: Decodable {
     let rank, rankPercentOfTop: Int
 }
 
-struct League: Codable {
+struct League: Decodable {
     let hasResults: Bool
     let wins, losses: Int
     let tierRank: PreviousTier
 }
 
-struct PreviousTier: Codable {
+struct PreviousTier: Decodable {
     let name, tier, tierDivision, string: String
     let shortString, division: String
     let imageURL: String
