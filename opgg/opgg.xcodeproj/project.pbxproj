@@ -31,6 +31,9 @@
 		E029712628A54454006E45CA /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712528A54454006E45CA /* Summoner.swift */; };
 		E029712928A544CD006E45CA /* Result+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712828A544CD006E45CA /* Result+Extension.swift */; };
 		E029712B28A54992006E45CA /* Matchs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712A28A54992006E45CA /* Matchs.swift */; };
+		E029712D28A54EDB006E45CA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712C28A54EDB006E45CA /* UIColor+Extension.swift */; };
+		E029713128A5509A006E45CA /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713028A5509A006E45CA /* TopView.swift */; };
+		E029713328A550A2006E45CA /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713228A550A1006E45CA /* TopViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		E029712528A54454006E45CA /* Summoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
 		E029712828A544CD006E45CA /* Result+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extension.swift"; sourceTree = "<group>"; };
 		E029712A28A54992006E45CA /* Matchs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matchs.swift; sourceTree = "<group>"; };
+		E029712C28A54EDB006E45CA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E029713028A5509A006E45CA /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E029713228A550A1006E45CA /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 		E02970F928A5366A006E45CA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E029712E28A55035006E45CA /* View */,
 				E02970FA28A53673006E45CA /* MainViewController.swift */,
 				E029710728A53A09006E45CA /* MainViewModel.swift */,
 			);
@@ -258,8 +265,26 @@
 			isa = PBXGroup;
 			children = (
 				E029712828A544CD006E45CA /* Result+Extension.swift */,
+				E029712C28A54EDB006E45CA /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E029712E28A55035006E45CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E029712F28A5503D006E45CA /* TopView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E029712F28A5503D006E45CA /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				E029713028A5509A006E45CA /* TopView.swift */,
+				E029713228A550A1006E45CA /* TopViewModel.swift */,
+			);
+			path = TopView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,10 +436,13 @@
 				E02970DF28A53265006E45CA /* AppDelegate.swift in Sources */,
 				E029710328A536E4006E45CA /* BaseView.swift in Sources */,
 				E02970F828A5353A006E45CA /* RootWindow.swift in Sources */,
+				E029712D28A54EDB006E45CA /* UIColor+Extension.swift in Sources */,
 				E029711B28A541CA006E45CA /* Container.swift in Sources */,
 				E029711F28A54200006E45CA /* OpggRepository.swift in Sources */,
 				E02970FF28A536C6006E45CA /* MVVM.swift in Sources */,
 				E029710828A53A09006E45CA /* MainViewModel.swift in Sources */,
+				E029713328A550A2006E45CA /* TopViewModel.swift in Sources */,
+				E029713128A5509A006E45CA /* TopView.swift in Sources */,
 				E029712B28A54992006E45CA /* Matchs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
