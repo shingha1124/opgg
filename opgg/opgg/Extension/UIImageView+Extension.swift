@@ -13,4 +13,13 @@ extension UIImageView {
         let resource = ImageResource(downloadURL: url, cacheKey: url.absoluteString)
         self.kf.setImage(with: resource)
     }
+    
+    func setImageWithIndicator(_ url: URL, time: CGFloat) {
+        let resource = ImageResource(downloadURL: url, cacheKey: url.absoluteString)
+        self.kf.indicatorType = .activity
+        self.kf.setImage(
+            with: resource,
+            options: [.transition(.fade(1.2))]
+        )
+    }
 }
