@@ -14,7 +14,7 @@ struct SummonerInfo: Decodable {
 struct Summoner: Decodable {
     let name: String
     let level: Int
-    let profileImageURL: String
+    let profileImageURL: URL
     let profileBorderImageURL: String
     let url: String
     let leagues: [League]

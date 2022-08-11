@@ -22,7 +22,7 @@ final class MainViewController: BaseViewController, View {
     
     func bind(to viewModel: MainViewModel) {
         rx.viewDidLoad
-            .bind(to: viewModel.action.tappedMatchs)
+            .bind(to: viewModel.action.viewDidLoad)
             .disposed(by: disposeBag)
         
         rx.viewDidAppear
@@ -50,6 +50,10 @@ final class MainViewController: BaseViewController, View {
         
         contentView.do {
             $0.axis = .vertical
+        }
+        
+        topView.do {
+            $0.viewModel = viewModel?.subViewModel.topViewModel
         }
     }
     

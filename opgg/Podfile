@@ -16,4 +16,5 @@ target 'opgg' do
   install_common
   pod 'SnapKit', '~> 5.6.0'
   pod 'Alamofire'
+  pod 'Kingfisher', '~> 5.0'
 end

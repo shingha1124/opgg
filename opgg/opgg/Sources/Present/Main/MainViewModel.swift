@@ -18,8 +18,13 @@ final class MainViewModel: ViewModel {
     struct State {
     }
     
+    struct SubViewModel {
+        let topViewModel = TopViewModel()
+    }
+    
     let action = Action()
     let state = State()
+    let subViewModel = SubViewModel()
     let disposeBag = DisposeBag()
     
     @Inject(\.opggRepository) private var opggRepository: OpggRepository
@@ -31,11 +36,13 @@ final class MainViewModel: ViewModel {
             }
             .share()
         
-        requestSummoner
+        let summoner = requestSummoner
             .compactMap { $0.value }
-            .bind(onNext: {
-                print($0)
-            })
+            .map { $0.summoner }
+            .share()
+        
+        summoner
+            .bind(to: subViewModel.topViewModel.update.summoner)
             .disposed(by: disposeBag)
         
         let requestMatchs = action.tappedMatchs

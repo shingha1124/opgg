@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Kingfisher
 import RxRelay
 import RxSwift
 
@@ -14,12 +15,28 @@ final class TopViewModel: ViewModel {
     }
     
     struct State {
+        let profileImageURL = PublishRelay<URL>()
+        let level = PublishRelay<Int>()
+    }
+    
+    struct Update {
+        let summoner = PublishRelay<Summoner>()
     }
     
     let action = Action()
     let state = State()
+    let update = Update()
     let disposeBag = DisposeBag()
     
     init() {
+        update.summoner
+            .map { $0.profileImageURL }
+            .bind(to: state.profileImageURL)
+            .disposed(by: disposeBag)
+        
+        update.summoner
+            .map { $0.level }
+            .bind(to: state.level)
+            .disposed(by: disposeBag)
     }
 }
