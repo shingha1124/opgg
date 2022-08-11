@@ -14,6 +14,8 @@ final class MainViewController: BaseViewController, View {
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: MainViewModel) {
-        
+        rx.viewDidLoad
+            .bind(to: viewModel.action.viewDidLoad)
+            .disposed(by: disposeBag)
     }
 }

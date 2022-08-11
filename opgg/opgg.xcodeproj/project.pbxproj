@@ -17,6 +17,19 @@
 		E029710328A536E4006E45CA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029710228A536E4006E45CA /* BaseView.swift */; };
 		E029710628A53700006E45CA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029710528A53700006E45CA /* Log.swift */; };
 		E029710828A53A09006E45CA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029710728A53A09006E45CA /* MainViewModel.swift */; };
+		E029710B28A53D17006E45CA /* BaseTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029710A28A53D17006E45CA /* BaseTarget.swift */; };
+		E029710E28A53D98006E45CA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029710D28A53D98006E45CA /* Response.swift */; };
+		E029711028A53E0E006E45CA /* Response+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029710F28A53E0E006E45CA /* Response+Reactive.swift */; };
+		E029711228A53E3E006E45CA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029711128A53E3E006E45CA /* APIError.swift */; };
+		E029711528A53FD5006E45CA /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029711428A53FD5006E45CA /* NetworkRepository.swift */; };
+		E029711728A54085006E45CA /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029711628A54085006E45CA /* Provider.swift */; };
+		E029711928A541BA006E45CA /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029711828A541BA006E45CA /* Inject.swift */; };
+		E029711B28A541CA006E45CA /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029711A28A541CA006E45CA /* Container.swift */; };
+		E029711F28A54200006E45CA /* OpggRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029711E28A54200006E45CA /* OpggRepository.swift */; };
+		E029712128A54208006E45CA /* OpggRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712028A54208006E45CA /* OpggRepositoryImpl.swift */; };
+		E029712328A54268006E45CA /* OpggTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712228A54268006E45CA /* OpggTarget.swift */; };
+		E029712628A54454006E45CA /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712528A54454006E45CA /* Summoner.swift */; };
+		E029712928A544CD006E45CA /* Result+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712828A544CD006E45CA /* Result+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +47,19 @@
 		E029710228A536E4006E45CA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E029710528A53700006E45CA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		E029710728A53A09006E45CA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E029710A28A53D17006E45CA /* BaseTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTarget.swift; sourceTree = "<group>"; };
+		E029710D28A53D98006E45CA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		E029710F28A53E0E006E45CA /* Response+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Reactive.swift"; sourceTree = "<group>"; };
+		E029711128A53E3E006E45CA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E029711428A53FD5006E45CA /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
+		E029711628A54085006E45CA /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		E029711828A541BA006E45CA /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
+		E029711A28A541CA006E45CA /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		E029711E28A54200006E45CA /* OpggRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpggRepository.swift; sourceTree = "<group>"; };
+		E029712028A54208006E45CA /* OpggRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpggRepositoryImpl.swift; sourceTree = "<group>"; };
+		E029712228A54268006E45CA /* OpggTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpggTarget.swift; sourceTree = "<group>"; };
+		E029712528A54454006E45CA /* Summoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
+		E029712828A544CD006E45CA /* Result+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				E02970F228A53342006E45CA /* Sources */,
+				E029712728A544BC006E45CA /* Extension */,
 				E029710428A536F7006E45CA /* Common */,
 				E02970F428A5334C006E45CA /* Resources */,
 				E02970F328A5334A006E45CA /* Configuration */,
@@ -97,6 +124,9 @@
 		E02970F228A53342006E45CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E029712428A54443006E45CA /* Model */,
+				E029710928A53D07006E45CA /* API */,
+				E029711328A53FC7006E45CA /* Repository */,
 				E02970F628A53520006E45CA /* Present */,
 				E02970DE28A53265006E45CA /* AppDelegate.swift */,
 			);
@@ -160,8 +190,73 @@
 			isa = PBXGroup;
 			children = (
 				E029710528A53700006E45CA /* Log.swift */,
+				E029711828A541BA006E45CA /* Inject.swift */,
+				E029711A28A541CA006E45CA /* Container.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E029710928A53D07006E45CA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E029710C28A53D8E006E45CA /* Base */,
+				E029712228A54268006E45CA /* OpggTarget.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E029710C28A53D8E006E45CA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E029710A28A53D17006E45CA /* BaseTarget.swift */,
+				E029711128A53E3E006E45CA /* APIError.swift */,
+				E029710D28A53D98006E45CA /* Response.swift */,
+				E029710F28A53E0E006E45CA /* Response+Reactive.swift */,
+				E029711628A54085006E45CA /* Provider.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E029711328A53FC7006E45CA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E029711D28A541F1006E45CA /* OpggRepository */,
+				E029711C28A541E3006E45CA /* Base */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E029711C28A541E3006E45CA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E029711428A53FD5006E45CA /* NetworkRepository.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E029711D28A541F1006E45CA /* OpggRepository */ = {
+			isa = PBXGroup;
+			children = (
+				E029711E28A54200006E45CA /* OpggRepository.swift */,
+				E029712028A54208006E45CA /* OpggRepositoryImpl.swift */,
+			);
+			path = OpggRepository;
+			sourceTree = "<group>";
+		};
+		E029712428A54443006E45CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E029712528A54454006E45CA /* Summoner.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E029712728A544BC006E45CA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E029712828A544CD006E45CA /* Result+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,12 +391,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E029710B28A53D17006E45CA /* BaseTarget.swift in Sources */,
+				E029711028A53E0E006E45CA /* Response+Reactive.swift in Sources */,
+				E029711728A54085006E45CA /* Provider.swift in Sources */,
 				E029710128A536D5006E45CA /* BaseViewController.swift in Sources */,
+				E029712328A54268006E45CA /* OpggTarget.swift in Sources */,
 				E029710628A53700006E45CA /* Log.swift in Sources */,
+				E029712928A544CD006E45CA /* Result+Extension.swift in Sources */,
+				E029711928A541BA006E45CA /* Inject.swift in Sources */,
+				E029712628A54454006E45CA /* Summoner.swift in Sources */,
+				E029712128A54208006E45CA /* OpggRepositoryImpl.swift in Sources */,
 				E02970FB28A53673006E45CA /* MainViewController.swift in Sources */,
+				E029711228A53E3E006E45CA /* APIError.swift in Sources */,
+				E029711528A53FD5006E45CA /* NetworkRepository.swift in Sources */,
+				E029710E28A53D98006E45CA /* Response.swift in Sources */,
 				E02970DF28A53265006E45CA /* AppDelegate.swift in Sources */,
 				E029710328A536E4006E45CA /* BaseView.swift in Sources */,
 				E02970F828A5353A006E45CA /* RootWindow.swift in Sources */,
+				E029711B28A541CA006E45CA /* Container.swift in Sources */,
+				E029711F28A54200006E45CA /* OpggRepository.swift in Sources */,
 				E02970FF28A536C6006E45CA /* MVVM.swift in Sources */,
 				E029710828A53A09006E45CA /* MainViewModel.swift in Sources */,
 			);
