@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  opgg
+
+  Created by seongha shin on 2022/08/13.
+  
+*/
+
+"Update" = "전적갱신";
+"Wins" = "승";
+"Losses" = "패";
+"Most Champion" = "모스트 챔피언";
+"Position" = "포지션";
+"SummaryTitlePrefix" = "최근 ";
+"SummaryTitleSuffix" = "게임 분석";

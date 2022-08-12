@@ -21,9 +21,9 @@ final class MatchView: BaseView, View {
         viewModel.state.gamePlayCount
             .map {
                 .appendAttributedString([
-                    .stringToOption("최근 "),
+                    .stringToOption("SummaryTitlePrefix".localized()),
                     .stringToOption("\($0)", attributes: [.font(.systemFont(ofSize: 10))]),
-                    .stringToOption("게임 분석")
+                    .stringToOption("SummaryTitleSuffix".localized())
                 ])
             }
             .bind(to: matchTitle.rx.attributedText)

@@ -25,7 +25,7 @@ final class PositionView: BaseView, View {
         super.attribute()
         
         title.do {
-            $0.text = "포지션"
+            $0.text = "Position".localized()
             $0.font = .appleSDGothicNeo(ofSize: 10)
             $0.textColor = .coolGrey
         }

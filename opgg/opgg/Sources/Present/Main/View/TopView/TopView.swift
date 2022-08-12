@@ -48,7 +48,7 @@ final class TopView: BaseView, View {
         
         refreshButton.do {
             $0.backgroundColor = .softBlue
-            $0.setTitle("전적갱신", for: .normal)
+            $0.setTitle("Update".localized(), for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
             $0.layer.cornerRadius = 20
         }

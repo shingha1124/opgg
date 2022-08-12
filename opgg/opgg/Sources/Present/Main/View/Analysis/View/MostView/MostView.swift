@@ -25,7 +25,7 @@ final class MostView: BaseView, View {
         super.attribute()
         
         title.do {
-            $0.text = "모스트 승률"
+            $0.text = "Most Champion".localized()
             $0.font = .appleSDGothicNeo(ofSize: 10)
             $0.textColor = .coolGrey
         }

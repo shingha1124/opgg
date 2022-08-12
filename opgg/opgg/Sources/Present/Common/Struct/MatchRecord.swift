@@ -51,9 +51,9 @@ extension MatchRecord {
     func text(ofSize fontSize: CGFloat) -> NSAttributedString {
         .appendAttributedString([
             .stringToOption("\(self.wins)", attributes: [.font(.systemFont(ofSize: fontSize))]),
-            .stringToOption("승", attributes: [.font(.appleSDGothicNeo(ofSize: fontSize))]),
+            .stringToOption("Wins".localized(), attributes: [.font(.appleSDGothicNeo(ofSize: fontSize))]),
             .stringToOption(" \(self.losses)", attributes: [.font(.systemFont(ofSize: fontSize))]),
-            .stringToOption("패", attributes: [.font(.appleSDGothicNeo(ofSize: fontSize))])
+            .stringToOption("Losses".localized(), attributes: [.font(.appleSDGothicNeo(ofSize: fontSize))])
         ])
     }
 }
