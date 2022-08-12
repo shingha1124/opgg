@@ -15,31 +15,28 @@ struct MatchRecord {
     init(wins: Int, losses: Int) {
         self.wins = wins
         self.losses = losses
-        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+        let totalGame = wins + losses
+        if wins == 0 || totalGame == 0 {
+            winRate = 0
+        } else {
+            winRate = Int((Float(wins) / Float(totalGame)) * 100)
+        }
     }
     
     init(_ league: League) {
-        wins = league.wins
-        losses = league.losses
-        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+        self.init(wins: league.wins, losses: league.losses)
     }
     
     init(_ summary: Summary) {
-        wins = summary.wins
-        losses = summary.losses
-        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+        self.init(wins: summary.wins, losses: summary.losses)
     }
     
     init(_ champion: Champion) {
-        wins = champion.wins
-        losses = champion.losses
-        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+        self.init(wins: champion.wins, losses: champion.losses)
     }
     
     init(_ position: Position) {
-        wins = position.wins
-        losses = position.losses
-        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+        self.init(wins: position.wins, losses: position.losses)
     }
 }
 

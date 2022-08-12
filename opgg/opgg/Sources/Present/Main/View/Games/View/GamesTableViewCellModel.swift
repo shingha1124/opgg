@@ -20,6 +20,6 @@ final class GamesTableViewCellModel: ViewModel {
     let state = State()
     let disposeBag = DisposeBag()
     
-    init() {
+    init(game: Game) {
     }
 }

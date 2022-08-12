@@ -7,17 +7,15 @@
 
 import UIKit
 
-class IntrinsicTableView: UITableView {
+final class IntrinsicTableView: UITableView {
+    
     override var intrinsicContentSize: CGSize {
-        let number = numberOfRows(inSection: 0)
-        var height: CGFloat = 0
-
-        (0..<number).forEach {
-            guard let cell = cellForRow(at: IndexPath(row: $0, section: 0)) else {
-                return
-            }
-            height += cell.bounds.height
-        }
-        return CGSize(width: contentSize.width, height: height)
+      let height = self.contentSize.height + self.contentInset.top + self.contentInset.bottom
+      return CGSize(width: self.contentSize.width, height: height)
+    }
+    
+    override func layoutSubviews() {
+      self.invalidateIntrinsicContentSize()
+      super.layoutSubviews()
     }
 }

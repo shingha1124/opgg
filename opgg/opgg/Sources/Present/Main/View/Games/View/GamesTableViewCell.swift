@@ -11,4 +11,15 @@ final class GamesTableViewCell: BaseTableViewCell, View {
     func bind(to viewModel: GamesTableViewCellModel) {
         
     }
+    
+    override func attribute() {
+        super.attribute()
+        self.do {
+            $0.contentView.backgroundColor = .green.withAlphaComponent(0.5)
+        }
+    }
+    
+    override func layout() {
+        super.layout()
+    }
 }

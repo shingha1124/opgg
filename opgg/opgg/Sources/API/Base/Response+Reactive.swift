@@ -27,7 +27,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Result<Respon
         return response.flatMap { result in .just(result) }
         .do(onSuccess: { result in
             if case .failure(let error) = result {
-                Log.error("APIError : \(error)")
+                Log.error("APIError : \(error.statusCode)")
             }
         })
     }
