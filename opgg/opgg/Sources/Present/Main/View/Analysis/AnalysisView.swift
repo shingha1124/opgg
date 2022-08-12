@@ -18,6 +18,7 @@ final class AnalysisView: BaseView, View {
     
     func bind(to viewModel: AnalysisViewModel) {
         matchView.viewModel = viewModel.subViewModel.match
+        mostView.viewModel = viewModel.subViewModel.most
     }
     
     override func attribute() {

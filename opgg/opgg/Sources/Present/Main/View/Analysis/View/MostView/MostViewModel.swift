@@ -14,12 +14,22 @@ final class MostViewModel: ViewModel {
     }
     
     struct State {
+        let champions = PublishRelay<[MostChampionViewModel]>()
+    }
+    
+    struct Update {
+        let champions = PublishRelay<[Champion]>()
     }
     
     let action = Action()
     let state = State()
+    let update = Update()
     let disposeBag = DisposeBag()
     
     init() {
+        update.champions
+            .map { $0.map { MostChampionViewModel(champion: $0) } }
+            .bind(to: state.champions)
+            .disposed(by: disposeBag)
     }
 }

@@ -9,7 +9,7 @@ import RxSwift
 import UIKit
 
 final class MatchView: BaseView, View {
-    private let matchDescription = UILabel()
+    private let matchTitle = UILabel()
     private let matchRecord = UILabel()
     private let kdaLabel = UILabel()
     private let kdaRate = UILabel()
@@ -26,34 +26,44 @@ final class MatchView: BaseView, View {
                     .stringToOption("게임 분석")
                 ])
             }
-            .bind(to: matchDescription.rx.attributedText)
+            .bind(to: matchTitle.rx.attributedText)
             .disposed(by: disposeBag)
         
         viewModel.state.matchRecord
-            .map { .matchRecordText($0, ofSize: 10) }
+            .map { $0.text(ofSize: 10) }
             .bind(to: matchRecord.rx.attributedText)
             .disposed(by: disposeBag)
         
         viewModel.state.matchKDA
-            .map { .kdaText($0, ofSize: 14) }
+            .map { $0.kdaText(ofSize: 14) }
             .bind(to: kdaLabel.rx.attributedText)
             .disposed(by: disposeBag)
         
         viewModel.state.matchKDA
-            .map { .kdaRateText($0, ofSize: 10) }
-            .bind(to: kdaRate.rx.attributedText)
+            .map { String(format: "%.2f:1", $0.kdaRate) }
+            .bind(to: kdaRate.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.state.matchKDA
+            .map { $0.kdaRateColor }
+            .bind(to: kdaRate.rx.textColor)
             .disposed(by: disposeBag)
         
         viewModel.state.matchRecord
-            .map { .matchRateText($0, ofSize: 10) }
-            .bind(to: winRate.rx.attributedText)
+            .map { "(\($0.winRate)%)" }
+            .bind(to: winRate.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.state.matchRecord
+            .map { $0.winRateColor }
+            .bind(to: winRate.rx.textColor)
             .disposed(by: disposeBag)
     }
     
     override func attribute() {
         super.attribute()
         
-        matchDescription.do {
+        matchTitle.do {
             $0.font = .appleSDGothicNeo(ofSize: 10)
             $0.textColor = .coolGrey
         }
@@ -62,22 +72,30 @@ final class MatchView: BaseView, View {
             $0.font = .systemFont(ofSize: 10)
             $0.textColor = .coolGrey
         }
+        
+        winRate.do {
+            $0.font = .systemFont(ofSize: 10)
+        }
+        
+        kdaRate.do {
+            $0.font = .systemFont(ofSize: 10)
+        }
     }
     
     override func layout() {
         super.layout()
-        addSubview(matchDescription)
+        addSubview(matchTitle)
         addSubview(matchRecord)
         addSubview(kdaLabel)
         addSubview(kdaRate)
         addSubview(winRate)
         
-        matchDescription.snp.makeConstraints {
+        matchTitle.snp.makeConstraints {
             $0.leading.top.equalToSuperview().inset(12)
         }
         
         matchRecord.snp.makeConstraints {
-            $0.top.equalTo(matchDescription.snp.bottom).offset(8)
+            $0.top.equalTo(matchTitle.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(12)
         }
         

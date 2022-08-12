@@ -27,6 +27,6 @@ final class LeagueCellViewModel: ViewModel {
     let disposeBag = DisposeBag()
     
     init(league: League) {
-        state = State(tier: league.tierRank, matchRecord: (league.wins, league.losses))
+        state = State(tier: league.tierRank, matchRecord: MatchRecord(league))
     }
 }

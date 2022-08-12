@@ -53,9 +53,10 @@
 		E029716B28A62E79006E45CA /* PositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029716A28A62E79006E45CA /* PositionViewModel.swift */; };
 		E029716D28A62E80006E45CA /* MostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029716C28A62E80006E45CA /* MostViewModel.swift */; };
 		E029717128A63912006E45CA /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717028A63912006E45CA /* MatchViewModel.swift */; };
-		E029717328A6425C006E45CA /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717228A6425C006E45CA /* Typealias.swift */; };
-		E029717528A64367006E45CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717428A64367006E45CA /* String+Extension.swift */; };
-		E029717728A68725006E45CA /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717628A68725006E45CA /* Float+Extension.swift */; };
+		E029717328A6425C006E45CA /* MatchRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717228A6425C006E45CA /* MatchRecord.swift */; };
+		E029717A28A69CB1006E45CA /* MostChampionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717928A69CB1006E45CA /* MostChampionView.swift */; };
+		E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */; };
+		E0C51F3328A6A8A00087CA18 /* KDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3228A6A8A00087CA18 /* KDA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,9 +110,10 @@
 		E029716A28A62E79006E45CA /* PositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewModel.swift; sourceTree = "<group>"; };
 		E029716C28A62E80006E45CA /* MostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewModel.swift; sourceTree = "<group>"; };
 		E029717028A63912006E45CA /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
-		E029717228A6425C006E45CA /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
-		E029717428A64367006E45CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		E029717628A68725006E45CA /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
+		E029717228A6425C006E45CA /* MatchRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecord.swift; sourceTree = "<group>"; };
+		E029717928A69CB1006E45CA /* MostChampionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionView.swift; sourceTree = "<group>"; };
+		E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionViewModel.swift; sourceTree = "<group>"; };
+		E0C51F3228A6A8A00087CA18 /* KDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,8 +318,6 @@
 				E029715528A5CA8A006E45CA /* UIStackView+Extension.swift */,
 				E029715A28A5D813006E45CA /* NSAttributedString+Extension.swift */,
 				E029715C28A5DACF006E45CA /* Int+Extension.swift */,
-				E029717428A64367006E45CA /* String+Extension.swift */,
-				E029717628A68725006E45CA /* Float+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -364,8 +364,8 @@
 		E029714028A558C4006E45CA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E0C51F3128A6A5DB0087CA18 /* Struct */,
 				E029714128A558CA006E45CA /* PaddingLabel.swift */,
-				E029717228A6425C006E45CA /* Typealias.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -410,6 +410,7 @@
 		E029716428A62E4D006E45CA /* MostView */ = {
 			isa = PBXGroup;
 			children = (
+				E029717828A69C9F006E45CA /* View */,
 				E029716628A62E5B006E45CA /* MostView.swift */,
 				E029716C28A62E80006E45CA /* MostViewModel.swift */,
 			);
@@ -423,6 +424,24 @@
 				E029716A28A62E79006E45CA /* PositionViewModel.swift */,
 			);
 			path = PositionView;
+			sourceTree = "<group>";
+		};
+		E029717828A69C9F006E45CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E029717928A69CB1006E45CA /* MostChampionView.swift */,
+				E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E0C51F3128A6A5DB0087CA18 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				E029717228A6425C006E45CA /* MatchRecord.swift */,
+				E0C51F3228A6A8A00087CA18 /* KDA.swift */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,15 +588,15 @@
 				E029713B28A55197006E45CA /* AnalysisView.swift in Sources */,
 				E029716128A62E39006E45CA /* MatchView.swift in Sources */,
 				E029711928A541BA006E45CA /* Inject.swift in Sources */,
+				E0C51F3328A6A8A00087CA18 /* KDA.swift in Sources */,
 				E029716928A62E62006E45CA /* PositionView.swift in Sources */,
-				E029717728A68725006E45CA /* Float+Extension.swift in Sources */,
 				E029715828A5CADF006E45CA /* LeaguesScrollView.swift in Sources */,
 				E029712628A54454006E45CA /* Summoner.swift in Sources */,
 				E029712128A54208006E45CA /* OpggRepositoryImpl.swift in Sources */,
 				E02970FB28A53673006E45CA /* MainViewController.swift in Sources */,
 				E029716D28A62E80006E45CA /* MostViewModel.swift in Sources */,
 				E029711228A53E3E006E45CA /* APIError.swift in Sources */,
-				E029717328A6425C006E45CA /* Typealias.swift in Sources */,
+				E029717328A6425C006E45CA /* MatchRecord.swift in Sources */,
 				E029713628A55105006E45CA /* LeaguesView.swift in Sources */,
 				E029711528A53FD5006E45CA /* NetworkRepository.swift in Sources */,
 				E029714228A558CA006E45CA /* PaddingLabel.swift in Sources */,
@@ -585,8 +604,8 @@
 				E029710E28A53D98006E45CA /* Response.swift in Sources */,
 				E029713D28A5519E006E45CA /* AnalysisViewModel.swift in Sources */,
 				E029713F28A555D5006E45CA /* UIFont+Extension.swift in Sources */,
-				E029717528A64367006E45CA /* String+Extension.swift in Sources */,
 				E029715228A56573006E45CA /* LeagueCellView.swift in Sources */,
+				E029717A28A69CB1006E45CA /* MostChampionView.swift in Sources */,
 				E02970DF28A53265006E45CA /* AppDelegate.swift in Sources */,
 				E029710328A536E4006E45CA /* BaseView.swift in Sources */,
 				E02970F828A5353A006E45CA /* RootWindow.swift in Sources */,
@@ -601,6 +620,7 @@
 				E029710828A53A09006E45CA /* MainViewModel.swift in Sources */,
 				E029715B28A5D813006E45CA /* NSAttributedString+Extension.swift in Sources */,
 				E029713328A550A2006E45CA /* TopViewModel.swift in Sources */,
+				E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */,
 				E029713128A5509A006E45CA /* TopView.swift in Sources */,
 				E029712B28A54992006E45CA /* Matches.swift in Sources */,
 				E029716728A62E5B006E45CA /* MostView.swift in Sources */,

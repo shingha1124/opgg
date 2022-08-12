@@ -15,7 +15,8 @@ final class LeagueCellView: BaseView, View {
     private let rankTypeLabel = UILabel()
     private let tierLabel = UILabel()
     private let lpLabel = UILabel()
-    private let matchRecord = UILabel()
+    private let matchRecordLabel = UILabel()
+    private let winRateLabel = UILabel()
     private let detailButton = UIButton()
     
     var disposeBag = DisposeBag()
@@ -28,11 +29,9 @@ final class LeagueCellView: BaseView, View {
         let lp = viewModel.state.tier.lp.currency()
         lpLabel.text = "\(lp) LP"
         
-        matchRecord.attributedText = .appendAttributedString([
-            .matchRecordText(viewModel.state.matchRecord, ofSize: 10),
-            .stringToOption(" "),
-            .matchRateText(viewModel.state.matchRecord, ofSize: 10, color: .steelGrey)
-        ])
+        let matchRecord = viewModel.state.matchRecord
+        matchRecordLabel.attributedText = matchRecord.text(ofSize: 10)
+        winRateLabel.text = "(\(matchRecord.winRate)%)"
     }
     
     override func attribute() {
@@ -67,8 +66,13 @@ final class LeagueCellView: BaseView, View {
             $0.textColor = .darkgrey
         }
         
-        matchRecord.do {
+        matchRecordLabel.do {
             $0.textColor = .steelGrey
+        }
+        
+        winRateLabel.do {
+            $0.textColor = .steelGrey
+            $0.font = .systemFont(ofSize: 10)
         }
         
         detailButton.do {
@@ -86,13 +90,14 @@ final class LeagueCellView: BaseView, View {
         contentView.addSubview(rankTypeLabel)
         contentView.addSubview(tierLabel)
         contentView.addSubview(lpLabel)
-        contentView.addSubview(matchRecord)
+        contentView.addSubview(matchRecordLabel)
+        contentView.addSubview(winRateLabel)
         contentView.addSubview(detailButton)
         
         contentView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
             $0.trailing.equalToSuperview().offset(-8)
-            $0.bottom.equalTo(matchRecord).offset(16)
+            $0.bottom.equalTo(matchRecordLabel).offset(16)
         }
 
         tierImageView.snp.makeConstraints {
@@ -116,9 +121,14 @@ final class LeagueCellView: BaseView, View {
             $0.leading.equalTo(rankTypeLabel)
         }
 
-        matchRecord.snp.makeConstraints {
-            $0.top.equalTo(lpLabel.snp.bottom).offset(-2)
+        matchRecordLabel.snp.makeConstraints {
+            $0.top.equalTo(lpLabel.snp.bottom).offset(2)
             $0.leading.equalTo(rankTypeLabel)
+        }
+        
+        winRateLabel.snp.makeConstraints {
+            $0.centerY.equalTo(matchRecordLabel)
+            $0.leading.equalTo(matchRecordLabel.snp.trailing).offset(5)
         }
 
         detailButton.snp.makeConstraints {

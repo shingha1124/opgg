@@ -36,18 +36,12 @@ final class MatchViewModel: ViewModel {
             .disposed(by: disposeBag)
         
         update.summary
-            .map { ($0.wins, $0.losses) }
+            .map { MatchRecord($0) }
             .bind(to: state.matchRecord)
             .disposed(by: disposeBag)
         
         update.summary
-            .map { summary -> MatchKDA in
-                let totalGame = Float(summary.wins + summary.losses)
-                let kills = Float(summary.kills) / totalGame
-                let deaths = Float(summary.deaths) / totalGame
-                let assists = Float(summary.assists) / totalGame
-                return (kills, deaths, assists)
-            }
+            .map { MatchKDA($0) }
             .bind(to: state.matchKDA)
             .disposed(by: disposeBag)
     }

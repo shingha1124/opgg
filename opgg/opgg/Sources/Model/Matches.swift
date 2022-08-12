@@ -9,15 +9,15 @@ import Foundation
 
 struct Matches: Decodable {
     let games: [Game]
-    let champions: [ChampionElement]
+    let champions: [Champion]
     let positions: [Position]
     let summary: Summary
 }
 
-struct ChampionElement: Decodable {
+struct Champion: Decodable {
     let id: Int
     let key, name: String
-    let imageURL: String
+    let imageURL: URL
     let games, kills, deaths, assists: Int
     let wins, losses: Int
 
