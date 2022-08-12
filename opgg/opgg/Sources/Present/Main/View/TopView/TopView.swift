@@ -82,13 +82,13 @@ final class TopView: BaseView, View {
         }
         
         title.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.equalTo(thumbnail)
             $0.leading.equalTo(thumbnail.snp.trailing).offset(16)
         }
         
         refreshButton.snp.makeConstraints {
             $0.leading.equalTo(thumbnail.snp.trailing).offset(16)
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalTo(thumbnail)
             $0.width.equalTo(97)
             $0.height.equalTo(40)
         }

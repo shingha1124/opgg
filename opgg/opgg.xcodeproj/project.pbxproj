@@ -306,7 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				E029712F28A5503D006E45CA /* TopView */,
-				E029713428A550F7006E45CA /* PreviousTier */,
+				E029713428A550F7006E45CA /* Leagues */,
 				E029713928A5514C006E45CA /* Analysis */,
 			);
 			path = View;
@@ -321,14 +321,14 @@
 			path = TopView;
 			sourceTree = "<group>";
 		};
-		E029713428A550F7006E45CA /* PreviousTier */ = {
+		E029713428A550F7006E45CA /* Leagues */ = {
 			isa = PBXGroup;
 			children = (
 				E029715028A56568006E45CA /* View */,
 				E029713528A55105006E45CA /* LeaguesView.swift */,
 				E029713728A5510D006E45CA /* LeaguesViewModel.swift */,
 			);
-			path = PreviousTier;
+			path = Leagues;
 			sourceTree = "<group>";
 		};
 		E029713928A5514C006E45CA /* Analysis */ = {
