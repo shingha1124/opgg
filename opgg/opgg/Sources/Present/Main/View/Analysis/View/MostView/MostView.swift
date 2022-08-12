@@ -25,9 +25,9 @@ final class MostView: BaseView, View {
     override func layout() {
         super.layout()
         
-        snp.makeConstraints {
-            $0.width.equalTo(98)
-        }
+//        snp.makeConstraints {
+//            $0.width.equalTo(98)
+//        }
     }
 }
 

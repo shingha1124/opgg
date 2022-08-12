@@ -66,7 +66,6 @@ final class MatchView: BaseView, View {
     
     override func layout() {
         super.layout()
-        
         addSubview(matchDescription)
         addSubview(matchRecord)
         addSubview(kdaLabel)
@@ -95,6 +94,11 @@ final class MatchView: BaseView, View {
         winRate.snp.makeConstraints {
             $0.centerY.equalTo(kdaRate)
             $0.leading.equalTo(kdaRate.snp.trailing).offset(5)
+        }
+        
+        snp.makeConstraints {
+            $0.trailing.equalTo(kdaLabel).offset(12)
+            $0.bottom.equalTo(kdaRate).offset(12)
         }
     }
 }

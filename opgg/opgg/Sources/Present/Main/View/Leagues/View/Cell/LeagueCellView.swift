@@ -117,7 +117,7 @@ final class LeagueCellView: BaseView, View {
         }
 
         matchRecord.snp.makeConstraints {
-            $0.top.equalTo(lpLabel.snp.bottom)
+            $0.top.equalTo(lpLabel.snp.bottom).offset(-2)
             $0.leading.equalTo(rankTypeLabel)
         }
 

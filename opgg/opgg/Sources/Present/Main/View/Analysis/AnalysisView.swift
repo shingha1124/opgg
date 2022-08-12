@@ -50,7 +50,7 @@ final class AnalysisView: BaseView, View {
         }
         
         snp.makeConstraints {
-            $0.height.equalTo(90)
+            $0.height.equalTo(matchView)
         }
     }
 }
