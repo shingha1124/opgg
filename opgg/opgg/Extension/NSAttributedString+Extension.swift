@@ -56,3 +56,73 @@ extension NSAttributedString {
     }
 }
 
+extension NSAttributedString {
+    static func matchRecordText(_ matchRecord: MatchRecord, ofSize fontSize: CGFloat) -> NSAttributedString {
+        return .appendAttributedString([
+            .stringToOption("\(matchRecord.wins)", attributes: [.font(.systemFont(ofSize: fontSize))]),
+            .stringToOption("승", attributes: [.font(.appleSDGothicNeo(ofSize: fontSize))]),
+            .stringToOption(" \(matchRecord.losses)", attributes: [.font(.systemFont(ofSize: fontSize))]),
+            .stringToOption("패", attributes: [.font(.appleSDGothicNeo(ofSize: fontSize))])
+        ])
+    }
+    
+    static func matchRateText(_ matchRecord: MatchRecord, ofSize fontSize: CGFloat, color: UIColor? = nil) -> NSAttributedString {
+        let matchPersent = Int((Float(matchRecord.wins) / Float(matchRecord.wins + matchRecord.losses)) * 100)
+        var fontColor: UIColor
+        
+        if let color = color {
+            fontColor = color
+        } else {
+            fontColor = matchPersent.winRateColor()
+        }
+        
+        return .stringToOption(
+            "(\(matchPersent)%)",
+            attributes: [
+                .font(.systemFont(ofSize: fontSize)),
+                .foreground(color: fontColor)
+            ])
+    }
+    
+    static func kdaRateText(_ kda: MatchKDA, ofSize fontSize: CGFloat) -> NSAttributedString {
+        let rate = Float(kda.kills + kda.assists) / Float(kda.deaths)
+        return .stringToOption(
+            String(format: "%.2f:1", rate),
+            attributes: [
+                .font(.systemFont(ofSize: fontSize)),
+                .foreground(color: rate.kdaRateColor())
+            ])
+    }
+    
+    static func kdaText(_ kda: MatchKDA, ofSize fontSize: CGFloat) -> NSAttributedString {
+        .appendAttributedString([
+            .stringToOption(String(format: "%.1f", kda.kills),
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
+                                .foreground(color: .charcoalGrey)
+                            ]),
+            .stringToOption(" / ",
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
+                                .foreground(color: .charcoalGrey)
+                            ]),
+            .stringToOption(String(format: "%.1f", kda.deaths),
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
+                                .foreground(color: .darkishPink)
+                            ]),
+            .stringToOption(" / ",
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
+                                .foreground(color: .charcoalGrey)
+                            ]),
+            .stringToOption(String(format: "%.1f", kda.assists),
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
+                                .foreground(color: .charcoalGrey)
+                            ])
+        ])
+    }
+    
+}
+

@@ -5,7 +5,7 @@
 //  Created by seongha shin on 2022/08/12.
 //
 
-import Foundation
+import UIKit
 
 protocol Currency { }
 
@@ -19,5 +19,12 @@ extension Currency {
         return stringPrice
     }
 }
+
 extension UInt: Currency { }
 extension Int: Currency { }
+
+extension Int {
+    func winRateColor() -> UIColor {
+        self >= 60 ? .darkishPink : .steelGrey
+    }
+}

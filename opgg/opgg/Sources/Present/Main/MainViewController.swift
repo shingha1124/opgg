@@ -18,6 +18,7 @@ final class MainViewController: BaseViewController, View {
     
     private let topView = TopView()
     private let previousTierView = LeaguesView()
+    private let analysisView = AnalysisView()
     
     var disposeBag = DisposeBag()
     
@@ -53,6 +54,10 @@ final class MainViewController: BaseViewController, View {
             $0.viewModel = viewModel?.subViewModel.previousTier
         }
         
+        analysisView.do {
+            $0.viewModel = viewModel?.subViewModel.analysis
+        }
+        
         contentView.do {
             $0.axis = .vertical
             $0.spacing = 16
@@ -67,6 +72,7 @@ final class MainViewController: BaseViewController, View {
         scrollView.addSubview(contentView)
         contentView.addArrangedSubview(topView)
         contentView.addArrangedSubview(previousTierView)
+        contentView.addArrangedSubview(analysisView)
         
         topLayoutBox.snp.makeConstraints {
             $0.top.equalTo(topLayoutGuide.snp.top)
@@ -82,7 +88,7 @@ final class MainViewController: BaseViewController, View {
         
         contentView.snp.makeConstraints {
             $0.top.width.equalToSuperview()
-            $0.bottom.equalTo(previousTierView)
+            $0.bottom.equalTo(analysisView)
         }
     }
 }

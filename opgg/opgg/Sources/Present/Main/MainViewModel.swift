@@ -21,6 +21,7 @@ final class MainViewModel: ViewModel {
     struct SubViewModel {
         let topView = TopViewModel()
         let previousTier = LeaguesViewModel()
+        let analysis = AnalysisViewModel()
     }
     
     let action = Action()
@@ -57,17 +58,18 @@ final class MainViewModel: ViewModel {
             .bind(to: subViewModel.previousTier.update.leagues)
             .disposed(by: disposeBag)
         
-        let requestMatchs = action.tappedMatchs
+        let requestMatchs = action.viewDidLoad
             .flatMapLatest { [unowned self] _ in
                 self.opggRepository.requestMatches(lastMatch: nil)
             }
             .share()
         
-        requestMatchs
+        let matches = requestMatchs
             .compactMap { $0.value }
-            .bind(onNext: {
-                print($0)
-            })
+            .share()
+        
+        matches
+            .bind(to: subViewModel.analysis.update.matches)
             .disposed(by: disposeBag)
     }
 }

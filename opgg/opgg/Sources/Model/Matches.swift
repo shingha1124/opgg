@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Matchs: Decodable {
+struct Matches: Decodable {
     let games: [Game]
     let champions: [ChampionElement]
     let positions: [Position]

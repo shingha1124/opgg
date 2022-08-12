@@ -15,9 +15,9 @@ final class OpggRepositoryImpl: NetworkRepository<OpggTarget>, OpggRepository {
             .map(SummonerInfo.self)
     }
     
-    func requestMatches(lastMatch: UInt64?) -> Single<Result<Matchs, APIError>> {
+    func requestMatches(lastMatch: UInt64?) -> Single<Result<Matches, APIError>> {
         provider
             .request(.requestMatches(lastMatch: lastMatch))
-            .map(Matchs.self)
+            .map(Matches.self)
     }
 }

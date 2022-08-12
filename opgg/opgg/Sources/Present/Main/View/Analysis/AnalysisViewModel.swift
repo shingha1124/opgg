@@ -16,10 +16,26 @@ final class AnalysisViewModel: ViewModel {
     struct State {
     }
     
+    struct SubViewModel {
+        let match = MatchViewModel()
+        let most = MostViewModel()
+        let position = PositionViewModel()
+    }
+    
+    struct Update {
+        let matches = PublishRelay<Matches>()
+    }
+    
     let action = Action()
     let state = State()
+    let subViewModel = SubViewModel()
+    let update = Update()
     let disposeBag = DisposeBag()
     
     init() {
+        update.matches
+            .map { $0.summary }
+            .bind(to: subViewModel.match.update.summary)
+            .disposed(by: disposeBag)
     }
 }
