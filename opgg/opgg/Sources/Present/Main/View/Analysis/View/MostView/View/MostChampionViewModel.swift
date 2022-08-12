@@ -24,7 +24,7 @@ final class MostChampionViewModel: ViewModel {
     
     init(champion: Champion) {
         let championImageUrl = champion.imageURL
-        let matchRecord = MatchRecord(wins: champion.wins, losses: champion.losses)
+        let matchRecord = MatchRecord(champion)
         state = State(championImageUrl: championImageUrl, matchRecord: matchRecord)
     }
 }

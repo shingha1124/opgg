@@ -14,7 +14,7 @@ final class MostViewModel: ViewModel {
     }
     
     struct State {
-        let champions = PublishRelay<[MostChampionViewModel]>()
+        let viewModels = PublishRelay<[MostChampionViewModel]>()
     }
     
     struct Update {
@@ -29,7 +29,7 @@ final class MostViewModel: ViewModel {
     init() {
         update.champions
             .map { $0.map { MostChampionViewModel(champion: $0) } }
-            .bind(to: state.champions)
+            .bind(to: state.viewModels)
             .disposed(by: disposeBag)
     }
 }

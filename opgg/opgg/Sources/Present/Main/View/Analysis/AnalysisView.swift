@@ -19,6 +19,7 @@ final class AnalysisView: BaseView, View {
     func bind(to viewModel: AnalysisViewModel) {
         matchView.viewModel = viewModel.subViewModel.match
         mostView.viewModel = viewModel.subViewModel.most
+        positionView.viewModel = viewModel.subViewModel.position
     }
     
     override func attribute() {
@@ -34,7 +35,6 @@ final class AnalysisView: BaseView, View {
         
         contentView.do {
             $0.axis = .horizontal
-            $0.spacing = 0
         }
     }
     

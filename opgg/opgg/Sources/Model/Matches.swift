@@ -113,7 +113,37 @@ enum TierRankShort: String, Decodable {
 
 struct Position: Decodable {
     let games, wins, losses: Int
-    let position, positionName: String
+    let type: PositionType
+    let positionName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case games, wins, losses, positionName
+        case type = "position"
+    }
+}
+
+@frozen
+enum PositionType: String, Decodable {
+    case top = "TOP"
+    case jungle = "JNG"
+    case middle = "MID"
+    case bottom = "ADC"
+    case support = "SUP"
+    
+    var imageName: String {
+        switch self {
+        case .top:
+            return "iconLolTop"
+        case .jungle:
+            return "iconLolJng"
+        case .middle:
+            return "iconLolMid"
+        case .bottom:
+            return "iconLolBot"
+        case .support:
+            return "iconLolSup"
+        }
+    }
 }
 
 struct Summary: Decodable {

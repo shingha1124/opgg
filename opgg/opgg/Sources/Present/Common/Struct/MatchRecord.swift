@@ -29,6 +29,18 @@ struct MatchRecord {
         losses = summary.losses
         winRate = Int((Float(wins) / Float(wins + losses)) * 100)
     }
+    
+    init(_ champion: Champion) {
+        wins = champion.wins
+        losses = champion.losses
+        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+    }
+    
+    init(_ position: Position) {
+        wins = position.wins
+        losses = position.losses
+        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+    }
 }
 
 extension MatchRecord {

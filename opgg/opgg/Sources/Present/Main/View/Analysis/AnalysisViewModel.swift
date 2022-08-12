@@ -42,5 +42,10 @@ final class AnalysisViewModel: ViewModel {
             .map { $0.champions }
             .bind(to: subViewModel.most.update.champions)
             .disposed(by: disposeBag)
+        
+        update.matches
+            .map { $0.positions }
+            .bind(to: subViewModel.position.update.positions)
+            .disposed(by: disposeBag)
     }
 }

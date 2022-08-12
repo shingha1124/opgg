@@ -16,8 +16,8 @@ final class MostView: BaseView, View {
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: MostViewModel) {
-        viewModel.state.champions
-            .bind(onNext: createMostChampionView)
+        viewModel.state.viewModels
+            .bind(onNext: createItemView)
             .disposed(by: disposeBag)
     }
     
@@ -52,14 +52,9 @@ final class MostView: BaseView, View {
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-12)
         }
-        
-        snp.makeConstraints {
-            $0.width.greaterThanOrEqualTo(title).offset(32)
-            $0.width.equalTo(contentView).offset(32)
-        }
     }
     
-    private func createMostChampionView(_ viewModel: [MostChampionViewModel]) {
+    private func createItemView(_ viewModel: [MostChampionViewModel]) {
         contentView.removeFullyAllArrangedSubviews()
         viewModel.forEach {
             let view = MostChampionView()

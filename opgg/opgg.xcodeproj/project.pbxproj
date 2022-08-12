@@ -57,6 +57,8 @@
 		E029717A28A69CB1006E45CA /* MostChampionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717928A69CB1006E45CA /* MostChampionView.swift */; };
 		E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */; };
 		E0C51F3328A6A8A00087CA18 /* KDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3228A6A8A00087CA18 /* KDA.swift */; };
+		E0C51F3628A6B0460087CA18 /* PositionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3528A6B0460087CA18 /* PositionItemView.swift */; };
+		E0C51F3828A6B04F0087CA18 /* PositionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3728A6B04F0087CA18 /* PositionItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,8 @@
 		E029717928A69CB1006E45CA /* MostChampionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionView.swift; sourceTree = "<group>"; };
 		E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionViewModel.swift; sourceTree = "<group>"; };
 		E0C51F3228A6A8A00087CA18 /* KDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDA.swift; sourceTree = "<group>"; };
+		E0C51F3528A6B0460087CA18 /* PositionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionItemView.swift; sourceTree = "<group>"; };
+		E0C51F3728A6B04F0087CA18 /* PositionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +424,7 @@
 		E029716528A62E51006E45CA /* PositionView */ = {
 			isa = PBXGroup;
 			children = (
+				E0C51F3428A6B0340087CA18 /* View */,
 				E029716828A62E62006E45CA /* PositionView.swift */,
 				E029716A28A62E79006E45CA /* PositionViewModel.swift */,
 			);
@@ -442,6 +447,15 @@
 				E0C51F3228A6A8A00087CA18 /* KDA.swift */,
 			);
 			path = Struct;
+			sourceTree = "<group>";
+		};
+		E0C51F3428A6B0340087CA18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C51F3528A6B0460087CA18 /* PositionItemView.swift */,
+				E0C51F3728A6B04F0087CA18 /* PositionItemViewModel.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,7 +631,9 @@
 				E02970FF28A536C6006E45CA /* MVVM.swift in Sources */,
 				E029717128A63912006E45CA /* MatchViewModel.swift in Sources */,
 				E029715428A5C8FD006E45CA /* LeagueCellViewModel.swift in Sources */,
+				E0C51F3628A6B0460087CA18 /* PositionItemView.swift in Sources */,
 				E029710828A53A09006E45CA /* MainViewModel.swift in Sources */,
+				E0C51F3828A6B04F0087CA18 /* PositionItemViewModel.swift in Sources */,
 				E029715B28A5D813006E45CA /* NSAttributedString+Extension.swift in Sources */,
 				E029713328A550A2006E45CA /* TopViewModel.swift in Sources */,
 				E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */,

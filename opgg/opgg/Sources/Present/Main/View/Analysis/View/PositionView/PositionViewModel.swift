@@ -14,12 +14,22 @@ final class PositionViewModel: ViewModel {
     }
     
     struct State {
+        let viewModels = PublishRelay<[PositionItemViewModel]>()
+    }
+    
+    struct Update {
+        let positions = PublishRelay<[Position]>()
     }
     
     let action = Action()
     let state = State()
+    let update = Update()
     let disposeBag = DisposeBag()
     
     init() {
+        update.positions
+            .map { $0.map { PositionItemViewModel(position: $0) } }
+            .bind(to: state.viewModels)
+            .disposed(by: disposeBag)
     }
 }
