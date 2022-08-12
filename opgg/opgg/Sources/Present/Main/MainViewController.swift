@@ -17,7 +17,7 @@ final class MainViewController: BaseViewController, View {
     private let contentView = UIStackView()
     
     private let topView = TopView()
-    private let previousTierView = PreviousTierView()
+    private let previousTierView = LeaguesView()
     
     var disposeBag = DisposeBag()
     
@@ -42,6 +42,7 @@ final class MainViewController: BaseViewController, View {
             $0.backgroundColor = .clear
             $0.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16)
             $0.contentSize = CGSize(width: 0, height: 2000)
+            $0.showsVerticalScrollIndicator = false
         }
         
         topView.do {

@@ -34,14 +34,19 @@
 		E029712D28A54EDB006E45CA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029712C28A54EDB006E45CA /* UIColor+Extension.swift */; };
 		E029713128A5509A006E45CA /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713028A5509A006E45CA /* TopView.swift */; };
 		E029713328A550A2006E45CA /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713228A550A1006E45CA /* TopViewModel.swift */; };
-		E029713628A55105006E45CA /* PreviousTierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713528A55105006E45CA /* PreviousTierView.swift */; };
-		E029713828A5510D006E45CA /* PreviousTierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713728A5510D006E45CA /* PreviousTierViewModel.swift */; };
+		E029713628A55105006E45CA /* LeaguesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713528A55105006E45CA /* LeaguesView.swift */; };
+		E029713828A5510D006E45CA /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713728A5510D006E45CA /* LeaguesViewModel.swift */; };
 		E029713B28A55197006E45CA /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713A28A55197006E45CA /* AnalysisView.swift */; };
 		E029713D28A5519E006E45CA /* AnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713C28A5519E006E45CA /* AnalysisViewModel.swift */; };
 		E029713F28A555D5006E45CA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713E28A555D5006E45CA /* UIFont+Extension.swift */; };
 		E029714228A558CA006E45CA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029714128A558CA006E45CA /* PaddingLabel.swift */; };
 		E029714428A55D72006E45CA /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029714328A55D72006E45CA /* UIImageView+Extension.swift */; };
-		E029715228A56573006E45CA /* PreviousTierViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715128A56573006E45CA /* PreviousTierViewCell.swift */; };
+		E029715228A56573006E45CA /* LeagueCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715128A56573006E45CA /* LeagueCellView.swift */; };
+		E029715428A5C8FD006E45CA /* LeagueCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715328A5C8FD006E45CA /* LeagueCellViewModel.swift */; };
+		E029715628A5CA8A006E45CA /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715528A5CA8A006E45CA /* UIStackView+Extension.swift */; };
+		E029715828A5CADF006E45CA /* LeaguesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715728A5CADF006E45CA /* LeaguesScrollView.swift */; };
+		E029715B28A5D813006E45CA /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715A28A5D813006E45CA /* NSAttributedString+Extension.swift */; };
+		E029715D28A5DACF006E45CA /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029715C28A5DACF006E45CA /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,14 +81,19 @@
 		E029712C28A54EDB006E45CA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E029713028A5509A006E45CA /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		E029713228A550A1006E45CA /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
-		E029713528A55105006E45CA /* PreviousTierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTierView.swift; sourceTree = "<group>"; };
-		E029713728A5510D006E45CA /* PreviousTierViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTierViewModel.swift; sourceTree = "<group>"; };
+		E029713528A55105006E45CA /* LeaguesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesView.swift; sourceTree = "<group>"; };
+		E029713728A5510D006E45CA /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
 		E029713A28A55197006E45CA /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
 		E029713C28A5519E006E45CA /* AnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewModel.swift; sourceTree = "<group>"; };
 		E029713E28A555D5006E45CA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		E029714128A558CA006E45CA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E029714328A55D72006E45CA /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
-		E029715128A56573006E45CA /* PreviousTierViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTierViewCell.swift; sourceTree = "<group>"; };
+		E029715128A56573006E45CA /* LeagueCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCellView.swift; sourceTree = "<group>"; };
+		E029715328A5C8FD006E45CA /* LeagueCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCellViewModel.swift; sourceTree = "<group>"; };
+		E029715528A5CA8A006E45CA /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		E029715728A5CADF006E45CA /* LeaguesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesScrollView.swift; sourceTree = "<group>"; };
+		E029715A28A5D813006E45CA /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		E029715C28A5DACF006E45CA /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +295,9 @@
 				E029712C28A54EDB006E45CA /* UIColor+Extension.swift */,
 				E029713E28A555D5006E45CA /* UIFont+Extension.swift */,
 				E029714328A55D72006E45CA /* UIImageView+Extension.swift */,
+				E029715528A5CA8A006E45CA /* UIStackView+Extension.swift */,
+				E029715A28A5D813006E45CA /* NSAttributedString+Extension.swift */,
+				E029715C28A5DACF006E45CA /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,8 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				E029715028A56568006E45CA /* View */,
-				E029713528A55105006E45CA /* PreviousTierView.swift */,
-				E029713728A5510D006E45CA /* PreviousTierViewModel.swift */,
+				E029713528A55105006E45CA /* LeaguesView.swift */,
+				E029713728A5510D006E45CA /* LeaguesViewModel.swift */,
 			);
 			path = PreviousTier;
 			sourceTree = "<group>";
@@ -338,9 +351,19 @@
 		E029715028A56568006E45CA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E029715128A56573006E45CA /* PreviousTierViewCell.swift */,
+				E029715928A5CFB2006E45CA /* Cell */,
+				E029715728A5CADF006E45CA /* LeaguesScrollView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E029715928A5CFB2006E45CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E029715128A56573006E45CA /* LeagueCellView.swift */,
+				E029715328A5C8FD006E45CA /* LeagueCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,26 +499,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				E029710B28A53D17006E45CA /* BaseTarget.swift in Sources */,
-				E029713828A5510D006E45CA /* PreviousTierViewModel.swift in Sources */,
+				E029713828A5510D006E45CA /* LeaguesViewModel.swift in Sources */,
 				E029711028A53E0E006E45CA /* Response+Reactive.swift in Sources */,
 				E029711728A54085006E45CA /* Provider.swift in Sources */,
 				E029710128A536D5006E45CA /* BaseViewController.swift in Sources */,
 				E029712328A54268006E45CA /* OpggTarget.swift in Sources */,
 				E029710628A53700006E45CA /* Log.swift in Sources */,
 				E029712928A544CD006E45CA /* Result+Extension.swift in Sources */,
+				E029715628A5CA8A006E45CA /* UIStackView+Extension.swift in Sources */,
 				E029713B28A55197006E45CA /* AnalysisView.swift in Sources */,
 				E029711928A541BA006E45CA /* Inject.swift in Sources */,
+				E029715828A5CADF006E45CA /* LeaguesScrollView.swift in Sources */,
 				E029712628A54454006E45CA /* Summoner.swift in Sources */,
 				E029712128A54208006E45CA /* OpggRepositoryImpl.swift in Sources */,
 				E02970FB28A53673006E45CA /* MainViewController.swift in Sources */,
 				E029711228A53E3E006E45CA /* APIError.swift in Sources */,
-				E029713628A55105006E45CA /* PreviousTierView.swift in Sources */,
+				E029713628A55105006E45CA /* LeaguesView.swift in Sources */,
 				E029711528A53FD5006E45CA /* NetworkRepository.swift in Sources */,
 				E029714228A558CA006E45CA /* PaddingLabel.swift in Sources */,
+				E029715D28A5DACF006E45CA /* Int+Extension.swift in Sources */,
 				E029710E28A53D98006E45CA /* Response.swift in Sources */,
 				E029713D28A5519E006E45CA /* AnalysisViewModel.swift in Sources */,
 				E029713F28A555D5006E45CA /* UIFont+Extension.swift in Sources */,
-				E029715228A56573006E45CA /* PreviousTierViewCell.swift in Sources */,
+				E029715228A56573006E45CA /* LeagueCellView.swift in Sources */,
 				E02970DF28A53265006E45CA /* AppDelegate.swift in Sources */,
 				E029710328A536E4006E45CA /* BaseView.swift in Sources */,
 				E02970F828A5353A006E45CA /* RootWindow.swift in Sources */,
@@ -504,7 +530,9 @@
 				E029711F28A54200006E45CA /* OpggRepository.swift in Sources */,
 				E029714428A55D72006E45CA /* UIImageView+Extension.swift in Sources */,
 				E02970FF28A536C6006E45CA /* MVVM.swift in Sources */,
+				E029715428A5C8FD006E45CA /* LeagueCellViewModel.swift in Sources */,
 				E029710828A53A09006E45CA /* MainViewModel.swift in Sources */,
+				E029715B28A5D813006E45CA /* NSAttributedString+Extension.swift in Sources */,
 				E029713328A550A2006E45CA /* TopViewModel.swift in Sources */,
 				E029713128A5509A006E45CA /* TopView.swift in Sources */,
 				E029712B28A54992006E45CA /* Matchs.swift in Sources */,

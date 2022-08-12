@@ -44,7 +44,7 @@ struct League: Decodable {
 struct PreviousTier: Decodable {
     let name, tier, tierDivision, string: String
     let shortString, division: String
-    let imageURL: String
+    let imageURL: URL
     let lp, tierRankPoint: Int
     let season: Int?
 

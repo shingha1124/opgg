@@ -1,31 +1,17 @@
 //
-//  RankView.swift
+//  LeaguesDataSource.swift
 //  opgg
 //
 //  Created by seongha shin on 2022/08/12.
 //
 
-import RxSwift
 import UIKit
 
-final class PreviousTierView: BaseView, View {
+final class LeaguesScrollView: BaseView {
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
     
-    var disposeBag = DisposeBag()
-    
-    func bind(to viewModel: PreviousTierViewModel) {
-        viewModel.state.previousTier
-            .bind(onNext: { [unowned self] tiers in
-                tiers.forEach { _ in
-                    let frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-                    let cell = PreviousTierViewCell(frame: frame)
-                    self.contentView.addArrangedSubview(cell)
-                }
-                self.scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(tiers.count), height: contentView.frame.height)
-            })
-            .disposed(by: disposeBag)
-    }
+    var items = [LeagueCellViewModel]()
     
     override func attribute() {
         super.attribute()
@@ -35,6 +21,7 @@ final class PreviousTierView: BaseView, View {
             $0.isScrollEnabled = true
             $0.isPagingEnabled = true
             $0.contentSize = CGSize(width: 2000, height: 100)
+            $0.showsHorizontalScrollIndicator = false
         }
         
         contentView.do {
@@ -62,5 +49,17 @@ final class PreviousTierView: BaseView, View {
         snp.makeConstraints {
             $0.height.equalTo(100)
         }
+    }
+    
+    func reloadData() {
+        contentView.removeFullyAllArrangedSubviews()
+        let size = scrollView.frame.size
+        items.forEach { viewModel in
+            let frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            let cell = LeagueCellView(frame: frame)
+            cell.viewModel = viewModel
+            self.contentView.addArrangedSubview(cell)
+        }
+        self.scrollView.contentSize = CGSize(width: size.width * CGFloat(items.count), height: size.height)
     }
 }

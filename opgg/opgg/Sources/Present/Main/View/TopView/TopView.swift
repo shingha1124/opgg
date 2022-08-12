@@ -26,6 +26,10 @@ final class TopView: BaseView, View {
             .map { String($0) }
             .bind(to: levelLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        refreshButton.rx.tap
+            .bind(to: viewModel.action.refresh)
+            .disposed(by: disposeBag)
     }
     
     override func attribute() {

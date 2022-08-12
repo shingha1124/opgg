@@ -12,6 +12,7 @@ import RxSwift
 
 final class TopViewModel: ViewModel {
     struct Action {
+        let refresh = PublishRelay<Void>()
     }
     
     struct State {

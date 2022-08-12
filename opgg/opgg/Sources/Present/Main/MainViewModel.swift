@@ -20,7 +20,7 @@ final class MainViewModel: ViewModel {
     
     struct SubViewModel {
         let topView = TopViewModel()
-        let previousTier = PreviousTierViewModel()
+        let previousTier = LeaguesViewModel()
     }
     
     let action = Action()
@@ -46,9 +46,15 @@ final class MainViewModel: ViewModel {
             .bind(to: subViewModel.topView.update.summoner)
             .disposed(by: disposeBag)
         
+        subViewModel.topView.action.refresh
+            .bind(onNext: {
+                print("전적갱신")
+            })
+            .disposed(by: disposeBag)
+        
         summoner
-            .map { $0.previousTiers }
-            .bind(to: subViewModel.previousTier.update.previousTier)
+            .map { $0.leagues }
+            .bind(to: subViewModel.previousTier.update.leagues)
             .disposed(by: disposeBag)
         
         let requestMatchs = action.tappedMatchs
