@@ -18,7 +18,7 @@ final class MainViewController: BaseViewController, View {
     
     private let topView = TopView()
     private let previousTierView = LeaguesView()
-    private let analysisView = AnalysisView()
+    private let analysisView = SummaryView()
     
     var disposeBag = DisposeBag()
     

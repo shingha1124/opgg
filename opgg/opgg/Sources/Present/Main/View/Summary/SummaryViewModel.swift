@@ -9,7 +9,7 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class AnalysisViewModel: ViewModel {
+final class SummaryViewModel: ViewModel {
     struct Action {
     }
     

@@ -21,7 +21,7 @@ final class MainViewModel: ViewModel {
     struct SubViewModel {
         let topView = TopViewModel()
         let previousTier = LeaguesViewModel()
-        let analysis = AnalysisViewModel()
+        let analysis = SummaryViewModel()
     }
     
     let action = Action()

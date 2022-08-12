@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class AnalysisView: BaseView, View {
+final class SummaryView: BaseView, View {
     var disposeBag = DisposeBag()
     
     private let contentView = UIStackView()
@@ -16,7 +16,7 @@ final class AnalysisView: BaseView, View {
     private let mostView = MostView()
     private let positionView = PositionView()
     
-    func bind(to viewModel: AnalysisViewModel) {
+    func bind(to viewModel: SummaryViewModel) {
         matchView.viewModel = viewModel.subViewModel.match
         mostView.viewModel = viewModel.subViewModel.most
         positionView.viewModel = viewModel.subViewModel.position

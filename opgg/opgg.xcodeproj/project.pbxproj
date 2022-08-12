@@ -36,8 +36,8 @@
 		E029713328A550A2006E45CA /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713228A550A1006E45CA /* TopViewModel.swift */; };
 		E029713628A55105006E45CA /* LeaguesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713528A55105006E45CA /* LeaguesView.swift */; };
 		E029713828A5510D006E45CA /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713728A5510D006E45CA /* LeaguesViewModel.swift */; };
-		E029713B28A55197006E45CA /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713A28A55197006E45CA /* AnalysisView.swift */; };
-		E029713D28A5519E006E45CA /* AnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713C28A5519E006E45CA /* AnalysisViewModel.swift */; };
+		E029713B28A55197006E45CA /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713A28A55197006E45CA /* SummaryView.swift */; };
+		E029713D28A5519E006E45CA /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713C28A5519E006E45CA /* SummaryViewModel.swift */; };
 		E029713F28A555D5006E45CA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029713E28A555D5006E45CA /* UIFont+Extension.swift */; };
 		E029714228A558CA006E45CA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029714128A558CA006E45CA /* PaddingLabel.swift */; };
 		E029714428A55D72006E45CA /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029714328A55D72006E45CA /* UIImageView+Extension.swift */; };
@@ -97,8 +97,8 @@
 		E029713228A550A1006E45CA /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		E029713528A55105006E45CA /* LeaguesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesView.swift; sourceTree = "<group>"; };
 		E029713728A5510D006E45CA /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
-		E029713A28A55197006E45CA /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
-		E029713C28A5519E006E45CA /* AnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewModel.swift; sourceTree = "<group>"; };
+		E029713A28A55197006E45CA /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		E029713C28A5519E006E45CA /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		E029713E28A555D5006E45CA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		E029714128A558CA006E45CA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E029714328A55D72006E45CA /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			children = (
 				E029712F28A5503D006E45CA /* TopView */,
 				E029713428A550F7006E45CA /* Leagues */,
-				E029713928A5514C006E45CA /* Analysis */,
+				E029713928A5514C006E45CA /* Summary */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,14 +362,14 @@
 			path = Leagues;
 			sourceTree = "<group>";
 		};
-		E029713928A5514C006E45CA /* Analysis */ = {
+		E029713928A5514C006E45CA /* Summary */ = {
 			isa = PBXGroup;
 			children = (
 				E029716228A62E3C006E45CA /* View */,
-				E029713A28A55197006E45CA /* AnalysisView.swift */,
-				E029713C28A5519E006E45CA /* AnalysisViewModel.swift */,
+				E029713A28A55197006E45CA /* SummaryView.swift */,
+				E029713C28A5519E006E45CA /* SummaryViewModel.swift */,
 			);
-			path = Analysis;
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		E029714028A558C4006E45CA /* Common */ = {
@@ -608,7 +608,7 @@
 				E029710628A53700006E45CA /* Log.swift in Sources */,
 				E029712928A544CD006E45CA /* Result+Extension.swift in Sources */,
 				E029715628A5CA8A006E45CA /* UIStackView+Extension.swift in Sources */,
-				E029713B28A55197006E45CA /* AnalysisView.swift in Sources */,
+				E029713B28A55197006E45CA /* SummaryView.swift in Sources */,
 				E029716128A62E39006E45CA /* MatchView.swift in Sources */,
 				E029711928A541BA006E45CA /* Inject.swift in Sources */,
 				E0C51F3328A6A8A00087CA18 /* KDA.swift in Sources */,
@@ -626,7 +626,7 @@
 				E029715D28A5DACF006E45CA /* Int+Extension.swift in Sources */,
 				E0C51F4028A6B6420087CA18 /* String+Extension.swift in Sources */,
 				E029710E28A53D98006E45CA /* Response.swift in Sources */,
-				E029713D28A5519E006E45CA /* AnalysisViewModel.swift in Sources */,
+				E029713D28A5519E006E45CA /* SummaryViewModel.swift in Sources */,
 				E029713F28A555D5006E45CA /* UIFont+Extension.swift in Sources */,
 				E029715228A56573006E45CA /* LeagueCellView.swift in Sources */,
 				E029717A28A69CB1006E45CA /* MostChampionView.swift in Sources */,
