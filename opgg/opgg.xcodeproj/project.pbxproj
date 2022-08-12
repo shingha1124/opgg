@@ -56,6 +56,12 @@
 		E029717328A6425C006E45CA /* MatchRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717228A6425C006E45CA /* MatchRecord.swift */; };
 		E029717A28A69CB1006E45CA /* MostChampionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717928A69CB1006E45CA /* MostChampionView.swift */; };
 		E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */; };
+		E05A9E6D28A6BD0A00A4A012 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */; };
+		E05A9E6F28A6BD1500A4A012 /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */; };
+		E05A9E7128A6BDE800A4A012 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */; };
+		E05A9E7428A6BE4200A4A012 /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E7328A6BE4200A4A012 /* GamesTableViewCell.swift */; };
+		E05A9E7628A6BE4A00A4A012 /* GamesTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E7528A6BE4A00A4A012 /* GamesTableViewCellModel.swift */; };
+		E05A9E7828A6BE6B00A4A012 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E7728A6BE6B00A4A012 /* BaseTableViewCell.swift */; };
 		E0C51F3328A6A8A00087CA18 /* KDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3228A6A8A00087CA18 /* KDA.swift */; };
 		E0C51F3628A6B0460087CA18 /* PositionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3528A6B0460087CA18 /* PositionItemView.swift */; };
 		E0C51F3828A6B04F0087CA18 /* PositionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3728A6B04F0087CA18 /* PositionItemViewModel.swift */; };
@@ -117,6 +123,12 @@
 		E029717228A6425C006E45CA /* MatchRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecord.swift; sourceTree = "<group>"; };
 		E029717928A69CB1006E45CA /* MostChampionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionView.swift; sourceTree = "<group>"; };
 		E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionViewModel.swift; sourceTree = "<group>"; };
+		E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
+		E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
+		E05A9E7328A6BE4200A4A012 /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
+		E05A9E7528A6BE4A00A4A012 /* GamesTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCellModel.swift; sourceTree = "<group>"; };
+		E05A9E7728A6BE6B00A4A012 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		E0C51F3228A6A8A00087CA18 /* KDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDA.swift; sourceTree = "<group>"; };
 		E0C51F3528A6B0460087CA18 /* PositionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionItemView.swift; sourceTree = "<group>"; };
 		E0C51F3728A6B04F0087CA18 /* PositionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionItemViewModel.swift; sourceTree = "<group>"; };
@@ -248,6 +260,7 @@
 			children = (
 				E029710028A536D5006E45CA /* BaseViewController.swift */,
 				E029710228A536E4006E45CA /* BaseView.swift */,
+				E05A9E7728A6BE6B00A4A012 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -339,6 +352,7 @@
 				E029712F28A5503D006E45CA /* TopView */,
 				E029713428A550F7006E45CA /* Leagues */,
 				E029713928A5514C006E45CA /* Summary */,
+				E05A9E6B28A6BCE300A4A012 /* Games */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,6 +391,7 @@
 			children = (
 				E0C51F3128A6A5DB0087CA18 /* Struct */,
 				E029714128A558CA006E45CA /* PaddingLabel.swift */,
+				E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -443,6 +458,25 @@
 			children = (
 				E029717928A69CB1006E45CA /* MostChampionView.swift */,
 				E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E05A9E6B28A6BCE300A4A012 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				E05A9E7228A6BE2B00A4A012 /* View */,
+				E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */,
+				E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		E05A9E7228A6BE2B00A4A012 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E05A9E7328A6BE4200A4A012 /* GamesTableViewCell.swift */,
+				E05A9E7528A6BE4A00A4A012 /* GamesTableViewCellModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -601,6 +635,7 @@
 			files = (
 				E029710B28A53D17006E45CA /* BaseTarget.swift in Sources */,
 				E029713828A5510D006E45CA /* LeaguesViewModel.swift in Sources */,
+				E05A9E6D28A6BD0A00A4A012 /* GamesView.swift in Sources */,
 				E029711028A53E0E006E45CA /* Response+Reactive.swift in Sources */,
 				E029711728A54085006E45CA /* Provider.swift in Sources */,
 				E029710128A536D5006E45CA /* BaseViewController.swift in Sources */,
@@ -620,11 +655,13 @@
 				E029716D28A62E80006E45CA /* MostViewModel.swift in Sources */,
 				E029711228A53E3E006E45CA /* APIError.swift in Sources */,
 				E029717328A6425C006E45CA /* MatchRecord.swift in Sources */,
+				E05A9E7828A6BE6B00A4A012 /* BaseTableViewCell.swift in Sources */,
 				E029713628A55105006E45CA /* LeaguesView.swift in Sources */,
 				E029711528A53FD5006E45CA /* NetworkRepository.swift in Sources */,
 				E029714228A558CA006E45CA /* PaddingLabel.swift in Sources */,
 				E029715D28A5DACF006E45CA /* Int+Extension.swift in Sources */,
 				E0C51F4028A6B6420087CA18 /* String+Extension.swift in Sources */,
+				E05A9E7128A6BDE800A4A012 /* IntrinsicTableView.swift in Sources */,
 				E029710E28A53D98006E45CA /* Response.swift in Sources */,
 				E029713D28A5519E006E45CA /* SummaryViewModel.swift in Sources */,
 				E029713F28A555D5006E45CA /* UIFont+Extension.swift in Sources */,
@@ -635,15 +672,18 @@
 				E02970F828A5353A006E45CA /* RootWindow.swift in Sources */,
 				E029712D28A54EDB006E45CA /* UIColor+Extension.swift in Sources */,
 				E029711B28A541CA006E45CA /* Container.swift in Sources */,
+				E05A9E7428A6BE4200A4A012 /* GamesTableViewCell.swift in Sources */,
 				E029711F28A54200006E45CA /* OpggRepository.swift in Sources */,
 				E029714428A55D72006E45CA /* UIImageView+Extension.swift in Sources */,
 				E029716B28A62E79006E45CA /* PositionViewModel.swift in Sources */,
 				E02970FF28A536C6006E45CA /* MVVM.swift in Sources */,
 				E029717128A63912006E45CA /* MatchViewModel.swift in Sources */,
 				E029715428A5C8FD006E45CA /* LeagueCellViewModel.swift in Sources */,
+				E05A9E6F28A6BD1500A4A012 /* GamesViewModel.swift in Sources */,
 				E0C51F3628A6B0460087CA18 /* PositionItemView.swift in Sources */,
 				E029710828A53A09006E45CA /* MainViewModel.swift in Sources */,
 				E0C51F3828A6B04F0087CA18 /* PositionItemViewModel.swift in Sources */,
+				E05A9E7628A6BE4A00A4A012 /* GamesTableViewCellModel.swift in Sources */,
 				E029715B28A5D813006E45CA /* NSAttributedString+Extension.swift in Sources */,
 				E029713328A550A2006E45CA /* TopViewModel.swift in Sources */,
 				E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */,

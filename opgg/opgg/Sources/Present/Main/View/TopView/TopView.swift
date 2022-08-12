@@ -5,7 +5,6 @@
 //  Created by seongha shin on 2022/08/11.
 //
 
-import Kingfisher
 import RxSwift
 import UIKit
 
