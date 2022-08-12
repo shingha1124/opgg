@@ -32,13 +32,13 @@ final class LeaguesView: BaseView, View {
         addSubview(scrollView)
         
         scrollView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.top.equalToSuperview()
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-24)
         }
         
         snp.makeConstraints {
-            $0.height.equalTo(100)
+            $0.height.equalTo(scrollView)
         }
     }
 }

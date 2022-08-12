@@ -36,30 +36,43 @@ final class LeaguesScrollView: BaseView {
         scrollView.addSubview(contentView)
         
         scrollView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-24)
+            $0.top.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(contentView)
         }
         
         contentView.snp.makeConstraints {
-            $0.height.equalToSuperview()
+            $0.top.equalToSuperview()
             $0.leading.equalToSuperview()
         }
         
         snp.makeConstraints {
-            $0.height.equalTo(100)
+            $0.height.equalTo(scrollView)
         }
     }
     
     func reloadData() {
         contentView.removeFullyAllArrangedSubviews()
         let size = scrollView.frame.size
-        items.forEach { viewModel in
-            let frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-            let cell = LeagueCellView(frame: frame)
+        let cells = items.map { viewModel -> LeagueCellView in
+            let cell = LeagueCellView()
             cell.viewModel = viewModel
-            self.contentView.addArrangedSubview(cell)
+            contentView.addArrangedSubview(cell)
+            cell.snp.makeConstraints {
+                $0.width.equalTo(size.width)
+            }
+            return cell
         }
-        self.scrollView.contentSize = CGSize(width: size.width * CGFloat(items.count), height: size.height)
+        updateContentSize(cells[0])
+    }
+    
+    private func updateContentSize(_ cell: UIView) {
+        contentView.snp.remakeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.height.equalTo(cell)
+        }
+        let width = scrollView.frame.size.width * CGFloat(items.count)
+        scrollView.contentSize = CGSize(width: width, height: contentView.frame.height)
     }
 }

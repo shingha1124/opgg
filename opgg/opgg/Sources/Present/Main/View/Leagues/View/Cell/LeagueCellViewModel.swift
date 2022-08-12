@@ -15,7 +15,7 @@ final class LeagueCellViewModel: ViewModel {
     
     struct State {
         let tier: PreviousTier
-        let matchRecord: (wins: Int, losses: Int)
+        let matchRecord: MatchRecord
     }
     
     struct Update {

@@ -28,14 +28,10 @@ final class LeagueCellView: BaseView, View {
         let lp = viewModel.state.tier.lp.currency()
         lpLabel.text = "\(lp) LP"
         
-        let match = viewModel.state.matchRecord
-        let matchPersent = Int((Float(match.wins) / Float(match.wins + match.losses)) * 100)
         matchRecord.attributedText = .appendAttributedString([
-            .stringToOption("\(match.wins)", attributes: [.font(.systemFont(ofSize: 10))]),
-            .stringToOption("승", attributes: [.font(.appleSDGothicNeo(ofSize: 10))]),
-            .stringToOption(" \(match.losses)", attributes: [.font(.systemFont(ofSize: 10))]),
-            .stringToOption("패", attributes: [.font(.appleSDGothicNeo(ofSize: 10))]),
-            .stringToOption(" (\(matchPersent)%)", attributes: [.font(.systemFont(ofSize: 10))])
+            .matchRecordText(viewModel.state.matchRecord, ofSize: 10),
+            .stringToOption(" "),
+            .matchRateText(viewModel.state.matchRecord, ofSize: 10, color: .steelGrey)
         ])
     }
     
@@ -94,45 +90,45 @@ final class LeagueCellView: BaseView, View {
         contentView.addSubview(detailButton)
         
         contentView.snp.makeConstraints {
-            $0.leading.top.bottom.equalToSuperview()
+            $0.top.leading.equalToSuperview()
             $0.trailing.equalToSuperview().offset(-8)
+            $0.bottom.equalTo(matchRecord).offset(16)
         }
-        
+
         tierImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(12)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(64)
         }
-        
+
         rankTypeLabel.snp.makeConstraints {
             $0.leading.equalTo(tierImageView.snp.trailing).offset(8)
             $0.top.equalToSuperview().offset(16)
         }
-        
+
         tierLabel.snp.makeConstraints {
-            $0.top.equalTo(rankTypeLabel.snp.bottom).offset(1)
+            $0.top.equalTo(rankTypeLabel.snp.bottom).offset(2)
             $0.leading.equalTo(rankTypeLabel)
         }
-        
+
         lpLabel.snp.makeConstraints {
             $0.top.equalTo(tierLabel.snp.bottom).offset(2)
             $0.leading.equalTo(rankTypeLabel)
         }
-        
+
         matchRecord.snp.makeConstraints {
-            $0.top.equalTo(lpLabel.snp.bottom).offset(2)
+            $0.top.equalTo(lpLabel.snp.bottom)
             $0.leading.equalTo(rankTypeLabel)
         }
-        
+
         detailButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().offset(-16)
             $0.width.height.equalTo(40)
         }
-        
+
         snp.makeConstraints {
-            $0.width.equalTo(frame.width)
-            $0.height.equalTo(frame.height)
+            $0.bottom.equalTo(contentView)
         }
     }
 }
