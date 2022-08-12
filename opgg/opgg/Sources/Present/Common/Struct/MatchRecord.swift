@@ -12,6 +12,12 @@ struct MatchRecord {
     let losses: Int
     let winRate: Int
     
+    init(wins: Int, losses: Int) {
+        self.wins = wins
+        self.losses = losses
+        winRate = Int((Float(wins) / Float(wins + losses)) * 100)
+    }
+    
     init(_ league: League) {
         wins = league.wins
         losses = league.losses

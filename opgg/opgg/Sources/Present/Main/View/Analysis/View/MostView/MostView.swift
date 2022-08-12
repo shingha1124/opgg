@@ -52,9 +52,11 @@ final class MostView: BaseView, View {
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-12)
         }
-//        snp.makeConstraints {
-//            $0.width.equalTo(98)
-//        }
+        
+        snp.makeConstraints {
+            $0.width.greaterThanOrEqualTo(title).offset(32)
+            $0.width.equalTo(contentView).offset(32)
+        }
     }
     
     private func createMostChampionView(_ viewModel: [MostChampionViewModel]) {

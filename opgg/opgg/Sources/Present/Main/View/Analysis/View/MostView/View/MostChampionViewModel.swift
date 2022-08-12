@@ -14,7 +14,8 @@ final class MostChampionViewModel: ViewModel {
     }
     
     struct State {
-        let champion: Champion
+        let championImageUrl: URL
+        let matchRecord: MatchRecord
     }
     
     let action = Action()
@@ -22,6 +23,8 @@ final class MostChampionViewModel: ViewModel {
     let disposeBag = DisposeBag()
     
     init(champion: Champion) {
-        state = State(champion: champion)
+        let championImageUrl = champion.imageURL
+        let matchRecord = MatchRecord(wins: champion.wins, losses: champion.losses)
+        state = State(championImageUrl: championImageUrl, matchRecord: matchRecord)
     }
 }
