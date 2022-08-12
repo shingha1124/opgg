@@ -42,15 +42,32 @@ struct League: Decodable {
 }
 
 struct PreviousTier: Decodable {
-    let name, tier, tierDivision, string: String
+    let rankType: RankType
+    let tier, tierDivision, string: String
     let shortString, division: String
     let imageURL: URL
     let lp, tierRankPoint: Int
     let season: Int?
 
     enum CodingKeys: String, CodingKey {
-        case name, tier, tierDivision, string, shortString, division
+        case tier, tierDivision, string, shortString, division
+        case rankType = "name"
         case imageURL = "imageUrl"
         case lp, tierRankPoint, season
+    }
+}
+
+@frozen
+enum RankType: String, Decodable {
+    case solo = "솔랭"
+    case flex = "자유 5:5 랭크"
+    
+    var text: String {
+        switch self {
+        case .solo:
+            return "RankSolo".localized()
+        case .flex:
+            return "RankFlex".localized()
+        }
     }
 }

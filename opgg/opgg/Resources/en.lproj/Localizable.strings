@@ -13,3 +13,5 @@
 "Position" = "Position";
 "SummaryTitlePrefix" = "Summary last ";
 "SummaryTitleSuffix" = " games.";
+"RankSolo" = "Ranked Solo/Duo";
+"RankFlex" = "Ranked Flex";

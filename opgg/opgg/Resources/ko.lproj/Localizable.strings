@@ -13,3 +13,5 @@
 "Position" = "포지션";
 "SummaryTitlePrefix" = "최근 ";
 "SummaryTitleSuffix" = "게임 분석";
+"RankSolo" = "솔로랭크";
+"RankFlex" = "자유 5:5 랭크";

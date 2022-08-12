@@ -9,7 +9,6 @@ import RxSwift
 import UIKit
 
 final class LeagueCellView: BaseView, View {
-    
     private let contentView = UIView()
     private let tierImageView = UIImageView()
     private let rankTypeLabel = UILabel()
@@ -23,7 +22,7 @@ final class LeagueCellView: BaseView, View {
     
     func bind(to viewModel: LeagueCellViewModel) {
         tierImageView.setImage(viewModel.state.tier.imageURL)
-        rankTypeLabel.text = viewModel.state.tier.name
+        rankTypeLabel.text = viewModel.state.tier.rankType.text
         tierLabel.text = viewModel.state.tier.tier
         
         let lp = viewModel.state.tier.lp.currency()
