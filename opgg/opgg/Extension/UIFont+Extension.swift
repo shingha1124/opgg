@@ -9,9 +9,22 @@ import UIKit
 
 extension UIFont {
     static func appleSDGothicNeo(ofSize size: CGFloat, weight: Weight = .regular) -> UIFont {
-        guard let font = UIFont(name: "AppleSDGothicNeo-Regular", size: size) else {
+        guard let font = UIFont(name: "AppleSDGothicNeo-\(weight.stringWeight)", size: size) else {
             return UIFont.systemFont(ofSize: size, weight: weight)
         }
         return font
+    }
+}
+
+extension UIFont.Weight {
+    var stringWeight: String {
+        switch self {
+        case .bold:
+            return "Bold"
+        case .regular:
+            return "Regular"
+        default:
+            return "Regular"
+        }
     }
 }

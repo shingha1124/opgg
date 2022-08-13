@@ -13,7 +13,7 @@ final class MainViewModel: ViewModel {
     struct Action {
         let viewDidLoad = PublishRelay<Void>()
         let tappedMatchs = PublishRelay<Void>()
-        let didEndDragging = PublishRelay<Void>()
+        let moreGames = PublishRelay<Void>()
     }
     
     struct State {
@@ -68,19 +68,19 @@ final class MainViewModel: ViewModel {
             .bind(to: subViewModel.summary.update.matches)
             .disposed(by: disposeBag)
         
-        matches
-            .map { $0.games }
+        let moreGames = action.moreGames
+            .withLatestFrom(subViewModel.games.update.games) { $1.last }
+            .flatMapLatest { [unowned self] lastGame in
+                self.opggRepository.requestMatches(lastMatch: lastGame?.createDate)
+            }
+            .share()
+        
+        Observable
+            .merge(
+                matches.map { $0.games },
+                moreGames.compactMap { $0.value?.games }
+            )
             .bind(to: subViewModel.games.update.games)
-            .disposed(by: disposeBag)
-        
-        subViewModel.topView.action.refresh
-            .bind(onNext: {
-                print("전적갱신")
-            })
-            .disposed(by: disposeBag)
-        
-        action.didEndDragging
-            .bind(to: subViewModel.games.action.moreGames)
             .disposed(by: disposeBag)
     }
 }

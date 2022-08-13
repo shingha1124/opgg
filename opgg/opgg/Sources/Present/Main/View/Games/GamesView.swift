@@ -25,7 +25,9 @@ final class GamesView: BaseView, View {
         viewModel.state.reloadData
             .do { [unowned self] _ in
                 self.intrinsicTableView.reloadData()
+                self.intrinsicTableView.layoutIfNeeded()
             }
+            .observe(on: MainScheduler.asyncInstance)
             .map { [unowned self] _ in
                 self.frame.origin.y + self.intrinsicTableView.intrinsicContentSize.height
             }

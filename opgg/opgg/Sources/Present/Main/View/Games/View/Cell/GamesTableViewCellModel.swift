@@ -14,12 +14,14 @@ final class GamesTableViewCellModel: ViewModel {
     }
     
     struct State {
+        let game: Game
     }
     
     let action = Action()
-    let state = State()
+    let state: State
     let disposeBag = DisposeBag()
     
     init(game: Game) {
+        state = State(game: game)
     }
 }

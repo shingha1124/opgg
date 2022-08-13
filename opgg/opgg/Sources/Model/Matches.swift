@@ -40,7 +40,7 @@ struct Game: Decodable {
     let summonerName: String
     let tierRankShort: TierRankShort
     let stats: Stats
-    let peak: [String]
+    let peak: [URL]
     let isWin: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -53,7 +53,7 @@ struct Game: Decodable {
 }
 
 struct GameChampion: Decodable {
-    let imageURL: String
+    let imageURL: URL
     let level: Int
 
     enum CodingKeys: String, CodingKey {
@@ -70,7 +70,7 @@ enum GameType: String, Decodable {
 }
 
 struct Item: Decodable {
-    let imageURL: String
+    let imageURL: URL
 
     enum CodingKeys: String, CodingKey {
         case imageURL = "imageUrl"
@@ -101,6 +101,10 @@ enum LargestMultiKillString: String, Decodable {
 enum OpScoreBadge: String, Decodable {
     case ace = "ACE"
     case empty = ""
+    
+    var name: String {
+        rawValue
+    }
 }
 
 struct Ward: Codable {

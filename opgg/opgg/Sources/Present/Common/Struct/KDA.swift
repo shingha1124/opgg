@@ -7,18 +7,82 @@
 
 import UIKit
 
-struct MatchKDA {
+protocol KDA { }
+
+extension KDA {
+    fileprivate func kdaAttributedString(kill: String, death: String, assist: String, ofSize fontSize: CGFloat) -> NSAttributedString {
+        .appendAttributedString([
+            .stringToOption(kill,
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
+                                .foreground(color: .charcoalGrey)
+                            ]),
+            .stringToOption(" / ",
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
+                                .foreground(color: .charcoalGrey)
+                            ]),
+            .stringToOption(death,
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
+                                .foreground(color: .darkishPink)
+                            ]),
+            .stringToOption(" / ",
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
+                                .foreground(color: .charcoalGrey)
+                            ]),
+            .stringToOption(assist,
+                            attributes: [
+                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
+                                .foreground(color: .charcoalGrey)
+                            ])
+        ])
+    }
+}
+
+struct MatchKDA: KDA {
     let kills: Float
     let deaths: Float
     let assists: Float
     let kdaRate: Float
     
     init(_ summary: Summary) {
-        let totalGame = Float(summary.wins + summary.losses)
-        kills = Float(summary.kills) / totalGame
-        deaths = Float(summary.deaths) / totalGame
-        assists = Float(summary.assists) / totalGame
+        let total = Float(summary.wins + summary.losses)
+        kills = Float(summary.kills) / total
+        deaths = Float(summary.deaths) / total
+        assists = Float(summary.assists) / total
         kdaRate = kills + assists / deaths
+    }
+    
+    func kdaText(ofSize fontSize: CGFloat) -> NSAttributedString {
+        kdaAttributedString(
+            kill: String(format: "%.1f", kills),
+            death: String(format: "%.1f", deaths),
+            assist: String(format: "%.1f", assists),
+            ofSize: fontSize
+        )
+    }
+}
+
+struct GameKDA: KDA {
+    let kill: Int
+    let death: Int
+    let assist: Int
+    
+    init(_ general: General) {
+        kill = general.kill
+        death = general.death
+        assist = general.assist
+    }
+    
+    func kdaText(ofSize fontSize: CGFloat) -> NSAttributedString {
+        kdaAttributedString(
+            kill: "\(kill)",
+            death: "\(death)",
+            assist: "\(assist)",
+            ofSize: fontSize
+        )
     }
 }
 
@@ -34,35 +98,5 @@ extension MatchKDA {
         default:
             return .darkishPink
         }
-    }
-    
-    func kdaText(ofSize fontSize: CGFloat) -> NSAttributedString {
-        .appendAttributedString([
-            .stringToOption(String(format: "%.1f", kills),
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
-                                .foreground(color: .charcoalGrey)
-                            ]),
-            .stringToOption(" / ",
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
-                                .foreground(color: .charcoalGrey)
-                            ]),
-            .stringToOption(String(format: "%.1f", deaths),
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
-                                .foreground(color: .darkishPink)
-                            ]),
-            .stringToOption(" / ",
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
-                                .foreground(color: .charcoalGrey)
-                            ]),
-            .stringToOption(String(format: "%.1f", assists),
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
-                                .foreground(color: .charcoalGrey)
-                            ])
-        ])
     }
 }

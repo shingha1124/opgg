@@ -34,11 +34,8 @@ final class MainViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         gamesView.updateHeight
-            .map { [unowned self] height in
-                let topOffset = self.topLayoutBox.frame.height
-                let bottomOffset = self.bottomLayoutBox.frame.height
-                return CGSize(width: 0, height: height + topOffset + bottomOffset)
-            }
+            .observe(on: MainScheduler.asyncInstance)
+            .map { CGSize(width: 0, height: $0) }
             .bind(to: scrollView.rx.contentSize)
             .disposed(by: disposeBag)
         
@@ -50,7 +47,7 @@ final class MainViewController: BaseViewController, View {
             }
             .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .map { _ in }
-            .bind(to: viewModel.action.didEndDragging)
+            .bind(to: viewModel.action.moreGames)
             .disposed(by: disposeBag)
     }
     
@@ -68,7 +65,6 @@ final class MainViewController: BaseViewController, View {
         scrollView.do {
             $0.backgroundColor = .clear
             $0.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16)
-//            $0.contentSize = CGSize(width: 0, height: 2000)
             $0.showsVerticalScrollIndicator = false
         }
         
