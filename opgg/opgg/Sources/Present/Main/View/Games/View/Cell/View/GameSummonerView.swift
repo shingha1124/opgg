@@ -31,7 +31,6 @@ final class GameSummonerView: BaseView {
             $0.font = .systemFont(ofSize: 10, weight: .bold)
             $0.clipsToBounds = true
             $0.textColor = .white
-            $0.backgroundColor = .orangeYellow
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor.white.cgColor
         }
@@ -124,6 +123,7 @@ final class GameSummonerView: BaseView {
         championImage.setImage(game.champion.imageURL)
         
         scoreBadge.text = general.opScoreBadge.name
+        scoreBadge.backgroundColor = general.opScoreBadge.color
         scoreBadge.isHidden = general.opScoreBadge == .empty
         
         spells.enumerated().forEach { index, spell in
@@ -137,6 +137,6 @@ final class GameSummonerView: BaseView {
         let gameKda = GameKDA(general)
         kdaLabel.attributedText = gameKda.kdaText(ofSize: 16)
     
-        contributionForKillRate.text = "킬관여 \(general.contributionForKillRate)"
+        contributionForKillRate.text = String(format: "KillParticipate".localized(), general.contributionForKillRate)
     }
 }

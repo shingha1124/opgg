@@ -15,3 +15,10 @@
 "SummaryTitleSuffix" = " games.";
 "RankSolo" = "Ranked Solo/Duo";
 "RankFlex" = "Ranked Flex";
+"Aram" = "Aram";
+"Normal" = "Normal";
+"DoubleKill" = "Double Kill";
+"KillParticipate" = "K/P %@";
+"Day Ago" = " day ago";
+"Hour Ago" = " hour ago";
+"Minute Ago" = " minute ago";
