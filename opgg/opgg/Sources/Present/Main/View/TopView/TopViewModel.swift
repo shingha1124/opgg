@@ -11,7 +11,7 @@ import RxSwift
 
 final class TopViewModel: ViewModel {
     struct Action {
-        let refresh = PublishRelay<Void>()
+        let update = PublishRelay<Void>()
     }
     
     struct State {

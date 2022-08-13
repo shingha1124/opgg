@@ -121,6 +121,8 @@ final class GameSummonerView: BaseView {
         let general = game.stats.general
         
         championImage.setImage(game.champion.imageURL)
+        championImage.layer.borderWidth = general.opScoreBadge == .empty ? 0 : 2
+        championImage.layer.borderColor = general.opScoreBadge.color.cgColor
         
         scoreBadge.text = general.opScoreBadge.name
         scoreBadge.backgroundColor = general.opScoreBadge.color

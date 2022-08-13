@@ -11,7 +11,7 @@ import UIKit
 final class TopView: BaseView, View {
     private let thumbnail = UIImageView()
     private let title = UILabel()
-    private let refreshButton = UIButton()
+    private let updateButton = UIButton()
     private let levelLabel = PaddingLabel()
     
     var disposeBag = DisposeBag()
@@ -26,8 +26,8 @@ final class TopView: BaseView, View {
             .bind(to: levelLabel.rx.text)
             .disposed(by: disposeBag)
         
-        refreshButton.rx.tap
-            .bind(to: viewModel.action.refresh)
+        updateButton.rx.tap
+            .bind(to: viewModel.action.update)
             .disposed(by: disposeBag)
     }
     
@@ -45,7 +45,7 @@ final class TopView: BaseView, View {
             $0.text = "OPGG"
         }
         
-        refreshButton.do {
+        updateButton.do {
             $0.backgroundColor = .softBlue
             $0.setTitle("Update".localized(), for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
@@ -68,7 +68,7 @@ final class TopView: BaseView, View {
         addSubview(thumbnail)
         addSubview(levelLabel)
         addSubview(title)
-        addSubview(refreshButton)
+        addSubview(updateButton)
         
         thumbnail.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)
@@ -85,7 +85,7 @@ final class TopView: BaseView, View {
             $0.leading.equalTo(thumbnail.snp.trailing).offset(16)
         }
         
-        refreshButton.snp.makeConstraints {
+        updateButton.snp.makeConstraints {
             $0.leading.equalTo(thumbnail.snp.trailing).offset(16)
             $0.bottom.equalTo(thumbnail)
             $0.width.equalTo(97)

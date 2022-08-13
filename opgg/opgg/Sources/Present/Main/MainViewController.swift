@@ -13,7 +13,7 @@ import UIKit
 final class MainViewController: BaseViewController, View {
     
     enum Constants {
-        static let refreshScrollSize: CGFloat = 65
+        static let refreshScrollSize: CGFloat = 0
     }
     
     private let topLayoutBox = UIView()

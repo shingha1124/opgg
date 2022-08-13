@@ -16,7 +16,7 @@ final class MostChampionView: BaseView, View {
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: MostChampionViewModel) {
-        championImage.setImage(viewModel.state.championImageUrl)
+        championImage.setImage(viewModel.state.championImageUrl, placeholder: UIImage(color: .paleGrey2))
         let matchRecord = viewModel.state.matchRecord
         winRateLabel.text = "\(matchRecord.winRate)%"
         winRateLabel.textColor = matchRecord.winRateColor

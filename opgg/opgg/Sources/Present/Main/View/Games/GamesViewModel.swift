@@ -11,6 +11,7 @@ import RxSwift
 
 final class GamesViewModel: ViewModel {
     struct Action {
+        let moreGames = PublishRelay<Void>()
     }
     
     struct State {
@@ -19,7 +20,7 @@ final class GamesViewModel: ViewModel {
     }
     
     struct Update {
-        let games = BehaviorRelay<[Game]>(value: [])
+        let updateGames = BehaviorRelay<[Game]>(value: [])
     }
     
     let action = Action()
@@ -30,9 +31,25 @@ final class GamesViewModel: ViewModel {
     @Inject(\.opggRepository) private var opggRepository: OpggRepository
     
     init() {
-        update.games
-            .scan([Game](), accumulator: +)
+        let updateGames = update.updateGames
             .map { $0.map { GamesTableViewCellModel(game: $0) } }
+            .share()
+        
+        let requestMoreGames = action.moreGames
+            .withLatestFrom(state.cellViewModels) { $1.last?.state.game.createDate }
+            .flatMapLatest { [unowned self] lastDate in
+                self.opggRepository.requestMatches(lastMatch: lastDate)
+            }
+            .share()
+        
+        let moreGames = requestMoreGames
+            .compactMap { $0.value?.games }
+            .map { $0.map { GamesTableViewCellModel(game: $0) } }
+            .withLatestFrom(state.cellViewModels) { $1 + $0 }
+            .share()
+        
+        Observable
+            .merge(updateGames, moreGames )
             .do { [unowned self] viewModels in
                 self.state.cellViewModels.accept(viewModels)
             }

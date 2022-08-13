@@ -12,7 +12,6 @@ import RxSwift
 final class MainViewModel: ViewModel {
     struct Action {
         let viewDidLoad = PublishRelay<Void>()
-        let tappedMatchs = PublishRelay<Void>()
         let moreGames = PublishRelay<Void>()
     }
     
@@ -34,7 +33,13 @@ final class MainViewModel: ViewModel {
     @Inject(\.opggRepository) private var opggRepository: OpggRepository
     
     init() {
-        let requestSummoner = action.viewDidLoad
+        let requestData = Observable
+            .merge(
+                action.viewDidLoad.asObservable(),
+                subViewModel.topView.action.update.asObservable()
+            )
+        
+        let requestSummoner = requestData
             .flatMapLatest { [unowned self] _ in
                 self.opggRepository.requestSummonerInfo()
             }
@@ -54,7 +59,7 @@ final class MainViewModel: ViewModel {
             .bind(to: subViewModel.previousTier.update.leagues)
             .disposed(by: disposeBag)
         
-        let requestMatchs = action.viewDidLoad
+        let requestMatchs = requestData
             .flatMapLatest { [unowned self] _ in
                 self.opggRepository.requestMatches(lastMatch: nil)
             }
@@ -68,19 +73,13 @@ final class MainViewModel: ViewModel {
             .bind(to: subViewModel.summary.update.matches)
             .disposed(by: disposeBag)
         
-        let moreGames = action.moreGames
-            .withLatestFrom(subViewModel.games.update.games) { $1.last }
-            .flatMapLatest { [unowned self] lastGame in
-                self.opggRepository.requestMatches(lastMatch: lastGame?.createDate)
-            }
-            .share()
+        matches
+            .map { $0.games }
+            .bind(to: subViewModel.games.update.updateGames)
+            .disposed(by: disposeBag)
         
-        Observable
-            .merge(
-                matches.map { $0.games },
-                moreGames.compactMap { $0.value?.games }
-            )
-            .bind(to: subViewModel.games.update.games)
+        action.moreGames
+            .bind(to: subViewModel.games.action.moreGames)
             .disposed(by: disposeBag)
     }
 }

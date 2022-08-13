@@ -39,7 +39,7 @@ final class GamesView: BaseView, View {
         super.attribute()
         
         intrinsicTableView.do {
-            $0.backgroundColor = .red
+            $0.separatorStyle = .none
             $0.dataSource = dataSource
             $0.register(GamesTableViewCell.self, forCellReuseIdentifier: GamesTableViewCell.identifier)
         }

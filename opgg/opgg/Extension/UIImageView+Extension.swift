@@ -14,6 +14,11 @@ extension UIImageView {
         kf.setImage(with: resource)
     }
     
+    func setImage(_ url: URL, placeholder: UIImage?) {
+        let resource = ImageResource(downloadURL: url, cacheKey: url.absoluteString)
+        kf.setImage(with: resource, placeholder: placeholder)
+    }
+    
     func setImageWithIndicator(_ url: URL, time: CGFloat) {
         let resource = ImageResource(downloadURL: url, cacheKey: url.absoluteString)
         kf.indicatorType = .activity
