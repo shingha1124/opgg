@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class LeaguesView: BaseView, View {
+final class LeaguesView: BaseView, UIKitView {
     private let scrollView = LeaguesScrollView()
     
     var disposeBag = DisposeBag()

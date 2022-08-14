@@ -13,7 +13,7 @@ enum ViewMapTable {
     static var viewModels = WeakMapTable<AnyObject, Any>()
 }
 
-protocol View: AnyObject {
+protocol UIKitView: AnyObject {
     associatedtype ViewModel
     
     var disposeBag: DisposeBag { get set }
@@ -21,7 +21,7 @@ protocol View: AnyObject {
     func bind(to viewModel: ViewModel)
 }
 
-extension View {
+extension UIKitView {
     private var key: String {
         String(describing: type(of: self))
     }

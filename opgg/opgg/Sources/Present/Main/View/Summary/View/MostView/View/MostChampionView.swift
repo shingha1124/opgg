@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class MostChampionView: BaseView, View {
+final class MostChampionView: BaseView, UIKitView {
     
     private let championImage = UIImageView()
     private let winRateLabel = UILabel()

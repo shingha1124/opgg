@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class GamesTableViewCell: BaseTableViewCell, View {
+final class GamesTableViewCell: BaseTableViewCell, UIKitView {
     
     private let cellBackgroundView = UIView()
     

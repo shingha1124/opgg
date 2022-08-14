@@ -10,7 +10,7 @@ import RxSwift
 import SnapKit
 import UIKit
 
-final class MainViewController: BaseViewController, View {
+final class MainViewController: BaseViewController, UIKitView {
     
     enum Constants {
         static let refreshScrollSize: CGFloat = 0

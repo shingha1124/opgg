@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class LeagueCellView: BaseView, View {
+final class LeagueCellView: BaseView, UIKitView {
     private let contentView = UIView()
     private let tierImageView = UIImageView()
     private let rankTypeLabel = UILabel()

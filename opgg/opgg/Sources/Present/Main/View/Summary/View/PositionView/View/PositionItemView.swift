@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class PositionItemView: BaseView, View {
+final class PositionItemView: BaseView, UIKitView {
     
     private let positionImage = UIImageView()
     private let winRateLabel = UILabel()

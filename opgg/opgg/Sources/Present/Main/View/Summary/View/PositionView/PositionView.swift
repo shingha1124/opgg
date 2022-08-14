@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class PositionView: BaseView, View {
+final class PositionView: BaseView, UIKitView {
     
     private let title = UILabel()
     private let contentView = UIStackView()

@@ -9,7 +9,7 @@ import RxRelay
 import RxSwift
 import UIKit
 
-final class GamesView: BaseView, View {
+final class GamesView: BaseView, UIKitView {
     
     private let intrinsicTableView = IntrinsicTableView()
 

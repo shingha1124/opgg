@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class TopView: BaseView, View {
+final class TopView: BaseView, UIKitView {
     private let thumbnail = UIImageView()
     private let title = UILabel()
     private let updateButton = UIButton()

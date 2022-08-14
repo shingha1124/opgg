@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class MostView: BaseView, View {
+final class MostView: BaseView, UIKitView {
     
     private let title = UILabel()
     private let contentView = UIStackView()

@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class SummaryView: BaseView, View {
+final class SummaryView: BaseView, UIKitView {
     var disposeBag = DisposeBag()
     
     private let contentView = UIStackView()

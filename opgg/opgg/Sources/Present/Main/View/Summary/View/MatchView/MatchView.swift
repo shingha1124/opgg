@@ -8,7 +8,7 @@
 import RxSwift
 import UIKit
 
-final class MatchView: BaseView, View {
+final class MatchView: BaseView, UIKitView {
     private let matchTitle = UILabel()
     private let matchRecord = UILabel()
     private let kdaLabel = UILabel()
