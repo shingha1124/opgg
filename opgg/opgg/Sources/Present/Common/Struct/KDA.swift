@@ -5,13 +5,12 @@
 //  Created by seongha shin on 2022/08/13.
 //
 
-import UIKit
 import SwiftUI
 
 protocol KDA { }
 
 extension KDA {
-    fileprivate func kdaAttributedString(kill: String, death: String, assist: String, ofSize fontSize: CGFloat) -> NSAttributedString {
+    func kdaAttributedString(kill: String, death: String, assist: String, ofSize fontSize: CGFloat) -> NSAttributedString {
         .appendAttributedString([
             .stringToOption(kill,
                             attributes: [

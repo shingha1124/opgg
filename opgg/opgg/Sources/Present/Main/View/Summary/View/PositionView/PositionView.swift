@@ -22,7 +22,7 @@ struct PositionView: View {
                 .foregroundColor(.coolGrey)
             Spacer(minLength: 10)
             HStack(spacing: 16) {
-                ForEach(viewModel.state.viewModels, id: \.index) { model in
+                ForEach(viewModel.state.cellViewModels, id: \.index) { model in
                     PositionItemView(model)
                 }
             }

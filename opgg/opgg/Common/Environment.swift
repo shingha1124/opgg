@@ -10,4 +10,5 @@ import Foundation
 enum Environment {
     static let leagueViewMaxCount = 2
     static let mostChampionViewMaxCount = 2
+    static let positionViewMaxCount = 1
 }

@@ -59,6 +59,8 @@
 		E030493D28ABDFAD00EADC49 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030493C28ABDFAD00EADC49 /* Array+Extension.swift */; };
 		E030493F28ABEAB900EADC49 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030493E28ABEAB900EADC49 /* Environment.swift */; };
 		E030494128ABED0400EADC49 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030494028ABED0400EADC49 /* View+Extension.swift */; };
+		E030494828ABF84C00EADC49 /* SwiftUIGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030494728ABF84C00EADC49 /* SwiftUIGamesViewModel.swift */; };
+		E030494A28ABF85A00EADC49 /* SwiftUIGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030494928ABF85A00EADC49 /* SwiftUIGamesView.swift */; };
 		E05A9E6D28A6BD0A00A4A012 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */; };
 		E05A9E6F28A6BD1500A4A012 /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */; };
 		E05A9E7128A6BDE800A4A012 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */; };
@@ -133,6 +135,8 @@
 		E030493C28ABDFAD00EADC49 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		E030493E28ABEAB900EADC49 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E030494028ABED0400EADC49 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		E030494728ABF84C00EADC49 /* SwiftUIGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIGamesViewModel.swift; sourceTree = "<group>"; };
+		E030494928ABF85A00EADC49 /* SwiftUIGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIGamesView.swift; sourceTree = "<group>"; };
 		E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
 		E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
@@ -472,13 +476,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E05A9E6B28A6BCE300A4A012 /* Games */ = {
+		E030494628ABF83C00EADC49 /* Temp */ = {
 			isa = PBXGroup;
 			children = (
 				E05A9E7228A6BE2B00A4A012 /* View */,
 				E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */,
 				E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */,
 				E05A9E7928A6C3C900A4A012 /* GamesTableDataSource.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		E05A9E6B28A6BCE300A4A012 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				E030494628ABF83C00EADC49 /* Temp */,
+				E030494728ABF84C00EADC49 /* SwiftUIGamesViewModel.swift */,
+				E030494928ABF85A00EADC49 /* SwiftUIGamesView.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -662,12 +676,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E030494A28ABF85A00EADC49 /* SwiftUIGamesView.swift in Sources */,
 				E029710B28A53D17006E45CA /* BaseTarget.swift in Sources */,
 				E030491D28ABB02C00EADC49 /* LeagueCellView.swift in Sources */,
 				E05A9E6D28A6BD0A00A4A012 /* GamesView.swift in Sources */,
 				E029711028A53E0E006E45CA /* Response+Reactive.swift in Sources */,
 				E030493B28ABD8DD00EADC49 /* PositionViewModel.swift in Sources */,
 				E029711728A54085006E45CA /* Provider.swift in Sources */,
+				E030494828ABF84C00EADC49 /* SwiftUIGamesViewModel.swift in Sources */,
 				E029710128A536D5006E45CA /* BaseViewController.swift in Sources */,
 				E029712328A54268006E45CA /* OpggTarget.swift in Sources */,
 				E030493328ABD48500EADC49 /* MostChampionView.swift in Sources */,

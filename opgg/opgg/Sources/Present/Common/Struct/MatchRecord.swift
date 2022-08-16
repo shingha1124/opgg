@@ -5,7 +5,6 @@
 //  Created by seongha shin on 2022/08/12.
 //
 
-import UIKit
 import SwiftUI
 
 struct MatchRecord {

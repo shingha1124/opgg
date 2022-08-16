@@ -31,7 +31,6 @@ struct SwiftUIMainView: View {
                 summaryView
             }
             .ignoresSafeArea()
-//            .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
         }
         .background(Color.paleGrey)
         .onAppear {

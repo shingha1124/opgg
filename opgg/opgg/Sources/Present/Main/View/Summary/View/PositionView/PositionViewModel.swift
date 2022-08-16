@@ -11,7 +11,7 @@ import RxSwift
 
 final class PositionViewModel: ObservableObject {    
     struct State {
-        var viewModels = [PositionItemViewModel]()
+        var cellViewModels = (0..<Environment.positionViewMaxCount).map { PositionItemViewModel($0) }
     }
     
     struct Update {
@@ -25,13 +25,14 @@ final class PositionViewModel: ObservableObject {
     init() {
         update.positions
             .map { positions in
-                positions.sorted {
+                Array(positions.sorted {
                     MatchRecord($0).winRate > MatchRecord($1).winRate
-                }[safe: 0..<1]
+                }[safe: 0..<Environment.positionViewMaxCount])
             }
-            .map { $0.enumerated().map { PositionItemViewModel(position: $1, at: $0) } }
-            .bind(onNext: { [unowned self] viewModels in
-                self.state.viewModels = viewModels
+            .bind(onNext: { [unowned self] positions in
+                self.state.cellViewModels.enumerated().forEach {
+                    $1.update.position.accept(positions[optional: $0])
+                }
             })
             .disposed(by: disposeBag)
     }

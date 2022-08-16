@@ -17,11 +17,7 @@ struct TopView: View {
     
     var body: some View {
         HStack(spacing: 16 ) {
-            AsyncImage(url: viewModel.state.profileImageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Color.red
-            }
+            AsyncImage(url: viewModel.state.profileImageURL) { $0.resizable() } placeholder: { Color.paleGrey2 }
             .frame(width: 88, height: 88, alignment: .topLeading)
             .clipShape(Capsule())
             .overlay(

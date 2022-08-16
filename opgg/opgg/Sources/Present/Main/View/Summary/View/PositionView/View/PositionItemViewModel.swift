@@ -11,18 +11,35 @@ import RxSwift
 
 final class PositionItemViewModel: ObservableObject {
     struct State {
-        let positionImageName: String
-        let matchRecord: MatchRecord
+        var positionImageName = ""
+        var matchRecord = MatchRecord(wins: 0, losses: 0)
     }
     
+    struct Update {
+        let position = PublishRelay<Position?>()
+    }
+    
+    @Published var state = State()
+    let update = Update()
     let index: Int
-    let state: State
     let disposeBag = DisposeBag()
     
-    init(position: Position, at index: Int) {
+    init(_ index: Int) {
         self.index = index
-        let positionImageName = position.type.imageName
-        let matchRecord = MatchRecord(position)
-        state = State(positionImageName: positionImageName, matchRecord: matchRecord)
+        
+        update.position
+            .compactMap { $0?.type.imageName }
+            .bind(onNext: { [unowned self] imageName in
+                self.state.positionImageName = imageName
+            })
+            .disposed(by: disposeBag)
+        
+        update.position
+            .compactMap { $0 }
+            .map { MatchRecord($0) }
+            .bind(onNext: { [unowned self] matchRecord in
+                self.state.matchRecord = matchRecord
+            })
+            .disposed(by: disposeBag)
     }
 }

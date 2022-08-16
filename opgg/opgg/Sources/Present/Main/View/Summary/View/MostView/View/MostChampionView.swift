@@ -17,11 +17,7 @@ struct MostChampionView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            AsyncImage(url: viewModel.state.championImageUrl) { image in
-                image.resizable()
-            } placeholder: {
-                Color.paleGrey2
-            }
+            AsyncImage(url: viewModel.state.championImageUrl) { $0.resizable() } placeholder: { Color.paleGrey2 }
             .frame(width: 30, height: 30)
             .clipShape(Capsule())
             
@@ -33,8 +29,8 @@ struct MostChampionView: View {
     }
 }
 
-//struct SwiftUIMostChampionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwiftUIMostChampionView(SwiftUIMostChampionViewModel()
-//    }
-//}
+struct MostChampionView_Previews: PreviewProvider {
+    static var previews: some View {
+        MostChampionView(MostChampionViewModel(0))
+    }
+}

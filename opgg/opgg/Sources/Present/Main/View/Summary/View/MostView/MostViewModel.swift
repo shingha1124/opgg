@@ -27,7 +27,7 @@ final class MostViewModel: ObservableObject {
             .map { champions in
                 Array(champions.sorted {
                     MatchRecord($0).winRate > MatchRecord($1).winRate
-                }[safe: 0..<2])
+                }[safe: 0..<Environment.mostChampionViewMaxCount])
             }
             .bind(onNext: { [unowned self] champions in
                 self.state.cellViewModels.enumerated().forEach {

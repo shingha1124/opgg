@@ -17,11 +17,7 @@ struct LeagueCellView: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: viewModel.state.tier.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Color.paleGrey2
-            }
+            AsyncImage(url: viewModel.state.tier.imageURL) { $0.resizable() } placeholder: { Color.paleGrey2 }
             .frame(width: 64, height: 64, alignment: .topLeading)
             .offset(x: 12, y: 0)
             
@@ -61,9 +57,8 @@ struct LeagueCellView: View {
     }
 }
 
-//struct SwiftUILeagueCellView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let league = League(
-//        SwiftUILeagueCellView(SwiftUILeagueCellViewModel())
-//    }
-//}
+struct LeagueCellView_Previews: PreviewProvider {
+    static var previews: some View {
+        LeagueCellView(LeagueCellViewModel(0))
+    }
+}
