@@ -17,6 +17,7 @@ final class GamesViewModel: ViewModel {
     struct State {
         let cellViewModels = PublishRelay<[GamesTableViewCellModel]>()
         let reloadData = PublishRelay<Void>()
+        let insertData = PublishRelay<[IndexPath]>()
     }
     
     struct Update {
@@ -35,6 +36,14 @@ final class GamesViewModel: ViewModel {
             .map { $0.map { GamesTableViewCellModel(game: $0) } }
             .share()
         
+        updateGames
+            .do { [unowned self] viewModels in
+                self.state.cellViewModels.accept(viewModels)
+            }
+            .map { _ in }
+            .bind(to: state.reloadData)
+            .disposed(by: disposeBag)
+        
         let requestMoreGames = action.moreGames
             .withLatestFrom(state.cellViewModels) { $1.last?.state.game.createDate }
             .flatMapLatest { [unowned self] lastDate in
@@ -45,16 +54,19 @@ final class GamesViewModel: ViewModel {
         let moreGames = requestMoreGames
             .compactMap { $0.value?.games }
             .map { $0.map { GamesTableViewCellModel(game: $0) } }
-            .withLatestFrom(state.cellViewModels) { $1 + $0 }
+            .withLatestFrom(state.cellViewModels) { new, prev -> ([GamesTableViewCellModel], [IndexPath]) in
+                let viewModels = prev + new
+                let indexPaths = (prev.count..<prev.count + new.count).map { IndexPath(item: $0, section: 0) }
+                return (viewModels, indexPaths)
+            }
             .share()
         
-        Observable
-            .merge(updateGames, moreGames )
-            .do { [unowned self] viewModels in
+        moreGames
+            .do { [unowned self] viewModels, _ in
                 self.state.cellViewModels.accept(viewModels)
             }
-            .map { _ in }
-            .bind(to: state.reloadData)
+            .map { $1 }
+            .bind(to: state.insertData)
             .disposed(by: disposeBag)
     }
 }

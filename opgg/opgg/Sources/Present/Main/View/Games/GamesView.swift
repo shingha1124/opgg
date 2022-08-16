@@ -22,11 +22,22 @@ final class GamesView: BaseView, View {
             .bind(onNext: dataSource.updateViewModels)
             .disposed(by: disposeBag)
         
-        viewModel.state.reloadData
+        let reloadData = viewModel.state.reloadData
             .do { [unowned self] _ in
                 self.intrinsicTableView.reloadData()
-                self.intrinsicTableView.layoutIfNeeded()
             }
+            .map { _ in }
+            .share()
+        
+        let insertData = viewModel.state.insertData
+            .do { [unowned self] indexPaths in
+                self.intrinsicTableView.insertRows(at: indexPaths, with: .none)
+            }
+            .map { _ in }
+            .share()
+        
+        Observable
+            .merge(reloadData, insertData)
             .observe(on: MainScheduler.asyncInstance)
             .map { [unowned self] _ in
                 self.frame.origin.y + self.intrinsicTableView.intrinsicContentSize.height
