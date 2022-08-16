@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUIMostChampionView: View {
+struct MostChampionView: View {
     
-    @ObservedObject private var viewModel: SwiftUIMostChampionViewModel
+    @ObservedObject private var viewModel: MostChampionViewModel
     
-    init(_ viewModel: SwiftUIMostChampionViewModel) {
+    init(_ viewModel: MostChampionViewModel) {
         self.viewModel = viewModel
     }
     
@@ -29,6 +29,7 @@ struct SwiftUIMostChampionView: View {
                 .font(.system(size: 10))
                 .foregroundColor(viewModel.state.matchRecord.winRateColor)
         }
+        .visibility(viewModel.state.visibility)
     }
 }
 

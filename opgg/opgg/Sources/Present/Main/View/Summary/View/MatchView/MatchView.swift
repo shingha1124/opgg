@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUIMatchView: View {
+struct MatchView: View {
     
-    @ObservedObject private var viewModel: SwiftUIMatchViewModel
+    @ObservedObject private var viewModel: MatchViewModel
     
-    init(_ viewModel: SwiftUIMatchViewModel) {
+    init(_ viewModel: MatchViewModel) {
         self.viewModel = viewModel
     }
     
@@ -72,6 +72,6 @@ struct SwiftUIMatchView: View {
 
 struct SwiftUIMatchView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIMatchView(SwiftUIMatchViewModel())
+        MatchView(MatchViewModel())
     }
 }

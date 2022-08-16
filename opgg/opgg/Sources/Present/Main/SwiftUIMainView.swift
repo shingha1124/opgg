@@ -11,15 +11,15 @@ struct SwiftUIMainView: View {
     
     @ObservedObject private var viewModel: MainViewModel
     
-    private let topView: SwiftUITopView
-    private let leaguesView: SwiftUILeaguesView
-    private let summaryView: SwiftUISummaryView
+    private let topView: TopView
+    private let leaguesView: LeaguesView
+    private let summaryView: SummaryView
     
     init() {
         let viewModel = MainViewModel()
-        topView = SwiftUITopView(viewModel.subViewModel.swiftUITopViewModel)
-        leaguesView = SwiftUILeaguesView(viewModel.subViewModel.swiftUILeaguesViewModel)
-        summaryView = SwiftUISummaryView(viewModel.subViewModel.swiftUISummaryViewModel)
+        topView = TopView(viewModel.subViewModel.swiftUITopViewModel)
+        leaguesView = LeaguesView(viewModel.subViewModel.swiftUILeaguesViewModel)
+        summaryView = SummaryView(viewModel.subViewModel.swiftUISummaryViewModel)
         self.viewModel = viewModel
     }
     

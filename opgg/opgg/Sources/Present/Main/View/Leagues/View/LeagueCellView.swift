@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUILeagueCellView: View {
+struct LeagueCellView: View {
     
-    @ObservedObject private var viewModel: SwiftUILeagueCellViewModel
+    @ObservedObject private var viewModel: LeagueCellViewModel
     
-    init(_ viewModel: SwiftUILeagueCellViewModel) {
+    init(_ viewModel: LeagueCellViewModel) {
         self.viewModel = viewModel
     }
     
@@ -57,6 +57,7 @@ struct SwiftUILeagueCellView: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 4))
         .shadow(color: .steelGrey.opacity(0.2), radius: 6, x: 0, y: 4)
+        .visibility(viewModel.state.visibility)
     }
 }
 

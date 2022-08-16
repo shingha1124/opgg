@@ -9,25 +9,17 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class SwiftUISummaryViewModel: ObservableObject {
-    struct Action {
-    }
-    
-    struct State {
-    }
-    
+final class SummaryViewModel: ObservableObject {
     struct SubViewModel {
-        let match = SwiftUIMatchViewModel()
-        let most = SwiftUIMostViewModel()
-        let position = SwiftUIPositionViewModel()
+        let match = MatchViewModel()
+        let most = MostViewModel()
+        let position = PositionViewModel()
     }
     
     struct Update {
         let matches = PublishRelay<Matches>()
     }
     
-    let action = Action()
-    let state = State()
     let subViewModel = SubViewModel()
     let update = Update()
     let disposeBag = DisposeBag()

@@ -1,5 +1,5 @@
 //
-//  SwiftUIMostView.swift
+//  SwiftUIPositionView.swift
 //  opgg
 //
 //  Created by seongha shin on 2022/08/16.
@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-struct SwiftUIMostView: View {
+struct PositionView: View {
     
-    @ObservedObject private var viewModel: SwiftUIMostViewModel
+    @ObservedObject private var viewModel: PositionViewModel
     
-    init(_ viewModel: SwiftUIMostViewModel) {
+    init(_ viewModel: PositionViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("Most Champion".localized())
+            Text("Position".localized())
                 .font(.appleSDGothicNeo(ofSize: 10))
                 .foregroundColor(.coolGrey)
-            Spacer(minLength: 8)
+            Spacer(minLength: 10)
             HStack(spacing: 16) {
                 ForEach(viewModel.state.viewModels, id: \.index) { model in
-                    SwiftUIMostChampionView(model)
+                    PositionItemView(model)
                 }
             }
         }
@@ -31,8 +31,8 @@ struct SwiftUIMostView: View {
     }
 }
 
-struct SwiftUIMostView_Previews: PreviewProvider {
+struct SwiftUIPositionView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIMostView(SwiftUIMostViewModel())
+        PositionView(PositionViewModel())
     }
 }

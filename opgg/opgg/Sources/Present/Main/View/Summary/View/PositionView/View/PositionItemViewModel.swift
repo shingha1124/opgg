@@ -9,17 +9,13 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class SwiftUIPositionItemViewModel: ObservableObject {
-    struct Action {
-    }
-    
+final class PositionItemViewModel: ObservableObject {
     struct State {
         let positionImageName: String
         let matchRecord: MatchRecord
     }
     
     let index: Int
-    let action = Action()
     let state: State
     let disposeBag = DisposeBag()
     

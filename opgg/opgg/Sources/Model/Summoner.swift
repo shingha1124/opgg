@@ -35,25 +35,30 @@ struct LadderRank: Decodable {
     let rank, rankPercentOfTop: Int
 }
 
-struct League: Decodable {
+struct League: Decodable, Equatable {
     let hasResults: Bool
     let wins, losses: Int
     let tierRank: PreviousTier
 }
 
-struct PreviousTier: Decodable {
+struct PreviousTier: Decodable, Equatable {
     let rankType: RankType
-    let tier, tierDivision, string: String
-    let shortString, division: String
-    let imageURL: URL
-    let lp, tierRankPoint: Int
-    let season: Int?
+    let tier: String
+    let imageURL: URL?
+    let lp: Int
 
+    init() {
+        rankType = .solo
+        tier = ""
+        imageURL = nil
+        lp = 0
+    }
+    
     enum CodingKeys: String, CodingKey {
-        case tier, tierDivision, string, shortString, division
+        case tier
         case rankType = "name"
         case imageURL = "imageUrl"
-        case lp, tierRankPoint, season
+        case lp
     }
 }
 

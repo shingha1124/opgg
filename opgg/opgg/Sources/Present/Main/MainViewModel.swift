@@ -15,22 +15,15 @@ final class MainViewModel: ObservableObject {
         let moreGames = PublishRelay<Void>()
     }
     
-    struct State {
-    }
-    
     struct SubViewModel {
-        let topView = TopViewModel()
-        let previousTier = LeaguesViewModel()
-        let summary = SummaryViewModel()
         let games = GamesViewModel()
         
-        let swiftUITopViewModel = SwiftUITopViewModel()
-        let swiftUILeaguesViewModel = SwiftUILeaguesViewModel()
-        let swiftUISummaryViewModel = SwiftUISummaryViewModel()
+        let swiftUITopViewModel = TopViewModel()
+        let swiftUILeaguesViewModel = LeaguesViewModel()
+        let swiftUISummaryViewModel = SummaryViewModel()
     }
     
     let action = Action()
-    let state = State()
     let subViewModel = SubViewModel()
     let disposeBag = DisposeBag()
     
@@ -62,7 +55,7 @@ final class MainViewModel: ObservableObject {
             .map { $0.leagues }
             .bind(to: subViewModel.swiftUILeaguesViewModel.update.leagues)
             .disposed(by: disposeBag)
-//
+
         let requestMatchs = requestData
             .flatMapLatest { [unowned self] _ in
                 self.opggRepository.requestMatches(lastMatch: nil)

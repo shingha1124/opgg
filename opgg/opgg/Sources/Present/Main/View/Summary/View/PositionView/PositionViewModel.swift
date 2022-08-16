@@ -1,5 +1,5 @@
 //
-//  SwiftUIMostViewModel.swift
+//  SwiftUIPositionViewModel.swift
 //  opgg
 //
 //  Created by seongha shin on 2022/08/16.
@@ -9,31 +9,27 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class SwiftUIMostViewModel: ObservableObject {
-    struct Action {
-    }
-    
+final class PositionViewModel: ObservableObject {    
     struct State {
-        var viewModels = [SwiftUIMostChampionViewModel]()
+        var viewModels = [PositionItemViewModel]()
     }
     
     struct Update {
-        let champions = PublishRelay<[Champion]>()
+        let positions = PublishRelay<[Position]>()
     }
     
-    let action = Action()
     @Published var state = State()
     let update = Update()
     let disposeBag = DisposeBag()
     
     init() {
-        update.champions
-            .map { champions in
-                champions.sorted {
+        update.positions
+            .map { positions in
+                positions.sorted {
                     MatchRecord($0).winRate > MatchRecord($1).winRate
-                }[safe: 0..<2]
+                }[safe: 0..<1]
             }
-            .map { $0.enumerated().map { SwiftUIMostChampionViewModel(champion: $1, at: $0) } }
+            .map { $0.enumerated().map { PositionItemViewModel(position: $1, at: $0) } }
             .bind(onNext: { [unowned self] viewModels in
                 self.state.viewModels = viewModels
             })

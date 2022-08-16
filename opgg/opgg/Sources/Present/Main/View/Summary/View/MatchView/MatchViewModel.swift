@@ -9,11 +9,7 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class SwiftUIMatchViewModel: ObservableObject {
-    
-    struct Action {
-    }
-    
+final class MatchViewModel: ObservableObject {
     struct State {
         var gamePlayCount: Int = 0
         var matchRecord = MatchRecord(wins: 0, losses: 0)
@@ -24,7 +20,6 @@ final class SwiftUIMatchViewModel: ObservableObject {
         let summary = PublishRelay<Summary>()
     }
     
-    let action = Action()
     @Published var state = State()
     let update = Update()
     let disposeBag = DisposeBag()

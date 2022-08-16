@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUITopView: View {
+struct TopView: View {
     
-    @ObservedObject private var viewModel: SwiftUITopViewModel
+    @ObservedObject private var viewModel: TopViewModel
     
-    init(_ viewModel: SwiftUITopViewModel) {
+    init(_ viewModel: TopViewModel) {
         self.viewModel = viewModel
     }
     
@@ -57,6 +57,6 @@ struct SwiftUITopView: View {
 
 struct SwiftUITopView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUITopView(SwiftUITopViewModel())
+        TopView(TopViewModel())
     }
 }

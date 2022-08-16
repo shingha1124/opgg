@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUIPositionItemView: View {
+struct PositionItemView: View {
     
-    @ObservedObject private var viewModel: SwiftUIPositionItemViewModel
+    @ObservedObject private var viewModel: PositionItemViewModel
     
-    init(_ viewModel: SwiftUIPositionItemViewModel) {
+    init(_ viewModel: PositionItemViewModel) {
         self.viewModel = viewModel
     }
     

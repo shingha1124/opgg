@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUILeaguesView: View {
+struct LeaguesView: View {
     
-    @ObservedObject private var viewModel: SwiftUILeaguesViewModel
+    @ObservedObject private var viewModel: LeaguesViewModel
     
-    init(_ viewModel: SwiftUILeaguesViewModel) {
+    init(_ viewModel: LeaguesViewModel) {
         self.viewModel = viewModel
     }
     
@@ -20,7 +20,7 @@ struct SwiftUILeaguesView: View {
         return ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
                 ForEach(viewModel.state.cellViewModels, id: \.index) { viewModel in
-                    SwiftUILeagueCellView(viewModel)
+                    LeagueCellView(viewModel)
                         .frame(width: screenSize.width - 48, height: nil)
                 }
             }
@@ -31,6 +31,6 @@ struct SwiftUILeaguesView: View {
 
 struct SwiftUILeaguesView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUILeaguesView(SwiftUILeaguesViewModel())
+        LeaguesView(LeaguesViewModel())
     }
 }

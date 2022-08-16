@@ -8,25 +8,23 @@
 import Foundation
 import RxRelay
 import RxSwift
-import SwiftUI
 
-final class SwiftUITopViewModel: ObservableObject {
+final class TopViewModel: ObservableObject {
     struct Action {
         let update = PublishRelay<Void>()
     }
     
     struct State {
-        var profileImageURL: URL? = nil
+        var profileImageURL: URL?
         var level = 0
     }
     
     struct Update {
         let summoner = PublishRelay<Summoner>()
     }
-        
-    
-    let action = Action()
+     
     @Published var state = State()
+    let action = Action()
     let update = Update()
     let disposeBag = DisposeBag()
     
