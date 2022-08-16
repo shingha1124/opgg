@@ -14,17 +14,29 @@ final class MostChampionViewModel: ViewModel {
     }
     
     struct State {
-        let championImageUrl: URL
-        let matchRecord: MatchRecord
+        let championImageUrl = PublishRelay<URL>()
+        let matchRecord = PublishRelay<MatchRecord>()
+    }
+    
+    struct Update {
+        let champion = PublishRelay<Champion?>()
     }
     
     let action = Action()
-    let state: State
+    let state = State()
+    let update = Update()
     let disposeBag = DisposeBag()
     
-    init(champion: Champion) {
-        let championImageUrl = champion.imageURL
-        let matchRecord = MatchRecord(champion)
-        state = State(championImageUrl: championImageUrl, matchRecord: matchRecord)
+    init() {
+        update.champion
+            .compactMap { $0?.imageURL }
+            .bind(to: state.championImageUrl)
+            .disposed(by: disposeBag)
+        
+        update.champion
+            .compactMap { $0 }
+            .map { MatchRecord($0) }
+            .bind(to: state.matchRecord)
+            .disposed(by: disposeBag)
     }
 }

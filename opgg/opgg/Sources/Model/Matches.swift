@@ -14,7 +14,7 @@ struct Matches: Decodable {
     let summary: Summary
 }
 
-struct Champion: Decodable {
+struct Champion: Decodable, Equatable {
     let id: Int
     let key, name: String
     let imageURL: URL
@@ -161,7 +161,7 @@ enum TierRankShort: String, Decodable {
     case c1 = "C1"
 }
 
-struct Position: Decodable {
+struct Position: Decodable, Equatable {
     let games, wins, losses: Int
     let type: PositionType
     let positionName: String

@@ -28,6 +28,11 @@ final class PositionViewModel: ViewModel {
     
     init() {
         update.positions
+            .map { positions in
+                positions.sorted {
+                    MatchRecord($0).winRate > MatchRecord($1).winRate
+                }[safe: 0..<Environment.positionViewMaxCount]
+            }
             .map { $0.map { PositionItemViewModel(position: $0) } }
             .bind(to: state.viewModels)
             .disposed(by: disposeBag)

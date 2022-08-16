@@ -16,10 +16,20 @@ final class MostChampionView: BaseView, View {
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: MostChampionViewModel) {
-        championImage.setImage(viewModel.state.championImageUrl, placeholder: UIImage(color: .paleGrey2))
-        let matchRecord = viewModel.state.matchRecord
-        winRateLabel.text = "\(matchRecord.winRate)%"
-        winRateLabel.textColor = matchRecord.winRateColor
+        viewModel.state.championImageUrl
+            .map { ($0, UIImage(color: .paleGrey2)) }
+            .bind(onNext: championImage.setImage)
+            .disposed(by: disposeBag)
+        
+        viewModel.state.matchRecord
+            .map { "\($0.winRate)%" }
+            .bind(to: winRateLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.state.matchRecord
+            .map { $0.winRateColor }
+            .bind(to: winRateLabel.rx.textColor)
+            .disposed(by: disposeBag)
     }
     
     override func attribute() {

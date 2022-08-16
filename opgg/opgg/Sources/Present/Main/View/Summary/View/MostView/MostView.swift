@@ -17,8 +17,11 @@ final class MostView: BaseView, View {
     
     func bind(to viewModel: MostViewModel) {
         viewModel.state.viewModels
-            .bind(onNext: createItemView)
-            .disposed(by: disposeBag)
+            .forEach { viewModels in
+                let view = MostChampionView()
+                view.viewModel = viewModels
+                contentView.addArrangedSubview(view)
+            }
     }
     
     override func attribute() {

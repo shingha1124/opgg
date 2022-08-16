@@ -14,7 +14,7 @@ final class MostViewModel: ViewModel {
     }
     
     struct State {
-        let viewModels = PublishRelay<[MostChampionViewModel]>()
+        let viewModels = (0..<Environment.mostChampionViewMaxCount).map { _ in MostChampionViewModel() }
     }
     
     struct Update {
@@ -28,8 +28,16 @@ final class MostViewModel: ViewModel {
     
     init() {
         update.champions
-            .map { $0.map { MostChampionViewModel(champion: $0) } }
-            .bind(to: state.viewModels)
+            .map { champions in
+                Array(champions.sorted {
+                    MatchRecord($0).winRate > MatchRecord($1).winRate
+                }[safe: 0..<Environment.mostChampionViewMaxCount])
+            }
+            .bind(onNext: { [unowned self] champions in
+                self.state.viewModels.enumerated().forEach {
+                    $1.update.champion.accept(champions[optional: $0])
+                }
+            })
             .disposed(by: disposeBag)
     }
 }

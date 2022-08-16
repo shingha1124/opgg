@@ -56,6 +56,8 @@
 		E029717328A6425C006E45CA /* MatchRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717228A6425C006E45CA /* MatchRecord.swift */; };
 		E029717A28A69CB1006E45CA /* MostChampionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717928A69CB1006E45CA /* MostChampionView.swift */; };
 		E029717C28A69CB9006E45CA /* MostChampionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */; };
+		E030494328ABF27C00EADC49 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030494228ABF27C00EADC49 /* Array+Extension.swift */; };
+		E030494528ABF2E600EADC49 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030494428ABF2E600EADC49 /* Environment.swift */; };
 		E05A9E6D28A6BD0A00A4A012 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */; };
 		E05A9E6F28A6BD1500A4A012 /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */; };
 		E05A9E7128A6BDE800A4A012 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */; };
@@ -127,6 +129,8 @@
 		E029717228A6425C006E45CA /* MatchRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecord.swift; sourceTree = "<group>"; };
 		E029717928A69CB1006E45CA /* MostChampionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionView.swift; sourceTree = "<group>"; };
 		E029717B28A69CB9006E45CA /* MostChampionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostChampionViewModel.swift; sourceTree = "<group>"; };
+		E030494228ABF27C00EADC49 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		E030494428ABF2E600EADC49 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E05A9E6C28A6BD0A00A4A012 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		E05A9E6E28A6BD1500A4A012 /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
 		E05A9E7028A6BDE800A4A012 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				E029710528A53700006E45CA /* Log.swift */,
 				E029711828A541BA006E45CA /* Inject.swift */,
 				E029711A28A541CA006E45CA /* Container.swift */,
+				E030494428ABF2E600EADC49 /* Environment.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				E029715C28A5DACF006E45CA /* Int+Extension.swift */,
 				E0C51F3F28A6B6420087CA18 /* String+Extension.swift */,
 				E05A9E8128A7E35100A4A012 /* UIImage+Extension.swift */,
+				E030494228ABF27C00EADC49 /* Array+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -670,6 +676,7 @@
 				E029712328A54268006E45CA /* OpggTarget.swift in Sources */,
 				E029710628A53700006E45CA /* Log.swift in Sources */,
 				E029712928A544CD006E45CA /* Result+Extension.swift in Sources */,
+				E030494328ABF27C00EADC49 /* Array+Extension.swift in Sources */,
 				E029715628A5CA8A006E45CA /* UIStackView+Extension.swift in Sources */,
 				E029713B28A55197006E45CA /* SummaryView.swift in Sources */,
 				E029716128A62E39006E45CA /* MatchView.swift in Sources */,
@@ -691,6 +698,7 @@
 				E029714228A558CA006E45CA /* PaddingLabel.swift in Sources */,
 				E029715D28A5DACF006E45CA /* Int+Extension.swift in Sources */,
 				E0C51F4028A6B6420087CA18 /* String+Extension.swift in Sources */,
+				E030494528ABF2E600EADC49 /* Environment.swift in Sources */,
 				E05A9E8028A7DECA00A4A012 /* GameItemsView.swift in Sources */,
 				E05A9E7128A6BDE800A4A012 /* IntrinsicTableView.swift in Sources */,
 				E029710E28A53D98006E45CA /* Response.swift in Sources */,
