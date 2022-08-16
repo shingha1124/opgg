@@ -28,6 +28,8 @@ final class TopViewModel: ViewModel {
     let update = Update()
     let disposeBag = DisposeBag()
     
+    let testViewModel = SwiftUITopViewModel()
+    
     init() {
         update.summoner
             .map { $0.profileImageURL }
@@ -38,5 +40,11 @@ final class TopViewModel: ViewModel {
             .map { $0.level }
             .bind(to: state.level)
             .disposed(by: disposeBag)
+        
+//        update.summoner
+//            .bind(onNext: { [unowned self] summoner in
+//                self.testViewModel.update.summoner.send(summoner)
+//            })
+//            .disposed(by: disposeBag)
     }
 }

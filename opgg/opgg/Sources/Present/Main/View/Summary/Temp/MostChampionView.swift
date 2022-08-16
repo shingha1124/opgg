@@ -19,7 +19,7 @@ final class MostChampionView: BaseView, UIKitView {
         championImage.setImage(viewModel.state.championImageUrl, placeholder: UIImage(color: .paleGrey2))
         let matchRecord = viewModel.state.matchRecord
         winRateLabel.text = "\(matchRecord.winRate)%"
-        winRateLabel.textColor = matchRecord.winRateColor
+        winRateLabel.textColor = matchRecord.winRateUIColor
     }
     
     override func attribute() {

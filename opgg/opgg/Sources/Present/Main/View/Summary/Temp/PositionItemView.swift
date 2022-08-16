@@ -19,7 +19,7 @@ final class PositionItemView: BaseView, UIKitView {
         positionImage.image = UIImage(named: viewModel.state.positionImageName)
         let matchRecord = viewModel.state.matchRecord
         winRateLabel.text = "\(matchRecord.winRate)%"
-        winRateLabel.textColor = matchRecord.winRateColor
+        winRateLabel.textColor = matchRecord.winRateUIColor
     }
     
     override func attribute() {

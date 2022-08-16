@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol KDA { }
 
@@ -47,6 +48,13 @@ struct MatchKDA: KDA {
     let assists: Float
     let kdaRate: Float
     
+    init() {
+        kills = 0
+        deaths = 0
+        assists = 0
+        kdaRate = 0
+    }
+    
     init(_ summary: Summary) {
         let total = Float(summary.wins + summary.losses)
         kills = Float(summary.kills) / total
@@ -87,7 +95,20 @@ struct GameKDA: KDA {
 }
 
 extension MatchKDA {
-    var kdaRateColor: UIColor {
+    var kdaRateUIColor: UIColor {
+        switch kdaRate {
+        case let value where value < 3:
+            return .steelGrey
+        case let value where value < 4:
+            return .greenBlue
+        case let value where value < 5:
+            return .softBlue
+        default:
+            return .darkishPink
+        }
+    }
+    
+    var kdaRateColor: Color {
         switch kdaRate {
         case let value where value < 3:
             return .steelGrey

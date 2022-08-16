@@ -5,17 +5,16 @@
 //  Created by seongha shin on 2022/08/11.
 //
 
+import SwiftUI
 import Then
-import UIKit
 
 final class RootWindow: UIWindow {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.do {
-            let viewModel = MainViewModel()
-            let viewController = MainViewController()
-            viewController.viewModel = viewModel
+            let mainView = SwiftUIMainView()
+            let viewController = UIHostingController(rootView: mainView)
             $0.rootViewController = viewController
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 struct MatchRecord {
     let wins: Int
@@ -41,7 +42,10 @@ struct MatchRecord {
 }
 
 extension MatchRecord {
-    var winRateColor: UIColor {
+    var winRateUIColor: UIColor {
+        winRate >= 60 ? .darkishPink : .steelGrey
+    }
+    var winRateColor: Color {
         winRate >= 60 ? .darkishPink : .steelGrey
     }
     

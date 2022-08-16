@@ -7,6 +7,7 @@
 
 import RxSwift
 import UIKit
+import SwiftUI
 
 final class TopView: BaseView, UIKitView {
     private let thumbnail = UIImageView()
@@ -17,6 +18,8 @@ final class TopView: BaseView, UIKitView {
     var disposeBag = DisposeBag()
     
     func bind(to viewModel: TopViewModel) {
+//        swiftUITopView.viewModel = viewModel.testViewModel
+        
         viewModel.state.profileImageURL
             .bind(onNext: thumbnail.setImage)
             .disposed(by: disposeBag)

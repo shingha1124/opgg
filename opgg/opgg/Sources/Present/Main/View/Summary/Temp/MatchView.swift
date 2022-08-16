@@ -45,7 +45,7 @@ final class MatchView: BaseView, UIKitView {
             .disposed(by: disposeBag)
         
         viewModel.state.matchKDA
-            .map { $0.kdaRateColor }
+            .map { $0.kdaRateUIColor }
             .bind(to: kdaRate.rx.textColor)
             .disposed(by: disposeBag)
         
@@ -55,7 +55,7 @@ final class MatchView: BaseView, UIKitView {
             .disposed(by: disposeBag)
         
         viewModel.state.matchRecord
-            .map { $0.winRateColor }
+            .map { $0.winRateUIColor }
             .bind(to: winRate.rx.textColor)
             .disposed(by: disposeBag)
     }
