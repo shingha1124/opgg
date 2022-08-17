@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (5.6.1)
-  - Differentiator (5.0.0)
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
@@ -10,13 +9,6 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
-  - RxDataSources (5.0.0):
-    - Differentiator (~> 5.0)
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
-  - RxGesture (4.0.4):
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -29,9 +21,6 @@ DEPENDENCIES:
   - Alamofire
   - Kingfisher (~> 5.0)
   - RxAppState (~> 1.6)
-  - RxCocoa (= 6.5.0)
-  - RxDataSources
-  - RxGesture
   - RxSwift (= 6.5.0)
   - SnapKit (~> 5.6.0)
   - SwiftLint
@@ -41,12 +30,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Differentiator
     - Kingfisher
     - RxAppState
     - RxCocoa
-    - RxDataSources
-    - RxGesture
     - RxRelay
     - RxSwift
     - SnapKit
@@ -56,12 +42,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
-  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   RxAppState: 9c34f951d4ff8b9034f84016fe766202365bceb2
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
-  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
@@ -69,6 +52,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 87cb6245878daa9be88bcc2dd08dec4f246e6f0f
+PODFILE CHECKSUM: 538f884490c59b8a71bc000fbfc8676520248e81
 
 COCOAPODS: 1.11.2
