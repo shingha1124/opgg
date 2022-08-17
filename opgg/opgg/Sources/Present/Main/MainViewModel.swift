@@ -12,7 +12,7 @@ import RxSwift
 final class MainViewModel: ObservableObject {
     struct Action {
         let onAppear = PublishRelay<Void>()
-        let moreGames = PublishRelay<Void>()
+        let loadMore = PublishRelay<Void>()
         let changeGamesViewHeight = PublishRelay<CGFloat>()
         let changeScrollHeight = PublishRelay<CGFloat>()
         let changeScrollOffsetHeight = PublishRelay<CGFloat>()
@@ -81,36 +81,5 @@ final class MainViewModel: ObservableObject {
             .map { $0.games }
             .bind(to: subViewModel.games.update.updateGames)
             .disposed(by: disposeBag)
-
-        action.moreGames
-            .skip(1)
-            .bind(to: subViewModel.games.update.moreGames)
-            .disposed(by: disposeBag)
-        
-//        Observable
-//            .combineLatest(
-//                action.changeGamesViewHeight.asObservable(),
-//                action.changeScrollHeight.asObservable(),
-//                action.changeScrollOffsetHeight.asObservable()
-//            )
-////            .debounce(.milliseconds(200), scheduler: MainScheduler.asyncInstance)
-//            .filter { gamesHeight, contentHeight, offsetHeight in
-//                if offsetHeight.isZero {
-//                    return false
-//                }
-//                let originY = contentHeight - gamesHeight
-//                let scrollOffset = offsetHeight * -1 + originY
-//                print(gamesHeight - scrollOffset)
-//                return gamesHeight - scrollOffset < 80
-//            }
-//            .map { _ in }
-//            .bind(to: subViewModel.games.update.moreGames)
-//            .disposed(by: disposeBag)
-//        
-//        subViewModel.games.state.updatedGames
-//            .bind(onNext: { [unowned self] lastIndex in
-//                self.state.updatedGames = lastIndex
-//            })
-//            .disposed(by: disposeBag)
     }
 }

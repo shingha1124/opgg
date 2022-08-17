@@ -27,15 +27,15 @@ struct MainView: View {
     }
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 0) {
                 topView
                 leaguesView
                 summaryView
                 gamesView
             }
         }
-        .background(Color.paleGrey)
+        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         .onAppear {
             viewModel.action.onAppear.accept(())
         }

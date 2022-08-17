@@ -28,6 +28,39 @@ struct Game: Decodable {
     let stats: Stats
     let peak: [URL]
     let isWin: Bool
+    
+    
+    init() {
+        //swiftlint: disable force_unwrapping
+        self.champion = GameChampion(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/champion/Lucian.png")!, level: 9)
+        let spells = [
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/spell/SummonerTeleport.png")!),
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png")!)
+        ]
+        self.spells = spells
+        
+        let items = [
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/item/1026.png")!),
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/item/1026.png")!),
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/item/1026.png")!),
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/item/1026.png")!),
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/item/1026.png")!),
+            Item(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/item/1026.png")!)
+        ]
+        self.items = items
+        self.createDate = 1660709221
+        self.gameLength = 3078
+        self.gameType = .aram
+        self.stats = Stats(general: General())
+        
+        let peak = [
+            URL(string: "https://opgg-static.akamaized.net/images/lol/perk/8229.png")!,
+            URL(string: "https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png")!
+        ]
+        
+        self.peak = peak
+        isWin = true
+    }
 }
 
 struct GameChampion: Decodable {
@@ -69,6 +102,15 @@ struct General: Decodable {
     let contributionForKillRate: String
     let largestMultiKillString: LargestMultiKillString
     let opScoreBadge: OpScoreBadge
+    
+    init() {
+        self.kill = 0
+        self.death = 0
+        self.assist = 0
+        self.contributionForKillRate = "47%"
+        self.largestMultiKillString = .doubleKill
+        self.opScoreBadge = .ace
+    }
 }
 
 @frozen

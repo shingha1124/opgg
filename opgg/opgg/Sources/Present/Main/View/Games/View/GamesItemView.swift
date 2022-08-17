@@ -49,6 +49,10 @@ struct GamesItemView: View {
                 Text(game.gameType.name)
                     .font(.appleSDGothicNeo(ofSize: 12))
                     .foregroundColor(.coolGrey)
+                
+                Text("\(viewModel.index)")
+                    .font(.appleSDGothicNeo(ofSize: 12))
+                    .foregroundColor(.black)
 
                 let (value, suffix) = game.createDateToValue
                 HStack(spacing: 2) {
@@ -76,6 +80,7 @@ struct GamesItemView: View {
             .padding(16)
         }
         .background(Color.white)
+        .padding(0)
     }
 }
 

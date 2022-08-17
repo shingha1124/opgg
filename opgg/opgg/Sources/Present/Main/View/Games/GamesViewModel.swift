@@ -10,18 +10,21 @@ import RxRelay
 import RxSwift
 
 final class GamesViewModel: ObservableObject {
+    struct Action {
+        let loadMore = PublishRelay<Void>()
+    }
+    
     struct State {
         var viewModels = [GamesItemViewModel]()
-        var isLoading = false
-        let updatedGames = PublishRelay<Int>()
+        var isLoading = BehaviorRelay<Bool>(value: false)
     }
     
     struct Update {
         let updateGames = PublishRelay<[Game]>()
-        let moreGames = PublishRelay<Void>()
     }
     
     @Published var state = State()
+    let action = Action()
     let update = Update()
     let disposeBag = DisposeBag()
     
@@ -35,12 +38,12 @@ final class GamesViewModel: ObservableObject {
             })
             .disposed(by: disposeBag)
         
-        let requestMoreGames = update.moreGames
+        let requestMoreGames = action.loadMore
             .filter { [unowned self] _ in
-                !self.state.isLoading
+                !self.state.isLoading.value
             }
             .do { [unowned self] _ in
-                self.state.isLoading = true
+                self.state.isLoading.accept(true)
             }
             .compactMap { [unowned self] _ in
                 self.state.viewModels.last?.state.game.createDate
@@ -48,24 +51,20 @@ final class GamesViewModel: ObservableObject {
             .flatMapLatest { [unowned self] lastDate in
                 self.opggRepository.requestMatches(lastMatch: lastDate)
             }
+            .do { [unowned self] _ in
+                self.state.isLoading.accept(false)
+            }
             .share()
         
         requestMoreGames
             .compactMap { $0.value?.games }
-            .do { [unowned self] new in
-                let newGames = new.enumerated().map {
-                    GamesItemViewModel( $0.element, at: self.state.viewModels.count + $0.offset)
+            .bind(onNext: { [unowned self] new in
+                let prevCount = self.state.viewModels.count
+                let newGames = new.enumerated().map { index, game in
+                    GamesItemViewModel( game, at: prevCount + index)
                 }
                 self.state.viewModels += newGames
-            }
-            .delay(.seconds(2), scheduler: MainScheduler.asyncInstance)
-            .do { [unowned self] _ in
-                self.state.isLoading = false
-            }
-            .map { [unowned self] new in
-                self.state.viewModels.count - new.count
-            }
-            .bind(to: state.updatedGames)
+            })
             .disposed(by: disposeBag)
     }
 }
