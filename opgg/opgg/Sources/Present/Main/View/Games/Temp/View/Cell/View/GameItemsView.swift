@@ -73,9 +73,9 @@ final class GameItemsView: BaseView {
         var playerItems = items
         let optionItem = playerItems.removeLast()
         playerItems.enumerated().forEach {
-            itemImageViews[$0].setImage($1.imageURL)
+            itemImageViews[$0].setImage($1.imageUrl)
         }
         
-        optionItemView.setImage(optionItem.imageURL)
+        optionItemView.setImage(optionItem.imageUrl)
     }
 }

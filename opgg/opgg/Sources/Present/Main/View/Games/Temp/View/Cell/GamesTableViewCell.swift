@@ -48,7 +48,7 @@ final class GamesTableViewCell: BaseTableViewCell, UIKitView {
         let multiKill = game.stats.general.largestMultiKillString
         multikillLabel.text = multiKill.name
         multikillLabel.isHidden = multiKill == .empty
-        multikillLabel.textColor = multiKill.color
+        multikillLabel.textColor = multiKill.uiColor
         multikillLabel.layer.borderColor = multiKill.color.cgColor
     }
     

@@ -5,6 +5,7 @@
 //  Created by seongha shin on 2022/08/11.
 //
 
+import SwiftUI
 import UIKit
 
 struct Matches: Decodable {
@@ -15,51 +16,24 @@ struct Matches: Decodable {
 }
 
 struct Champion: Decodable, Equatable {
-    let id: Int
-    let key, name: String
-    let imageURL: URL
-    let games, kills, deaths, assists: Int
+    let imageUrl: URL
+    let kills, deaths, assists: Int
     let wins, losses: Int
-
-    enum CodingKeys: String, CodingKey {
-        case id, key, name
-        case imageURL = "imageUrl"
-        case games, kills, deaths, assists, wins, losses
-    }
 }
 
 struct Game: Decodable {
-    let mmr: Int?
     let champion: GameChampion
     let spells, items: [Item]
-    let needRenew: Bool
-    let gameID: String
     let createDate, gameLength: Int
     let gameType: GameType
-    let summonerID: String
-    let summonerName: String
-    let tierRankShort: TierRankShort
     let stats: Stats
     let peak: [URL]
     let isWin: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case mmr, champion, spells, items, needRenew
-        case gameID = "gameId"
-        case createDate, gameLength, gameType
-        case summonerID = "summonerId"
-        case summonerName, tierRankShort, stats, peak, isWin
-    }
 }
 
 struct GameChampion: Decodable {
-    let imageURL: URL
+    let imageUrl: URL
     let level: Int
-
-    enum CodingKeys: String, CodingKey {
-        case imageURL = "imageUrl"
-        case level
-    }
 }
 
 @frozen
@@ -83,26 +57,17 @@ enum GameType: String, Decodable {
     }
 }
 
-struct Item: Decodable {
-    let imageURL: URL
-
-    enum CodingKeys: String, CodingKey {
-        case imageURL = "imageUrl"
-    }
+struct Item: Decodable, Equatable {
+    let imageUrl: URL
 }
 
 struct Stats: Decodable {
     let general: General
-    let ward: Ward
 }
 
 struct General: Decodable {
     let kill, death, assist: Int
-    let kdaString: String
-    let cs: Int
-    let csPerMin: Double
     let contributionForKillRate: String
-    let goldEarned, totalDamageDealtToChampions: Int
     let largestMultiKillString: LargestMultiKillString
     let opScoreBadge: OpScoreBadge
 }
@@ -121,7 +86,16 @@ enum LargestMultiKillString: String, Decodable {
         }
     }
     
-    var color: UIColor {
+    var uiColor: UIColor {
+        switch self {
+        case .doubleKill:
+            return .darkishPink
+        case .empty:
+            return .clear
+        }
+    }
+    
+    var color: Color {
         switch self {
         case .doubleKill:
             return .darkishPink
@@ -141,7 +115,18 @@ enum OpScoreBadge: String, Decodable {
         rawValue
     }
     
-    var color: UIColor {
+    var uiColor: UIColor {
+        switch self {
+        case .ace:
+            return .periwinkle
+        case .mvp:
+            return .orangeYellow
+        case .empty:
+            return .clear
+        }
+    }
+    
+    var color: Color {
         switch self {
         case .ace:
             return .periwinkle
@@ -153,21 +138,12 @@ enum OpScoreBadge: String, Decodable {
     }
 }
 
-struct Ward: Codable {
-    let sightWardsBought, visionWardsBought: Int
-}
-
-enum TierRankShort: String, Decodable {
-    case c1 = "C1"
-}
-
 struct Position: Decodable, Equatable {
     let games, wins, losses: Int
     let type: PositionType
-    let positionName: String
     
     enum CodingKeys: String, CodingKey {
-        case games, wins, losses, positionName
+        case games, wins, losses
         case type = "position"
     }
 }

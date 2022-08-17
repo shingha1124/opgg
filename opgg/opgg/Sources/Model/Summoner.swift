@@ -14,29 +14,11 @@ struct SummonerInfo: Decodable {
 struct Summoner: Decodable {
     let name: String
     let level: Int
-    let profileImageURL: URL
-    let profileBorderImageURL: String
-    let url: String
+    let profileImageUrl: URL
     let leagues: [League]
-    let previousTiers: [PreviousTier]
-    let ladderRank: LadderRank
-    let profileBackgroundImageURL: String
-
-    enum CodingKeys: String, CodingKey {
-        case name, level
-        case profileImageURL = "profileImageUrl"
-        case profileBorderImageURL = "profileBorderImageUrl"
-        case url, leagues, previousTiers, ladderRank
-        case profileBackgroundImageURL = "profileBackgroundImageUrl"
-    }
-}
-
-struct LadderRank: Decodable {
-    let rank, rankPercentOfTop: Int
 }
 
 struct League: Decodable, Equatable {
-    let hasResults: Bool
     let wins, losses: Int
     let tierRank: PreviousTier
 }

@@ -47,12 +47,13 @@ struct TopView: View {
             }
             Spacer()
         }
-        .padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 0))
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 0))
     }
 }
 
 struct SwiftUITopView_Previews: PreviewProvider {
     static var previews: some View {
         TopView(TopViewModel())
+            .frame(width: nil, height: 88 + 48)
     }
 }

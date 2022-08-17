@@ -16,7 +16,25 @@ struct SwiftUIGamesView: View {
     }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVStack(alignment: .leading, spacing: 4) {
+            ForEach(viewModel.state.viewModels) { viewModel in
+                SwiftUIGamesItemView(viewModel)
+            }
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                    viewModel.update.moreGames.accept(())
+                }, label: {
+                    Text("전적갱신")
+                        .font(.system(size: 14))
+                        .foregroundColor(.white)
+                        .padding(EdgeInsets(top: 11, leading: 20, bottom: 11, trailing: 20))
+                })
+                Spacer()
+            }
+        }
+        .padding([.top], 4)
     }
 }
 

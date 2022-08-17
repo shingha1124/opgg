@@ -31,7 +31,7 @@ final class TopViewModel: ObservableObject {
     init() {
         update.summoner
             .bind(onNext: { [unowned self] summoner in
-                self.state.profileImageURL = summoner.profileImageURL
+                self.state.profileImageURL = summoner.profileImageUrl
                 self.state.level = summoner.level
             })
             .disposed(by: disposeBag)

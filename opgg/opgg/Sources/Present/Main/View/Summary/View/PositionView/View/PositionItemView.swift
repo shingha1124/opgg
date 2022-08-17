@@ -27,8 +27,8 @@ struct PositionItemView: View {
     }
 }
 
-//struct SwiftUIPositionItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwiftUIPositionItemView(SwiftUIPositionItemViewModel())
-//    }
-//}
+struct PositionItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        PositionItemView(PositionItemViewModel(0))
+    }
+}

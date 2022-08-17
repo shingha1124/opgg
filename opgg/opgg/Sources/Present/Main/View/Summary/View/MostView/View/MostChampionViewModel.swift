@@ -34,7 +34,7 @@ final class MostChampionViewModel: ObservableObject {
                 guard let champion = champion else {
                     return
                 }
-                self.state.championImageUrl = champion.imageURL
+                self.state.championImageUrl = champion.imageUrl
                 self.state.matchRecord = MatchRecord(champion)
             })
             .disposed(by: disposeBag)

@@ -120,16 +120,16 @@ final class GameSummonerView: BaseView {
     func setGameData(_ game: Game) {
         let general = game.stats.general
         
-        championImage.setImage(game.champion.imageURL)
+        championImage.setImage(game.champion.imageUrl)
         championImage.layer.borderWidth = general.opScoreBadge == .empty ? 0 : 2
         championImage.layer.borderColor = general.opScoreBadge.color.cgColor
         
         scoreBadge.text = general.opScoreBadge.name
-        scoreBadge.backgroundColor = general.opScoreBadge.color
+//        scoreBadge.backgroundColor = general.opScoreBadge.color
         scoreBadge.isHidden = general.opScoreBadge == .empty
         
         spells.enumerated().forEach { index, spell in
-            spell.setImage(game.spells[index].imageURL)
+            spell.setImage(game.spells[index].imageUrl)
         }
         
         peaks.enumerated().forEach { index, peak in
