@@ -5,7 +5,6 @@
 //  Created by seongha shin on 2022/08/17.
 //
 
-import Introspect
 import SwiftUI
 
 struct GamesView: View {

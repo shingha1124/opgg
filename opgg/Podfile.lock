@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (5.6.1)
-  - Differentiator (5.0.0)
-  - Introspect (0.1.4)
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
@@ -11,68 +9,41 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
-  - RxDataSources (5.0.0):
-    - Differentiator (~> 5.0)
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
-  - RxGesture (4.0.4):
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - SnapKit (5.6.0)
   - SwiftLint (0.47.1)
   - Then (2.7.0)
-  - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
   - Alamofire
-  - Introspect
   - Kingfisher (~> 5.0)
   - RxAppState (~> 1.6)
-  - RxCocoa (= 6.5.0)
-  - RxDataSources
-  - RxGesture
   - RxSwift (= 6.5.0)
-  - SnapKit (~> 5.6.0)
   - SwiftLint
   - Then (~> 2.7)
-  - WeakMapTable
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Differentiator
-    - Introspect
     - Kingfisher
     - RxAppState
     - RxCocoa
-    - RxDataSources
-    - RxGesture
     - RxRelay
     - RxSwift
-    - SnapKit
     - SwiftLint
     - Then
-    - WeakMapTable
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
-  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
-  Introspect: b62c4dd2063072327c21d618ef2bedc3c87bc366
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   RxAppState: 9c34f951d4ff8b9034f84016fe766202365bceb2
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
-  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
-  WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 3769ae5f480be2aa57d671605b31efeda24c8676
+PODFILE CHECKSUM: ca0a36374e8385283d97d4e5c8396289aa079e5d
 
 COCOAPODS: 1.11.2
