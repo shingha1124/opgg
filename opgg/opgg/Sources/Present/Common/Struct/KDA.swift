@@ -9,8 +9,8 @@ import UIKit
 
 protocol KDA { }
 
-extension KDA {
-    fileprivate func kdaAttributedString(kill: String, death: String, assist: String, ofSize fontSize: CGFloat) -> NSAttributedString {
+fileprivate extension KDA {
+    func kdaAttributedString(kill: String, death: String, assist: String, ofSize fontSize: CGFloat) -> NSAttributedString {
         .appendAttributedString([
             .stringToOption(kill,
                             attributes: [

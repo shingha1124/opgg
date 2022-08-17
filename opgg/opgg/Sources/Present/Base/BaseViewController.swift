@@ -30,4 +30,3 @@ class BaseViewController: UIViewController {
     func attribute() { }
     func layout() { }
 }
-
