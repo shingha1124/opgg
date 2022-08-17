@@ -29,26 +29,24 @@ struct MatchView: View {
             Spacer(minLength: 2)
             
             let kda = viewModel.state.kda
-            HStack(spacing: 5) {
+            Group {
                 Text(String(format: "%.1f", kda.kill))
                     .font(.system(size: 14))
                     .bold()
-                    .foregroundColor(.charcoalGrey)
+                    .foregroundColor(.charcoalGrey) +
                 
-                Text("/")
+                Text(" / ")
                     .font(.appleSDGothicNeo(ofSize: 14))
-                    .foregroundColor(.charcoalGrey)
-                    .foregroundColor(.charcoalGrey)
+                    .foregroundColor(.charcoalGrey) +
                 
                 Text(String(format: "%.1f", kda.death))
                     .font(.system(size: 14))
                     .bold()
-                    .foregroundColor(.darkishPink)
+                    .foregroundColor(.darkishPink) +
                 
-                Text("/")
+                Text(" / ")
                     .font(.appleSDGothicNeo(ofSize: 14))
-                    .foregroundColor(.charcoalGrey)
-                    .foregroundColor(.charcoalGrey)
+                    .foregroundColor(.charcoalGrey) +
                 
                 Text(String(format: "%.1f", kda.assist))
                     .font(.system(size: 14))
@@ -57,12 +55,12 @@ struct MatchView: View {
             }
             Spacer(minLength: 2)
             
-            HStack(spacing: 3) {
+            Group {
                 Text(String(format: "%.2f:1", kda.rate))
                     .font(.system(size: 10))
-                    .foregroundColor(kda.rateColor)
+                    .foregroundColor(kda.rateColor) +
                 
-                Text("(\(winRate.rate)%)")
+                Text(" (\(winRate.rate)%)")
                     .font(.system(size: 10))
                     .foregroundColor(winRate.rateColor)
             }

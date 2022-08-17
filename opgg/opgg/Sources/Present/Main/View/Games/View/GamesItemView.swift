@@ -51,15 +51,13 @@ struct GamesItemView: View {
                     .foregroundColor(.coolGrey)
 
                 let (value, suffix) = game.createDateToValue
-                HStack(spacing: 2) {
-                    Text("\(value)")
-                        .font(.appleSDGothicNeo(ofSize: 12))
-                        .foregroundColor(.coolGrey)
+                Text("\(value)")
+                    .font(.system(size: 12))
+                    .foregroundColor(.coolGrey) +
 
-                    Text("\(suffix)")
-                        .font(.system(size: 12))
-                        .foregroundColor(.coolGrey)
-                }
+                Text("\(suffix)")
+                    .font(.appleSDGothicNeo(ofSize: 12))
+                    .foregroundColor(.coolGrey)
                 Spacer()
 
                 let multiKill = game.stats.general.largestMultiKillString
