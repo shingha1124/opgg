@@ -17,20 +17,20 @@ struct MatchView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("최근 \(viewModel.state.gamePlayCount)게임 분석")
+            Text(String(format: "SummaryTitle".localized(), viewModel.state.gamePlayCount))
                 .font(.appleSDGothicNeo(ofSize: 10))
                 .foregroundColor(.coolGrey)
             Spacer(minLength: 8)
             
-            let matchRecord = viewModel.state.matchRecord
-            Text("\(matchRecord.wins)승 \(matchRecord.losses)패")
+            let winRate = viewModel.state.winRate
+            Text(String(format: "GameScore".localized(), winRate.wins, winRate.losses))
                 .font(.appleSDGothicNeo(ofSize: 10))
                 .foregroundColor(.coolGrey)
             Spacer(minLength: 2)
             
-            let kda = viewModel.state.matchKDA
+            let kda = viewModel.state.kda
             HStack(spacing: 5) {
-                Text(String(format: "%.1f", kda.kills))
+                Text(String(format: "%.1f", kda.kill))
                     .font(.system(size: 14))
                     .bold()
                     .foregroundColor(.charcoalGrey)
@@ -40,7 +40,7 @@ struct MatchView: View {
                     .foregroundColor(.charcoalGrey)
                     .foregroundColor(.charcoalGrey)
                 
-                Text(String(format: "%.1f", kda.deaths))
+                Text(String(format: "%.1f", kda.death))
                     .font(.system(size: 14))
                     .bold()
                     .foregroundColor(.darkishPink)
@@ -50,7 +50,7 @@ struct MatchView: View {
                     .foregroundColor(.charcoalGrey)
                     .foregroundColor(.charcoalGrey)
                 
-                Text(String(format: "%.1f", kda.assists))
+                Text(String(format: "%.1f", kda.assist))
                     .font(.system(size: 14))
                     .bold()
                     .foregroundColor(.charcoalGrey)
@@ -58,19 +58,19 @@ struct MatchView: View {
             Spacer(minLength: 2)
             
             HStack(spacing: 3) {
-                Text(String(format: "%.2f:1", kda.kdaRate))
+                Text(String(format: "%.2f:1", kda.rate))
                     .font(.system(size: 10))
-                    .foregroundColor(kda.kdaRateColor)
+                    .foregroundColor(kda.rateColor)
                 
-                Text("(\(matchRecord.winRate)%)")
+                Text("(\(winRate.rate)%)")
                     .font(.system(size: 10))
-                    .foregroundColor(matchRecord.winRateColor)
+                    .foregroundColor(winRate.rateColor)
             }
         }
     }
 }
 
-struct SwiftUIMatchView_Previews: PreviewProvider {
+struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
         MatchView(MatchViewModel())
     }

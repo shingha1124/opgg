@@ -12,7 +12,7 @@ import RxSwift
 final class MostChampionViewModel: ObservableObject {
     struct State {
         var championImageUrl: URL?
-        var matchRecord = MatchRecord(wins: 0, losses: 0)
+        var winRate = WinRate(wins: 0, losses: 0)
         var visibility: ViewVisibility = .gone
     }
     
@@ -35,7 +35,7 @@ final class MostChampionViewModel: ObservableObject {
                     return
                 }
                 self.state.championImageUrl = champion.imageUrl
-                self.state.matchRecord = MatchRecord(champion)
+                self.state.winRate = WinRate(champion)
             })
             .disposed(by: disposeBag)
     }

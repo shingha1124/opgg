@@ -32,12 +32,17 @@ struct MainView: View {
                 topView
                 leaguesView
                 summaryView
-                gamesView
+                gamesView  
             }
         }
-        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         .onAppear {
             viewModel.action.onAppear.accept(())
         }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
     }
 }

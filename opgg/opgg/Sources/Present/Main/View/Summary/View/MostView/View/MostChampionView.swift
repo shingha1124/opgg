@@ -21,9 +21,9 @@ struct MostChampionView: View {
             .frame(width: 30, height: 30)
             .clipShape(Capsule())
             
-            Text("\(viewModel.state.matchRecord.winRate)%")
+            Text("\(viewModel.state.winRate.rate)%")
                 .font(.system(size: 10))
-                .foregroundColor(viewModel.state.matchRecord.winRateColor)
+                .foregroundColor(viewModel.state.winRate.rateColor)
         }
         .visibility(viewModel.state.visibility)
     }

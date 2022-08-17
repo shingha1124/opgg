@@ -12,8 +12,8 @@ import RxSwift
 final class MatchViewModel: ObservableObject {
     struct State {
         var gamePlayCount: Int = 0
-        var matchRecord = MatchRecord(wins: 0, losses: 0)
-        var matchKDA = MatchKDA()
+        var winRate = WinRate(wins: 0, losses: 0)
+        var kda = KDA()
     }
     
     struct Update {
@@ -33,16 +33,16 @@ final class MatchViewModel: ObservableObject {
             .disposed(by: disposeBag)
         
         update.summary
-            .map { MatchRecord($0) }
-            .bind(onNext: { [unowned self] matchRecord in
-                self.state.matchRecord = matchRecord
+            .map { WinRate($0) }
+            .bind(onNext: { [unowned self] winRate in
+                self.state.winRate = winRate
             })
             .disposed(by: disposeBag)
         
         update.summary
-            .map { MatchKDA($0) }
-            .bind(onNext: { [unowned self] matchKDA in
-                self.state.matchKDA = matchKDA
+            .map { KDA($0) }
+            .bind(onNext: { [unowned self] kda in
+                self.state.kda = kda
             })
             .disposed(by: disposeBag)
     }

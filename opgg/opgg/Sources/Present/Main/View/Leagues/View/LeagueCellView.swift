@@ -19,9 +19,11 @@ struct LeagueCellView: View {
         HStack {
             AsyncImage(url: viewModel.state.tier.imageURL) { $0.resizable() } placeholder: { Color.paleGrey2 }
             .frame(width: 64, height: 64, alignment: .topLeading)
-            .offset(x: 12, y: 0)
+            .clipShape(RoundedRectangle(cornerRadius: 32))
             
-            VStack(alignment: .leading) {
+            Spacer().frame(width: 8)
+            
+            VStack(alignment: .leading, spacing: 2) {
                 Text("\(viewModel.state.tier.rankType.text)")
                     .font(.appleSDGothicNeo(ofSize: 12))
                     .foregroundColor(.softBlue)
@@ -36,20 +38,27 @@ struct LeagueCellView: View {
                     .font(.appleSDGothicNeo(ofSize: 12))
                 
                 HStack(spacing: 3) {
-                    let matchRecord = viewModel.state.matchRecord
-                    Text("\(matchRecord.wins)승 \(matchRecord.losses)패")
+                    let winRate = viewModel.state.winRate
+                    Text(String(format: "GameScore".localized(), winRate.wins, winRate.losses))
                         .font(.system(size: 10))
                         .foregroundColor(.steelGrey)
                     
-                    Text("(\(matchRecord.winRate)%)")
+                    Text("(\(winRate.rate)%)")
                         .font(.system(size: 10))
                         .foregroundColor(.steelGrey)
                 }
             }
-            .offset(x: 8, y: 0)
             Spacer()
+            Button(action: {
+            }, label: {
+                Image("iconArrowRight")
+            })
+            .frame(width: 40, height: 40)
+            .background(Color.paleGrey)
+            .clipShape(Capsule())
+            .padding(8)
         }
-        .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+        .padding(EdgeInsets(top: 16, leading: 12, bottom: 16, trailing: 16))
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 4))
         .shadow(color: .steelGrey.opacity(0.2), radius: 6, x: 0, y: 4)

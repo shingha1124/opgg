@@ -7,45 +7,38 @@
 
 import SwiftUI
 
-protocol KDA { }
-
-struct MatchKDA: KDA {
-    let kills: Float
-    let deaths: Float
-    let assists: Float
-    let kdaRate: Float
+struct KDA {
+    let kill: Float
+    let death: Float
+    let assist: Float
+    let rate: Float
     
     init() {
-        kills = 0
-        deaths = 0
-        assists = 0
-        kdaRate = 0
+        kill = 0
+        death = 0
+        assist = 0
+        rate = 0
     }
     
     init(_ summary: Summary) {
         let total = Float(summary.wins + summary.losses)
-        kills = Float(summary.kills) / total
-        deaths = Float(summary.deaths) / total
-        assists = Float(summary.assists) / total
-        kdaRate = kills + assists / deaths
+        kill = Float(summary.kills) / total
+        death = Float(summary.deaths) / total
+        assist = Float(summary.assists) / total
+        rate = kill + assist / death
     }
-}
-
-struct GameKDA: KDA {
-    let kill: Int
-    let death: Int
-    let assist: Int
     
     init(_ general: General) {
-        kill = general.kill
-        death = general.death
-        assist = general.assist
+        kill = Float(general.kill)
+        death = Float(general.death)
+        assist = Float(general.assist)
+        rate = kill + assist / death
     }
 }
 
-extension MatchKDA {    
-    var kdaRateColor: Color {
-        switch kdaRate {
+extension KDA {
+    var rateColor: Color {
+        switch rate {
         case let value where value < 3:
             return .steelGrey
         case let value where value < 4:

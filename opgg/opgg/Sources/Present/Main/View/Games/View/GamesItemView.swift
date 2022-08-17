@@ -49,10 +49,6 @@ struct GamesItemView: View {
                 Text(game.gameType.name)
                     .font(.appleSDGothicNeo(ofSize: 12))
                     .foregroundColor(.coolGrey)
-                
-                Text("\(viewModel.index)")
-                    .font(.appleSDGothicNeo(ofSize: 12))
-                    .foregroundColor(.black)
 
                 let (value, suffix) = game.createDateToValue
                 HStack(spacing: 2) {
@@ -84,9 +80,8 @@ struct GamesItemView: View {
     }
 }
 
-//struct SwiftUIGamesItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Game(
-//        SwiftUIGamesItemView(SwiftUIGamesItemViewModel(0))
-//    }
-//}
+struct GamesItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        GamesItemView(GamesItemViewModel(Game(), at: 0))
+    }
+}

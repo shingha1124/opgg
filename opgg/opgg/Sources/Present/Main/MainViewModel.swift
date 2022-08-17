@@ -12,14 +12,6 @@ import RxSwift
 final class MainViewModel: ObservableObject {
     struct Action {
         let onAppear = PublishRelay<Void>()
-        let loadMore = PublishRelay<Void>()
-        let changeGamesViewHeight = PublishRelay<CGFloat>()
-        let changeScrollHeight = PublishRelay<CGFloat>()
-        let changeScrollOffsetHeight = PublishRelay<CGFloat>()
-    }
-    
-    struct State {
-        var updatedGames = 0
     }
     
     struct SubViewModel {
@@ -30,7 +22,6 @@ final class MainViewModel: ObservableObject {
     }
     
     let action = Action()
-    @Published var state = State()
     let subViewModel = SubViewModel()
     let disposeBag = DisposeBag()
     

@@ -11,8 +11,6 @@
 "Losses" = "L";
 "Most Champion" = "Most Champion";
 "Position" = "Position";
-"SummaryTitlePrefix" = "Summary last ";
-"SummaryTitleSuffix" = " games.";
 "RankSolo" = "Ranked Solo/Duo";
 "RankFlex" = "Ranked Flex";
 "Aram" = "Aram";
@@ -22,3 +20,6 @@
 "Day Ago" = " day ago";
 "Hour Ago" = " hour ago";
 "Minute Ago" = " minute ago";
+
+"SummaryTitle" = "Summary last %d games.";
+"GameScore" = "%dW %dL";

@@ -37,7 +37,7 @@ struct TopView: View {
                 Button(action: {
                     viewModel.action.update.accept(())
                 }, label: {
-                    Text("전적갱신")
+                    Text("Update".localized())
                         .font(.system(size: 14))
                         .foregroundColor(.white)
                         .padding(EdgeInsets(top: 11, leading: 20, bottom: 11, trailing: 20))
@@ -51,7 +51,7 @@ struct TopView: View {
     }
 }
 
-struct SwiftUITopView_Previews: PreviewProvider {
+struct TopView_Previews: PreviewProvider {
     static var previews: some View {
         TopView(TopViewModel())
             .frame(width: nil, height: 88 + 48)

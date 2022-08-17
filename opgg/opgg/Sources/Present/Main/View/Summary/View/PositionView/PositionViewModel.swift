@@ -26,7 +26,7 @@ final class PositionViewModel: ObservableObject {
         update.positions
             .map { positions in
                 Array(positions.sorted {
-                    MatchRecord($0).winRate > MatchRecord($1).winRate
+                    WinRate($0).rate > WinRate($1).rate
                 }[safe: 0..<Environment.positionViewMaxCount])
             }
             .bind(onNext: { [unowned self] positions in

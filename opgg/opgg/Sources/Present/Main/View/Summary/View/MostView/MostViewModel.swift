@@ -26,7 +26,7 @@ final class MostViewModel: ObservableObject {
         update.champions
             .map { champions in
                 Array(champions.sorted {
-                    MatchRecord($0).winRate > MatchRecord($1).winRate
+                    WinRate($0).rate > WinRate($1).rate
                 }[safe: 0..<Environment.mostChampionViewMaxCount])
             }
             .bind(onNext: { [unowned self] champions in

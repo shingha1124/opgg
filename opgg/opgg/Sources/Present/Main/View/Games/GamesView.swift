@@ -18,7 +18,7 @@ struct GamesView: View {
     }
     
     var body: some View {
-        LazyVStack(alignment: .leading) {
+        LazyVStack(alignment: .leading, spacing: 4) {
             ForEach(viewModel.state.viewModels) { model in
                 GamesItemView(model)
                     .frame(minHeight: self.rowHeight)
@@ -41,6 +41,7 @@ struct GamesView: View {
                     }
             }
         }
+        .padding([.top], 4)
         .background(Color.paleGrey2)
     }
 }
@@ -51,7 +52,7 @@ struct SizePreferenceKey: PreferenceKey {
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) { }
 }
 
-struct SwiftUIGamesView_Previews: PreviewProvider {
+struct GamesView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = GamesViewModel()
         let view = GamesView(viewModel)

@@ -29,7 +29,6 @@ struct Game: Decodable {
     let peak: [URL]
     let isWin: Bool
     
-    
     init() {
         //swiftlint: disable force_unwrapping
         self.champion = GameChampion(imageUrl: URL(string: "https://opgg-static.akamaized.net/images/lol/champion/Lucian.png")!, level: 9)

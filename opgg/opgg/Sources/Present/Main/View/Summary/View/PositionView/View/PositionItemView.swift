@@ -20,9 +20,9 @@ struct PositionItemView: View {
             Image(viewModel.state.positionImageName)
             .frame(width: 24, height: 24)
             
-            Text("\(viewModel.state.matchRecord.winRate)%")
+            Text("\(viewModel.state.winRate.rate)%")
                 .font(.system(size: 10))
-                .foregroundColor(viewModel.state.matchRecord.winRateColor)
+                .foregroundColor(viewModel.state.winRate.rateColor)
         }
     }
 }

@@ -19,7 +19,7 @@ struct LeaguesView: View {
         let screenSize = UIScreen.main.bounds.size
         return ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(viewModel.state.cellViewModels, id: \.index) { viewModel in
+                ForEach(viewModel.state.cellViewModels) { viewModel in
                     LeagueCellView(viewModel)
                         .frame(width: screenSize.width - 48, height: nil)
                 }
@@ -29,7 +29,7 @@ struct LeaguesView: View {
     }
 }
 
-struct SwiftUILeaguesView_Previews: PreviewProvider {
+struct LeaguesView_Previews: PreviewProvider {
     static var previews: some View {
         LeaguesView(LeaguesViewModel())
     }

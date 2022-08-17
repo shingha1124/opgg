@@ -22,3 +22,6 @@
 "Day Ago" = "일 전";
 "Hour Ago" = "시간 전";
 "Minute Ago" = "분 전";
+
+"SummaryTitle" = "최근 %d게임 분석";
+"GameScore" = "%d승 %d패";

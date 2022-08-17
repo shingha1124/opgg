@@ -65,11 +65,11 @@ struct GameSummonerView: View {
                 .clipShape(Capsule())
             }
             
-            let kda = GameKDA(general)
+            let kda = KDA(general)
             Spacer().frame(width: 8)
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 0) {
-                    Text("\(kda.kill)")
+                    Text("\(Int(kda.kill))")
                         .font(.system(size: 16))
                         .bold()
                         .foregroundColor(.darkgrey)
@@ -78,7 +78,7 @@ struct GameSummonerView: View {
                         .font(.system(size: 16))
                         .foregroundColor(.darkgrey)
                     
-                    Text("\(kda.death)")
+                    Text("\(Int(kda.death))")
                         .font(.system(size: 16))
                         .bold()
                         .foregroundColor(.darkishPink)
@@ -87,7 +87,7 @@ struct GameSummonerView: View {
                         .font(.system(size: 16))
                         .foregroundColor(.darkgrey)
                     
-                    Text("\(kda.assist)")
+                    Text("\(Int(kda.assist))")
                         .font(.system(size: 16))
                         .bold()
                         .foregroundColor(.darkgrey)
@@ -102,8 +102,8 @@ struct GameSummonerView: View {
     }
 }
 
-//struct GameSummonerView2_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameSummonerView2()
-//    }
-//}
+struct GameSummonerView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameSummonerView(game: Game())
+    }
+}

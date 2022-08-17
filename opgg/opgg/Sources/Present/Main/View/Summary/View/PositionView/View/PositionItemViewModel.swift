@@ -12,7 +12,7 @@ import RxSwift
 final class PositionItemViewModel: ObservableObject {
     struct State {
         var positionImageName = ""
-        var matchRecord = MatchRecord(wins: 0, losses: 0)
+        var winRate = WinRate(wins: 0, losses: 0)
     }
     
     struct Update {
@@ -36,9 +36,9 @@ final class PositionItemViewModel: ObservableObject {
         
         update.position
             .compactMap { $0 }
-            .map { MatchRecord($0) }
-            .bind(onNext: { [unowned self] matchRecord in
-                self.state.matchRecord = matchRecord
+            .map { WinRate($0) }
+            .bind(onNext: { [unowned self] winRate in
+                self.state.winRate = winRate
             })
             .disposed(by: disposeBag)
     }

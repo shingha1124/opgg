@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct MatchRecord {
+struct WinRate {
     let wins: Int
     let losses: Int
-    let winRate: Int
+    let rate: Int
     
     init(wins: Int, losses: Int) {
         self.wins = wins
         self.losses = losses
         let totalGame = wins + losses
         if wins == 0 || totalGame == 0 {
-            winRate = 0
+            rate = 0
         } else {
-            winRate = Int((Float(wins) / Float(totalGame)) * 100)
+            rate = Int((Float(wins) / Float(totalGame)) * 100)
         }
     }
     
@@ -40,8 +40,8 @@ struct MatchRecord {
     }
 }
 
-extension MatchRecord {
-    var winRateColor: Color {
-        winRate >= 60 ? .darkishPink : .steelGrey
+extension WinRate {
+    var rateColor: Color {
+        rate >= 60 ? .darkishPink : .steelGrey
     }
 }

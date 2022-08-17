@@ -31,7 +31,7 @@ struct PositionView: View {
     }
 }
 
-struct SwiftUIPositionView_Previews: PreviewProvider {
+struct PositionView_Previews: PreviewProvider {
     static var previews: some View {
         PositionView(PositionViewModel())
     }

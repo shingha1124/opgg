@@ -35,8 +35,9 @@ struct GameItemView: View {
     }
 }
 
-//struct GameItemView2_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameItemView2()
-//    }
-//}
+struct GameItemView2_Previews: PreviewProvider {
+    static var previews: some View {
+        let game = Game()
+        GameItemView(items: game.items, lastItem: game.items.last)
+    }
+}

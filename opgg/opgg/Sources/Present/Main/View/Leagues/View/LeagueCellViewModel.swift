@@ -9,12 +9,10 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class LeagueCellViewModel: ObservableObject {
-    let index: Int
-    
+final class LeagueCellViewModel: ObservableObject, Identifiable {
     struct State {
         var tier = PreviousTier()
-        var matchRecord = MatchRecord(wins: 0, losses: 0)
+        var winRate = WinRate(wins: 0, losses: 0)
         var visibility: ViewVisibility = .gone
     }
     
@@ -25,6 +23,7 @@ final class LeagueCellViewModel: ObservableObject {
     @Published var state = State()
     let update = Update()
     let disposeBag = DisposeBag()
+    let index: Int
     
     init(_ index: Int) {
         self.index = index
@@ -36,7 +35,7 @@ final class LeagueCellViewModel: ObservableObject {
                     return
                 }
                 self.state.tier = league.tierRank
-                self.state.matchRecord = MatchRecord(league)
+                self.state.winRate = WinRate(league)
             })
             .disposed(by: disposeBag)
     }

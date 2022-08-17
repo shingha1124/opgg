@@ -31,7 +31,7 @@ struct MostView: View {
     }
 }
 
-struct SwiftUIMostView_Previews: PreviewProvider {
+struct MostView_Previews: PreviewProvider {
     static var previews: some View {
         MostView(MostViewModel())
     }
