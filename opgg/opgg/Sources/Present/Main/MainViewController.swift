@@ -13,7 +13,7 @@ import UIKit
 final class MainViewController: BaseViewController, View {
     
     enum Constants {
-        static let refreshScrollSize: CGFloat = 0
+        static let refreshScrollSize: CGFloat = -400
     }
     
     private let topLayoutBox = UIView()
@@ -45,7 +45,6 @@ final class MainViewController: BaseViewController, View {
                 let diffVlue = self.scrollView.contentOffset.y - maxScrollValue
                 return diffVlue > Constants.refreshScrollSize
             }
-            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .map { _ in }
             .bind(to: viewModel.action.moreGames)
             .disposed(by: disposeBag)
@@ -64,7 +63,7 @@ final class MainViewController: BaseViewController, View {
         
         scrollView.do {
             $0.backgroundColor = .clear
-            $0.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16)
+            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
             $0.showsVerticalScrollIndicator = false
         }
         
@@ -86,7 +85,6 @@ final class MainViewController: BaseViewController, View {
         
         contentView.do {
             $0.axis = .vertical
-            $0.spacing = 16
         }
     }
     
@@ -115,9 +113,9 @@ final class MainViewController: BaseViewController, View {
         }
         
         scrollView.snp.makeConstraints {
-            $0.top.equalTo(topLayoutBox.snp.bottom)
+            $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(bottomLayoutBox.snp.top)
+            $0.bottom.equalToSuperview()
         }
         
         contentView.snp.makeConstraints {

@@ -91,22 +91,22 @@ final class MatchView: BaseView, View {
         addSubview(winRate)
         
         matchTitle.snp.makeConstraints {
-            $0.leading.top.equalToSuperview().inset(12)
+            $0.leading.top.equalToSuperview()
         }
         
         matchRecord.snp.makeConstraints {
             $0.top.equalTo(matchTitle.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(12)
+            $0.leading.equalToSuperview()
         }
         
         kdaLabel.snp.makeConstraints {
             $0.top.equalTo(matchRecord.snp.bottom).offset(2)
-            $0.leading.equalToSuperview().offset(12)
+            $0.leading.equalToSuperview()
         }
         
         kdaRate.snp.makeConstraints {
             $0.top.equalTo(kdaLabel.snp.bottom).offset(2)
-            $0.leading.equalToSuperview().offset(12)
+            $0.leading.equalToSuperview()
         }
         
         winRate.snp.makeConstraints {
@@ -116,7 +116,7 @@ final class MatchView: BaseView, View {
         
         snp.makeConstraints {
             $0.trailing.equalTo(kdaLabel).offset(12)
-            $0.bottom.equalTo(kdaRate).offset(12)
+            $0.bottom.equalTo(kdaRate)
         }
     }
 }

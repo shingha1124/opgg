@@ -43,14 +43,14 @@ final class PositionView: BaseView, View {
         addSubview(contentView)
         
         title.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(12)
+            $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
         
         contentView.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-12)
+            $0.bottom.equalToSuperview()
         }
         
         snp.makeConstraints {

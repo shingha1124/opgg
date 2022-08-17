@@ -38,7 +38,7 @@ final class LeaguesView: BaseView, View {
         }
         
         snp.makeConstraints {
-            $0.height.equalTo(scrollView)
+            $0.height.equalTo(scrollView).offset(16)
         }
     }
 }

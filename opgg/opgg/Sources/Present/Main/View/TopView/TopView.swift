@@ -71,7 +71,7 @@ final class TopView: BaseView, View {
         addSubview(updateButton)
         
         thumbnail.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(8)
+            $0.top.equalToSuperview().offset(24)
             $0.leading.equalToSuperview().offset(16)
             $0.width.height.equalTo(88)
         }
@@ -93,7 +93,7 @@ final class TopView: BaseView, View {
         }
         
         snp.makeConstraints {
-            $0.bottom.equalTo(thumbnail).offset(8)
+            $0.bottom.equalTo(thumbnail).offset(24)
         }
     }
 }
