@@ -9,38 +9,6 @@ import SwiftUI
 
 protocol KDA { }
 
-extension KDA {
-    func kdaAttributedString(kill: String, death: String, assist: String, ofSize fontSize: CGFloat) -> NSAttributedString {
-        .appendAttributedString([
-            .stringToOption(kill,
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
-                                .foreground(color: .charcoalGrey)
-                            ]),
-            .stringToOption(" / ",
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
-                                .foreground(color: .charcoalGrey)
-                            ]),
-            .stringToOption(death,
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
-                                .foreground(color: .darkishPink)
-                            ]),
-            .stringToOption(" / ",
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .regular)),
-                                .foreground(color: .charcoalGrey)
-                            ]),
-            .stringToOption(assist,
-                            attributes: [
-                                .font(.systemFont(ofSize: fontSize, weight: .bold)),
-                                .foreground(color: .charcoalGrey)
-                            ])
-        ])
-    }
-}
-
 struct MatchKDA: KDA {
     let kills: Float
     let deaths: Float
@@ -61,15 +29,6 @@ struct MatchKDA: KDA {
         assists = Float(summary.assists) / total
         kdaRate = kills + assists / deaths
     }
-    
-    func kdaText(ofSize fontSize: CGFloat) -> NSAttributedString {
-        kdaAttributedString(
-            kill: String(format: "%.1f", kills),
-            death: String(format: "%.1f", deaths),
-            assist: String(format: "%.1f", assists),
-            ofSize: fontSize
-        )
-    }
 }
 
 struct GameKDA: KDA {
@@ -82,31 +41,9 @@ struct GameKDA: KDA {
         death = general.death
         assist = general.assist
     }
-    
-    func kdaText(ofSize fontSize: CGFloat) -> NSAttributedString {
-        kdaAttributedString(
-            kill: "\(kill)",
-            death: "\(death)",
-            assist: "\(assist)",
-            ofSize: fontSize
-        )
-    }
 }
 
-extension MatchKDA {
-    var kdaRateUIColor: UIColor {
-        switch kdaRate {
-        case let value where value < 3:
-            return .steelGrey
-        case let value where value < 4:
-            return .greenBlue
-        case let value where value < 5:
-            return .softBlue
-        default:
-            return .darkishPink
-        }
-    }
-    
+extension MatchKDA {    
     var kdaRateColor: Color {
         switch kdaRate {
         case let value where value < 3:

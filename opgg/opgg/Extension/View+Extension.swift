@@ -23,7 +23,6 @@ enum ViewVisibility: CaseIterable {
     case visible, invisible, gone
 }
 
-
 extension View {
     func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
         background(

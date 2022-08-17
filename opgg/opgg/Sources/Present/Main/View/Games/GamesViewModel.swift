@@ -9,9 +9,9 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class SwiftUIGamesViewModel: ObservableObject {
+final class GamesViewModel: ObservableObject {
     struct State {
-        var viewModels = [SwiftUIGamesItemViewModel]()
+        var viewModels = [GamesItemViewModel]()
         var isLoading = false
         let updatedGames = PublishRelay<Int>()
     }
@@ -29,7 +29,7 @@ final class SwiftUIGamesViewModel: ObservableObject {
     
     init() {
         update.updateGames
-            .map { $0.enumerated().map { SwiftUIGamesItemViewModel($0.element, at: $0.offset) } }
+            .map { $0.enumerated().map { GamesItemViewModel($0.element, at: $0.offset) } }
             .bind(onNext: { [unowned self] viewModels in
                 self.state.viewModels = viewModels
             })
@@ -54,7 +54,7 @@ final class SwiftUIGamesViewModel: ObservableObject {
             .compactMap { $0.value?.games }
             .do { [unowned self] new in
                 let newGames = new.enumerated().map {
-                    SwiftUIGamesItemViewModel( $0.element, at: self.state.viewModels.count + $0.offset)
+                    GamesItemViewModel( $0.element, at: self.state.viewModels.count + $0.offset)
                 }
                 self.state.viewModels += newGames
             }

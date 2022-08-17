@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GameSummonerView2: View {
+struct GameSummonerView: View {
     @State var game: Game
     
     var body: some View {

@@ -9,7 +9,7 @@ import Foundation
 import RxRelay
 import RxSwift
 
-final class SwiftUIGamesItemViewModel: ObservableObject, Identifiable {
+final class GamesItemViewModel: ObservableObject, Identifiable {
     struct State {
         let game: Game
         let items: [Item]

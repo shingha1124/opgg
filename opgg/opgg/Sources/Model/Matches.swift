@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct Matches: Decodable {
     let games: [Game]
@@ -86,15 +85,6 @@ enum LargestMultiKillString: String, Decodable {
         }
     }
     
-    var uiColor: UIColor {
-        switch self {
-        case .doubleKill:
-            return .darkishPink
-        case .empty:
-            return .clear
-        }
-    }
-    
     var color: Color {
         switch self {
         case .doubleKill:
@@ -113,17 +103,6 @@ enum OpScoreBadge: String, Decodable {
     
     var name: String {
         rawValue
-    }
-    
-    var uiColor: UIColor {
-        switch self {
-        case .ace:
-            return .periwinkle
-        case .mvp:
-            return .orangeYellow
-        case .empty:
-            return .clear
-        }
     }
     
     var color: Color {

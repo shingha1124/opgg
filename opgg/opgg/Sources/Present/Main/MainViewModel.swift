@@ -23,7 +23,7 @@ final class MainViewModel: ObservableObject {
     }
     
     struct SubViewModel {
-        let games = SwiftUIGamesViewModel()
+        let games = GamesViewModel()
         let topView = TopViewModel()
         let leagues = LeaguesViewModel()
         let summary = SummaryViewModel()

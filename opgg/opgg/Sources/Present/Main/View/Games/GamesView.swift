@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct SwiftUIGamesView: View {
+struct GamesView: View {
     
-    @ObservedObject private var viewModel: SwiftUIGamesViewModel
+    @ObservedObject private var viewModel: GamesViewModel
     
-    init(_ viewModel: SwiftUIGamesViewModel) {
+    init(_ viewModel: GamesViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 4) {
             ForEach(viewModel.state.viewModels) { viewModel in
-                SwiftUIGamesItemView(viewModel)
+                GamesItemView(viewModel)
             }
             
             HStack {
@@ -40,6 +40,6 @@ struct SwiftUIGamesView: View {
 
 struct SwiftUIGamesView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIGamesView(SwiftUIGamesViewModel())
+        GamesView(GamesViewModel())
     }
 }

@@ -5,6 +5,7 @@
 //  Created by seongha shin on 2022/08/11.
 //
 
+import RxAppState
 import SwiftUI
 import Then
 
@@ -13,7 +14,7 @@ final class RootWindow: UIWindow {
         super.init(frame: frame)
         
         self.do {
-            let mainView = SwiftUIMainView()
+            let mainView = MainView()
             let viewController = UIHostingController(rootView: mainView)
             $0.rootViewController = viewController
         }

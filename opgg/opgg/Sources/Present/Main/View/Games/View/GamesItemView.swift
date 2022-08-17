@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUIGamesItemView: View {
+struct GamesItemView: View {
     
-    @ObservedObject private var viewModel: SwiftUIGamesItemViewModel
+    @ObservedObject private var viewModel: GamesItemViewModel
     
-    init(_ viewModel: SwiftUIGamesItemViewModel) {
+    init(_ viewModel: GamesItemViewModel) {
         self.viewModel = viewModel
     }
     
@@ -39,8 +39,8 @@ struct SwiftUIGamesItemView: View {
             .background(game.isWin ? Color.softBlue : .darkishPink)
 
             VStack(alignment: .leading, spacing: 8) {
-                GameSummonerView2(game: game)
-                GameItemView2(items: viewModel.state.items, lastItem: viewModel.state.lastItem)
+                GameSummonerView(game: game)
+                GameItemView(items: viewModel.state.items, lastItem: viewModel.state.lastItem)
             }
             .padding(16)
 

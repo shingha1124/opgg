@@ -5,7 +5,7 @@
 //  Created by seongha shin on 2022/08/12.
 //
 
-import UIKit
+import SwiftUI
 
 protocol Currency { }
 
@@ -22,9 +22,3 @@ extension Currency {
 
 extension UInt: Currency { }
 extension Int: Currency { }
-
-extension Int {
-    func winRateColor() -> UIColor {
-        self >= 60 ? .darkishPink : .steelGrey
-    }
-}

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GameItemView2: View {
+struct GameItemView: View {
     @State var items: [Item]
     @State var lastItem: Item?
     
