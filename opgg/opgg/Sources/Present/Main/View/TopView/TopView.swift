@@ -24,13 +24,14 @@ struct TopView: View {
                 Text("\(viewModel.state.level)")
                     .font(.system(size: 12))
                     .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
-                    .background(Color.darkgrey)
+                    .background(Color.darkgrey.opacity(0.9))
                     .foregroundColor(.white)
                     .clipShape(Capsule()), alignment: .bottomTrailing
             )
             
             VStack(alignment: .leading) {
                 Text("OPGG")
+                    .foregroundColor(.darkgrey)
                     .font(.system(size: 24))
                     .bold()
                 Spacer()
@@ -47,7 +48,7 @@ struct TopView: View {
             }
             Spacer()
         }
-        .padding(EdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 0))
+        .padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 0))
     }
 }
 

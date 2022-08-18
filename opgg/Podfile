@@ -11,5 +11,4 @@ target 'opgg' do
   use_frameworks!
   install_common
   pod 'Alamofire'
-  pod 'Kingfisher', '~> 5.0'
 end

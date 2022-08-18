@@ -35,6 +35,7 @@ struct MainView: View {
                 gamesView  
             }
         }
+        .background(Color.paleGrey)
         .onAppear {
             viewModel.action.onAppear.accept(())
         }

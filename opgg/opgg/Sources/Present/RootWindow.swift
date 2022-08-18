@@ -17,6 +17,7 @@ final class RootWindow: UIWindow {
             let mainView = MainView()
             let viewController = UIHostingController(rootView: mainView)
             $0.rootViewController = viewController
+            $0.overrideUserInterfaceStyle = .light
         }
     }
     

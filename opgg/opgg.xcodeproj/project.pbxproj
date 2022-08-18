@@ -59,6 +59,7 @@
 		E030495828AC65D900EADC49 /* GameItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030495728AC65D900EADC49 /* GameItemView.swift */; };
 		E030495A28AC721400EADC49 /* Model+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030495928AC721400EADC49 /* Model+Extension.swift */; };
 		E08D62A828AD47E30088623A /* ActiveityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D62A728AD47E30088623A /* ActiveityIndicator.swift */; };
+		E08D62AA28ADB0000088623A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08D62A928ADB0000088623A /* Colors.xcassets */; };
 		E0C51F3328A6A8A00087CA18 /* KDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3228A6A8A00087CA18 /* KDA.swift */; };
 		E0C51F3B28A6B60F0087CA18 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0C51F3D28A6B60F0087CA18 /* Localizable.strings */; };
 		E0C51F4028A6B6420087CA18 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C51F3F28A6B6420087CA18 /* String+Extension.swift */; };
@@ -124,6 +125,7 @@
 		E030495728AC65D900EADC49 /* GameItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemView.swift; sourceTree = "<group>"; };
 		E030495928AC721400EADC49 /* Model+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model+Extension.swift"; sourceTree = "<group>"; };
 		E08D62A728AD47E30088623A /* ActiveityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveityIndicator.swift; sourceTree = "<group>"; };
+		E08D62A928ADB0000088623A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E0C51F3228A6A8A00087CA18 /* KDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDA.swift; sourceTree = "<group>"; };
 		E0C51F3C28A6B60F0087CA18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0C51F3E28A6B6170087CA18 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				E02970E728A53266006E45CA /* Assets.xcassets */,
 				E0C51F3D28A6B60F0087CA18 /* Localizable.strings */,
+				E08D62A928ADB0000088623A /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08D62AA28ADB0000088623A /* Colors.xcassets in Resources */,
 				E02970E828A53266006E45CA /* Assets.xcassets in Resources */,
 				E0C51F3B28A6B60F0087CA18 /* Localizable.strings in Resources */,
 			);
@@ -821,6 +825,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -849,6 +854,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
