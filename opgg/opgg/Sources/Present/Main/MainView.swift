@@ -35,6 +35,7 @@ struct MainView: View {
                 gamesView  
             }
         }
+        .padding([.top], 1)
         .background(Color.paleGrey)
         .onAppear {
             viewModel.action.onAppear.accept(())
