@@ -25,7 +25,6 @@
 ### Third-Party
 
 - SwiftLint
-- Kingfisher
 - Then
 - RxAppState
 
